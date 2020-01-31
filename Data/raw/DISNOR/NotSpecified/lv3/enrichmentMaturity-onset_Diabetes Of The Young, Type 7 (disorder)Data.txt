@@ -1,0 +1,7 @@
+"Query: Maturity-onset Diabetes Of The Young, Type 7 (disorder) - Complexity level 3: all"
+"Disease";"Hits";"p-value"
+"Maturity-onset Diabetes Of The Young, Type 7 (disorder)";"1/1";"7.00E-4"
+"Delta-Beta Thalassemia";"1/2";"1.50E-3"
+"Chloracne";"1/32";"3.00E-2"
+"Acute Kidney Injury";"1/66";"5.84E-2"
+"Prostatic Neoplasms";"2/475";"6.00E-2"

@@ -1,0 +1,6 @@
+"Query: Maturity-onset Diabetes Of The Young, Type 6 (disorder) - Complexity level 3: all"
+"Disease";"Hits";"p-value"
+"Maturity-onset Diabetes Of The Young, Type 6 (disorder)";"1/1";"7.00E-4"
+"Diabetes Mellitus, Experimental";"1/106";"6.32E-2"
+"Diabetes Mellitus, Non-Insulin-Dependent";"1/159";"8.80E-2"
+"Polycystic Ovary Syndrome";"1/154";"8.99E-2"

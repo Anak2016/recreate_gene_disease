@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="feff25f7-8fba-40e8-b520-dddacbb722a7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="recreate_gene_disease" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="JupyterTrust" id="7cb7c8e8-a79d-467b-a1af-6c55c895e0af">
+    <option name="files">
+      <option value="notebook\Concept\multiple_inheritence.ipynb" />
+      <option value="notebook\Library\networkx.ipynb" />
+      <option value="notebook\Library\pandas.ipynb" />
+      <option value="notebook\Library\pytorch_lighting.ipynb" />
+      <option value="notebook\Library\sklearn.ipynb" />
+      <option value="notebook\eda\Dataset\DDAs_DisGeNET.ipynb" />
+      <option value="notebook\eda\Dataset\DNetDB.ipynb" />
+      <option value="notebook\eda\Dataset\HumanNet2.ipynb" />
+    </option>
+  </component>
+  <component name="ProjectId" id="1Uu0R8JDshknmYih54vzCgrxJkO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowDebug.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Data/processed/GPSim/Node2Vec/WeightedEdges/AddedEdges/EdgesPercent" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Recreate_GeneDisease" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Recreate_GeneDisease" />
+        <option name="myAddContentRoots" value="false" />
+        <option name="myAddSourceRoots" value="false" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesPercent" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesPercent" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges\EdgesPercent" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Edges\DiseasePhenotype" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Edges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\ExampleCode\Library\SKLearn" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Practicing\Library" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.node2vec_emb">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build_features" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sources/Preparation/Features" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sources/Preparation/Features/build_features.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="node2vec_emb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sources/Modeling/Embedding" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" />
+      <option name="PARAMETERS" value="--add_qualified_edges top_k --dataset GPSim --edges_percent 1 --added_edges_percent_of GPSim" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_roc_cuve_with_cross_validation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExampleCode/Library/SKLearn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExampleCode/Library/SKLearn/plot_roc_cuve_with_cross_validation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Models/train_model.py" />
+      <option name="PARAMETERS" value="--use_saved_emb_file --dataset no --edges_number 24 --cv --k_fold 4" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.PyramidServer" factoryName="Pyramid server">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="CONFIGURATION_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;-v&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.node2vec_emb" />
+      <item itemvalue="Python.train_model" />
+      <item itemvalue="Python.build_features" />
+      <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.node2vec_emb" />
+        <item itemvalue="Python.train_model" />
+        <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
+        <item itemvalue="Python.build_features" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="feff25f7-8fba-40e8-b520-dddacbb722a7" name="Default Changelist" comment="" />
+      <created>1576191161551</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576191161551</updated>
+      <workItem from="1576725104194" duration="201000" />
+      <workItem from="1576725399292" duration="15621000" />
+      <workItem from="1576769494408" duration="11669000" />
+      <workItem from="1576784175342" duration="15044000" />
+      <workItem from="1576853339578" duration="340000" />
+      <workItem from="1576853699615" duration="483000" />
+      <workItem from="1576854201559" duration="136000" />
+      <workItem from="1576854368548" duration="57000" />
+      <workItem from="1576854469650" duration="1962000" />
+      <workItem from="1576856450642" duration="144000" />
+      <workItem from="1576856612860" duration="3094000" />
+      <workItem from="1576859861467" duration="23341000" />
+      <workItem from="1577002194940" duration="1778000" />
+      <workItem from="1577028460059" duration="7861000" />
+      <workItem from="1577115269624" duration="2818000" />
+      <workItem from="1577129716342" duration="937000" />
+      <workItem from="1577132267815" duration="198000" />
+      <workItem from="1577132484341" duration="2555000" />
+      <workItem from="1577135071417" duration="9477000" />
+      <workItem from="1577256026087" duration="7258000" />
+      <workItem from="1577373090634" duration="11373000" />
+      <workItem from="1577406397136" duration="8176000" />
+      <workItem from="1577416702794" duration="232000" />
+      <workItem from="1577416957316" duration="6481000" />
+      <workItem from="1577436090502" duration="6274000" />
+      <workItem from="1577462335909" duration="4621000" />
+      <workItem from="1577549477073" duration="6265000" />
+      <workItem from="1577580395082" duration="349000" />
+      <workItem from="1577580760894" duration="27138000" />
+      <workItem from="1577715089852" duration="4994000" />
+      <workItem from="1577919733344" duration="3555000" />
+      <workItem from="1577928360175" duration="6532000" />
+      <workItem from="1578017724071" duration="432000" />
+      <workItem from="1578018185026" duration="2663000" />
+      <workItem from="1578276264982" duration="3402000" />
+      <workItem from="1578335149878" duration="427000" />
+      <workItem from="1578335637974" duration="19063000" />
+      <workItem from="1578361066549" duration="16579000" />
+      <workItem from="1578531222192" duration="107000" />
+      <workItem from="1578531353930" duration="67000" />
+      <workItem from="1578531439435" duration="249000" />
+      <workItem from="1578531706349" duration="48000" />
+      <workItem from="1578531774440" duration="640000" />
+      <workItem from="1578532491791" duration="130000" />
+      <workItem from="1578562515594" duration="10019000" />
+      <workItem from="1578890222108" duration="6191000" />
+      <workItem from="1578900576319" duration="12495000" />
+      <workItem from="1579148136644" duration="232000" />
+      <workItem from="1579148403401" duration="8816000" />
+      <workItem from="1579175227402" duration="5000" />
+      <workItem from="1579175312987" duration="14903000" />
+      <workItem from="1579225730908" duration="34996000" />
+      <workItem from="1579725049453" duration="29619000" />
+      <workItem from="1579876750745" duration="21454000" />
+      <workItem from="1579906744459" duration="922000" />
+      <workItem from="1579907824113" duration="127238000" />
+      <workItem from="1580237546650" duration="55305000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="457" y="64" key="#Custom_Plugin_Repositories" timestamp="1577029133062">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="457" y="64" key="#Custom_Plugin_Repositories/0.0.1536.783@0.0.1536.783" timestamp="1577029133062" />
+    <state x="360" y="69" key="#Grep_Console" timestamp="1576860376978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="69" key="#Grep_Console/0.0.1536.824@0.0.1536.824" timestamp="1576860376978" />
+    <state x="360" y="49" key="#Inspections" timestamp="1576925392221">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="360" y="49" key="#Inspections/0.0.1536.783@0.0.1536.783" timestamp="1576925392221" />
+    <state x="360" y="69" width="816" height="733" key="#Intentions" timestamp="1576859376085">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="69" width="816" height="733" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1576859376085" />
+    <state x="360" y="71" key="#Notifications" timestamp="1578016047265">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1578016047265" />
+    <state x="720" y="74" key="#Plugins" timestamp="1577629425306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="720" y="74" key="#Plugins/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577629425306" />
+    <state x="875" y="80" key="#adding_sub_parser" timestamp="1580336081103">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="875" y="80" key="#adding_sub_parser/0.0.1536.824@0.0.1536.824" timestamp="1580336081103" />
+    <state x="222" y="66" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577459974061">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="222" y="66" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577459974061" />
+    <state x="487" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580238934982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="487" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577919791426" />
+    <state x="487" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1580238934982" />
+    <state x="517" y="250" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1578532401667">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="517" y="250" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578532401667" />
+    <state x="541" y="104" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1580254832557">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="541" y="104" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580254832557" />
+    <state x="448" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577435822767">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="448" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577435822767" />
+    <state x="626" y="72" width="544" height="540" key="#node2vec_emb" timestamp="1580453005497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="626" y="72" width="544" height="540" key="#node2vec_emb/0.0.1536.824@0.0.1536.824" timestamp="1580453005497" />
+    <state x="938" y="0" width="544" height="824" key="#train_model" timestamp="1580415109056">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="938" y="0" width="544" height="824" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1580415109056" />
+    <state x="806" y="268" width="582" height="556" key="#xdebugger.evaluate" timestamp="1580448615579">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="100" key="#xdebugger.evaluate/0.0.1536.783@0.0.1536.783" timestamp="1576918218922" />
+    <state x="806" y="268" width="582" height="556" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1580448615579" />
+    <state x="329" y="106" key="Cacher.FindSnippetDialog" timestamp="1580505798291">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="103" key="Cacher.FindSnippetDialog/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577132240505" />
+    <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900029272" />
+    <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578940018995" />
+    <state x="329" y="106" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580505798291" />
+    <state x="266" y="80" key="Cacher.NewSnippetDialog" timestamp="1580505980720">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="311" y="23" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643776331" />
+    <state x="2197" y="20" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577261405183" />
+    <state x="266" y="80" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580505980720" />
+    <state width="1534" height="440" key="DebuggerActiveHint" timestamp="1580321660568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1534" height="440" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1580321660568" />
+    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl" timestamp="1579876219685">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="932" y="132" key="FileChooserDialogImpl/0.0.1536.783@0.0.1536.783" timestamp="1577028661745" />
+    <state x="932" y="139" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578964735869" />
+    <state x="2749" y="123" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577256820309" />
+    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579876219685" />
+    <state width="1537" height="233" key="GridCell.Tab.0.bottom" timestamp="1580453025009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.0.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
+    <state width="1537" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
+    <state width="1537" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
+    <state width="1537" height="233" key="GridCell.Tab.0.center" timestamp="1580453025009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.0.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
+    <state width="1537" height="228" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
+    <state width="1537" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
+    <state width="1537" height="233" key="GridCell.Tab.0.left" timestamp="1580453025009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.0.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
+    <state width="1537" height="228" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
+    <state width="1537" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
+    <state width="1537" height="233" key="GridCell.Tab.0.right" timestamp="1580453025009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.0.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
+    <state width="1537" height="228" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
+    <state width="1537" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
+    <state width="1537" height="233" key="GridCell.Tab.1.bottom" timestamp="1580453019643">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.1.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
+    <state width="1535" height="287" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
+    <state width="1537" height="233" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580453019643" />
+    <state width="1537" height="233" key="GridCell.Tab.1.center" timestamp="1580453019642">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.1.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
+    <state width="1535" height="287" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
+    <state width="1537" height="233" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
+    <state width="1537" height="233" key="GridCell.Tab.1.left" timestamp="1580453019642">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.1.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
+    <state width="1535" height="287" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
+    <state width="1537" height="233" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
+    <state width="1537" height="233" key="GridCell.Tab.1.right" timestamp="1580453019642">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1535" height="273" key="GridCell.Tab.1.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
+    <state width="1535" height="287" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
+    <state width="1537" height="233" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
+    <state x="276" y="53" key="SettingsEditor" timestamp="1580255662606">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="374" y="48" key="SettingsEditor/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577137050293" />
+    <state x="374" y="48" key="SettingsEditor/0.0.1536.783@0.0.1536.783" timestamp="1577115237003" />
+    <state x="374" y="51" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1579223963053" />
+    <state x="2253" y="10" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577261136773" />
+    <state x="276" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1580255662606" />
+    <state x="795" y="216" key="StringManipulation.SortTypeDialog" timestamp="1576969449268">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="795" y="216" key="StringManipulation.SortTypeDialog/0.0.1536.783@0.0.1536.783" timestamp="1576969449268" />
+    <state width="498" height="452" key="SwitcherDM" timestamp="1580452969454">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="430" key="SwitcherDM/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577137151107" />
+    <state width="498" height="430" key="SwitcherDM/0.0.1536.783@0.0.1536.783" timestamp="1576969368126" />
+    <state width="498" height="452" key="SwitcherDM/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1579225962530" />
+    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1580452969454" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1580216044893">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578526811278" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580216044893" />
+    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1580448653317">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1580448653317" />
+    <state x="93" y="98" width="1350" height="630" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577285428897">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="598" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.783@0.0.1536.783" timestamp="1576942813383" />
+    <state x="93" y="98" width="1350" height="630" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577285428897" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.RecentChangeDialog" timestamp="1576860134944">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.RecentChangeDialog/0.0.1536.824@0.0.1536.824" timestamp="1576860134944" />
+    <state x="93" y="93" width="1350" height="598" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1576927456900">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="93" y="93" width="1350" height="598" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.783@0.0.1536.783" timestamp="1576927456900" />
+    <state x="463" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1578532504609">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="222" key="com.intellij.ide.util.TipDialog/0.0.1536.783/1920.0.1366.728@0.0.1536.783" timestamp="1577120281357" />
+    <state x="463" y="222" key="com.intellij.ide.util.TipDialog/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577135291052" />
+    <state x="463" y="222" key="com.intellij.ide.util.TipDialog/0.0.1536.783@0.0.1536.783" timestamp="1577028464675" />
+    <state x="463" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578532504609" />
+    <state x="2332" y="206" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577256522362" />
+    <state x="463" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578361452655" />
+    <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576921420005">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.783@0.0.1536.783" timestamp="1576921420005" />
+    <state x="323" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1580082333325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="323" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1580082333325" />
+    <state x="93" y="93" width="1350" height="598" key="dock-window-1" timestamp="1576921774646">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="93" y="93" width="1350" height="598" key="dock-window-1/0.0.1536.783@0.0.1536.783" timestamp="1576921774646" />
+    <state x="93" y="93" width="1350" height="598" key="dock-window-2" timestamp="1576924412871">
+      <screen x="0" y="0" width="1536" height="783" />
+    </state>
+    <state x="93" y="93" width="1350" height="598" key="dock-window-2/0.0.1536.783@0.0.1536.783" timestamp="1576924412871" />
+    <state x="523" y="179" width="740" height="606" key="find.popup" timestamp="1580416146171">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136316169" />
+    <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783@0.0.1536.783" timestamp="1576921066285" />
+    <state x="798" y="218" width="738" height="606" key="find.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578589552889" />
+    <state x="523" y="179" width="740" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580416146171" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1580448523754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="600" height="403" key="javadoc.popup/0.0.1536.783@0.0.1536.783" timestamp="1576901662049" />
+    <state width="600" height="425" key="javadoc.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577638561595" />
+    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1580448523754" />
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1580253325871">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1536.824@0.0.1536.824" timestamp="1580253325871" />
+    <state x="409" y="157" width="599" height="622" key="recent.locations.popup" timestamp="1577409860929">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="409" y="149" width="599" height="592" key="recent.locations.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577134971862" />
+    <state x="409" y="149" width="599" height="592" key="recent.locations.popup/0.0.1536.783@0.0.1536.783" timestamp="1576998048593" />
+    <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577409860929" />
+    <state x="2284" y="139" width="598" height="551" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577245609484" />
+    <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1577393531137" />
+    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1580415161493">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136918109" />
+    <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783@0.0.1536.783" timestamp="1577064146390" />
+    <state x="830" y="146" width="672" height="679" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578903960727" />
+    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1580415161493" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>230</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>244</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Visualization/visualization.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Anaconda3/Lib/site-packages/sklearn/metrics/_plot/roc_curve.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ExampleCode/Library/SKLearn/plot_roc_cuve_with_cross_validation.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Visualization/visualization.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>109</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/preprocessing.py</url>
+          <line>241</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/preprocessing.py</url>
+          <line>167</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>146</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="report_support_pred_class['support'].dtype" language="Python" />
+        <watch expression="report_support_pred_class['predicted'].dtype" language="Python" />
+        <watch expression="report_df['support'].dtype" language="Python" />
+        <watch expression="added_dim" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/recreate_gene_disease$file2.coverage" NAME="file2 Coverage Results" MODIFIED="1577414913480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestDir/TestDir2" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_for_test_hellow_word_test_two.coverage" NAME="pytest for test_hellow_word.test_two Coverage Results" MODIFIED="1577460076081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec.coverage" NAME="node2vec_emb Coverage Results" MODIFIED="1579884502008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$plot_roc_cuve_with_cross_validation.coverage" NAME="plot_roc_cuve_with_cross_validation Coverage Results" MODIFIED="1580254953187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/SKLearn" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577416861451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_for_test_hellow_word_test_one.coverage" NAME="pytest for test_hellow_word.test_one Coverage Results" MODIFIED="1577459690751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$make_dataset.coverage" NAME="make_dataset Coverage Results" MODIFIED="1579717592562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/data" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1580415053661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
+    <SUITE FILE_PATH="coverage/recreate_gene_disease$setup.coverage" NAME="setup Coverage Results" MODIFIED="1577406530429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_in_test_hellow_word_py.coverage" NAME="pytest in test_hellow_word.py Coverage Results" MODIFIED="1577460001187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
+    <SUITE FILE_PATH="coverage/recreate_gene_disease$test.coverage" NAME="test Coverage Results" MODIFIED="1577409315838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preparation/data" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$build_features.coverage" NAME="build_features Coverage Results" MODIFIED="1580148278345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/Features" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$adding_sub_parser.coverage" NAME="adding_sub_parser Coverage Results" MODIFIED="1580336082118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/argparse" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec_emb__1_.coverage" NAME="node2vec_emb (1) Coverage Results" MODIFIED="1579885721693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$test.coverage" NAME="test Coverage Results" MODIFIED="1579888423862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec_emb.coverage" NAME="node2vec_emb Coverage Results" MODIFIED="1580453005576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
+    <SUITE FILE_PATH="coverage/recreate_gene_disease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577415818353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

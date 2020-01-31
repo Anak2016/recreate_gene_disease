@@ -1,0 +1,102 @@
+,0
+0,agoraphobia
+1,maturity-onset diabetes of the young- type 9 (disorder)
+2,hyperlipoproteinemia type iv
+3,maturity-onset diabetes of the young- type iv (disorder)
+4,diabetes mellitus autosomal dominant type ii (disorder)
+5,leukoerythroblastic anemia
+6,pulmonary veno-occlusive disease (disorder)
+7,diabetes mellitus- transient neonatal- 3 (disorder)
+8,melancholia
+9,methemoglobinemia
+10,hypercholesterolemia- autosomal recessive
+11,diabetes mellitus- insulin-dependent- 12
+12,diabetes mellitus- insulin-dependent- 7
+13,hyperlipoproteinemia type iii
+14,cardiopulmonary arrest
+15,heart failure- diastolic
+16,maturity-onset diabetes of the young- type 3 (disorder)
+17,polycythemia vera
+18,common carotid artery thrombosis
+19,spherocytosis- type 5
+20,lateral medullary syndrome
+21,impaired glucose tolerance
+22,hereditary sideroblastic anemia
+23,moyamoya disease 1
+24,persistent fetal circulation syndrome
+25,maturity-onset diabetes of the young- type 8- with exocrine dysfunction
+26,myocardial stunning
+27,pure red-cell aplasia
+28,erythrocytosis- familial- 2
+29,maturity-onset diabetes of the young- type 6 (disorder)
+30,carotid ulcer
+31,diabetic ketoacidosis
+32,fanconi anemia- complementation group i
+33,diabetes mellitus- insulin-dependent- 2
+34,combat disorders
+35,lipoatrophic diabetes mellitus
+36,carcinoma- small cell
+37,lateral sinus thrombosis
+38,pleuropulmonary blastoma
+39,deficiency of pyruvate kinase
+40,fanconi anemia- complementation group n
+41,congenital dyserythropoietic anemia
+42,panic disorder
+43,anxiety
+44,heart failure- systolic
+45,dysthymic disorder
+46,estren-dameshek variant of fanconi pancytopenia
+47,apolipoprotein c-ii deficiency (disorder)
+48,carcinoma- giant cell
+49,thrombotic infarction- middle cerebral artery
+50,diabetes mellitus- insulin-dependent- 4
+51,reactive depression
+52,iron deficiency anemia
+53,diabetes mellitus- insulin-dependent- 20 (disorder)
+54,diabetes mellitus- neonatal- with congenital hypothyroidism
+55,chronic post-traumatic stress disorder
+56,fanconi anemia- complementation group j
+57,maturity-onset diabetes of the young- type 1
+58,cerebral embolism
+59,abdominal obesity metabolic syndrome
+60,maturity-onset diabetes of the young- type 7 (disorder)
+61,obsessive-compulsive disorder
+62,familial erythrocytosis
+63,cerebral cavernous malformations 2
+64,cerebral vasospasm
+65,sleep apnea- mixed central and obstructive
+66,coronary occlusion
+67,hyperlipidemia- familial combined
+68,myocardial preinfarction syndrome
+69,fanconi anemia- complementation group d1
+70,stress disorders- traumatic- acute
+71,diamond-blackfan anemia 7
+72,myocardial infarction
+73,atrial fibrillation- familial- 1 (disorder)
+74,phobic anxiety disorder
+75,rh deficiency syndrome
+76,anemia- sideroblastic- and spinocerebellar ataxia
+77,status asthmaticus
+78,renal cysts and diabetes syndrome
+79,diabetes mellitus- permanent neonatal
+80,kernicterus
+81,spherocytosis- type 3 (disorder)
+82,coronary restenosis
+83,claustrophobia
+84,pancytopenia
+85,cerebral infarction
+86,asthma
+87,spherocytosis- type 1 (disorder)
+88,hyperlipoproteinemia type v
+89,gestational diabetes
+90,bronchitis
+91,diabetes mellitus- insulin-dependent- 5
+92,spherocytosis- type 4
+93,anterior myocardial infarction
+94,erythroblastosis- fetal
+95,5q-syndrome
+96,megaloblastic anemia due to inborn errors of metabolism
+97,diabetes mellitus- insulin-dependent- 8
+98,pulmonary hypertension- primary- fenfluramine-associated
+99,obesity- morbid
+100,sagittal sinus thrombophlebitis

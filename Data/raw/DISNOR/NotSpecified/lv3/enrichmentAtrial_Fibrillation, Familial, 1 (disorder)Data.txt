@@ -1,0 +1,8 @@
+"Query: Atrial Fibrillation, Familial, 1 (disorder) - Complexity level 3: all"
+"Disease";"Hits";"p-value"
+"Atrial Fibrillation, Familial, 1 (disorder)";"1/1";"5.00E-4"
+"Cardiomyopathy, Familial, With Conduction Disturbance";"1/2";"1.50E-3"
+"Adrenal Gland Neoplasms";"1/11";"1.08E-2"
+"Tetralogy Of Fallot";"1/17";"1.24E-2"
+"Cholangiocarcinoma";"1/24";"2.21E-2"
+"Hypertensive Disease";"1/193";"1.56E-1"

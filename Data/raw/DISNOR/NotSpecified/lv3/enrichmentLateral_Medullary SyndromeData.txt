@@ -1,13 +1,3 @@
-"Query: Lateral Medullary Syndrome - Complexity level 3: all"
-"Disease";"Hits";"p-value"
-"Lateral Medullary Syndrome";"1/1";"1.20E-3"
-"Follicle-stimulating Hormone Deficiency, Isolated";"1/1";"1.20E-3"
-"Pituitary Hormone Deficiency, Combined, 3";"1/1";"2.50E-3"
-"Keratoconus";"1/3";"4.80E-3"
-"Alveolar Rhabdomyosarcoma";"1/4";"6.60E-3"
-"Pituitary Dwarfism Type 3";"1/3";"6.60E-3"
-"Amenorrhea";"1/6";"1.11E-2"
-"Oligospermia";"1/8";"1.21E-2"
-"Hypogonadism";"1/14";"2.34E-2"
-"Alcoholic Intoxication, Chronic";"1/41";"6.58E-2"
-"Leukemia, Myelocytic, Acute";"1/113";"1.75E-1"
+version https://git-lfs.github.com/spec/v1
+oid sha256:b0100a15f8d86ace4176d424e26e20e85b7eac684c3111d459bbbbecf97074cf
+size 582

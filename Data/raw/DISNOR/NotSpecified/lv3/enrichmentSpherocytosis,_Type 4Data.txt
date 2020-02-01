@@ -1,20 +1,3 @@
-"Query: Spherocytosis, Type 4 - Complexity level 3: all"
-"Disease";"Hits";"p-value"
-"Spherocytosis, Type 4";"1/1";"1.80E-3"
-"Renal Tubular Acidosis, Distal, With Normal Red Cell Morphology";"1/1";"1.80E-3"
-"Renal Tubular Acidosis, Distal, With Hemolytic Anemia (disorder)";"1/1";"1.80E-3"
-"Pseudohyperkalemia Cardiff";"1/1";"1.80E-3"
-"Ovalocytosis, Hereditary Hemolytic";"1/1";"1.80E-3"
-"Distal Renal Tubular Acidosis";"1/1";"1.80E-3"
-"Renal Tubular Acidosis";"1/2";"4.80E-3"
-"Renal Tubular Acidosis, Distal, Autosomal Recessive";"1/2";"4.90E-3"
-"Dementia, Vascular";"1/2";"5.30E-3"
-"Anemia, Hereditary Spherocytic Hemolytic";"1/5";"1.20E-2"
-"Elliptocytosis, Hereditary";"1/5";"1.21E-2"
-"Hereditary Spherocytosis";"1/8";"2.12E-2"
-"Anemia, Hemolytic";"1/12";"2.91E-2"
-"Malaria";"1/21";"4.86E-2"
-"Mesothelioma";"1/41";"1.01E-1"
-"Multiple Sclerosis";"1/94";"2.23E-1"
-"Melanoma";"1/202";"4.23E-1"
-"Obesity";"1/273";"5.25E-1"
+version https://git-lfs.github.com/spec/v1
+oid sha256:5aeda4beb15324c64f545da4f17dedab91267c38e978773763cb80c0d8eec091
+size 939

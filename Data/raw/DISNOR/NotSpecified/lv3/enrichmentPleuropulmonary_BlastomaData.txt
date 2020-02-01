@@ -1,13 +1,3 @@
-"Query: Pleuropulmonary Blastoma - Complexity level 3: all"
-"Disease";"Hits";"p-value"
-"Endemic Goiter";"1/1";"1.80E-3"
-"Euthyroid Goiter";"1/1";"1.80E-3"
-"Granulosa Cell Cancer";"1/1";"1.80E-3"
-"Gynandroblastoma";"1/1";"1.80E-3"
-"Pleuropulmonary Blastoma";"1/1";"1.80E-3"
-"Rhabdomyosarcoma, Embryonal, 2";"1/1";"1.80E-3"
-"Oligospermia";"1/8";"1.28E-2"
-"Salivary Gland Neoplasms";"1/45";"7.20E-2"
-"Adenoid Cystic Carcinoma";"1/100";"1.54E-1"
-"Endometriosis";"1/157";"2.31E-1"
-"Iga Glomerulonephritis";"1/445";"5.23E-1"
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e8de4b200ae0a36cc3499e39eaea4ba6b94c52d219c4e9a58a2d80cf98ab7fd
+size 530

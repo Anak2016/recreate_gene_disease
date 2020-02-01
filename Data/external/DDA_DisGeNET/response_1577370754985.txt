@@ -1,11 +1,3 @@
-disease1_disease_class	disease1_disease_class_name	disease1_name	disease1_nvariants	disease2_disease_class	disease2_disease_class_name	disease2_name	disease2_nvariants	diseaseid1	diseaseid2	jaccard_variants	ngenes1	ngenes2	nvariants	nvariants1	nvariants2	pvalue_jaccard_variants	source
-C14	Cardiovascular Diseases	Myocardial Infarction	454			Ischemic cardiomyopathy	65	C0027051	C0349782	0.143171806167401	965	115	65	454	65	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14;C23	Cardiovascular Diseases; Pathological Conditions, Signs and Symptoms	Angina Pectoris	64	C0027051	C0002962	0.140969162995595	965	58	64	454	64	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Coronary Artery Disease	861	C0027051	C1956346	0.139514731369151	965	980	161	454	861	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Coronary Arteriosclerosis	189	C0027051	C0010054	0.104810996563574	965	759	61	454	189	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Cardiovascular Diseases	197	C0027051	C0007222	0.0996621621621622	965	786	59	454	197	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Coronary heart disease	760	C0027051	C0010068	0.0936936936936937	965	912	104	454	760	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Atherosclerosis	131	C0027051	C0004153	0.0813308687615527	965	1133	44	454	131	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C14	Cardiovascular Diseases	Arteriosclerosis	121	C0027051	C0003850	0.0808270676691729	965	1086	43	454	121	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454			Ischemic stroke	209	C0027051	C0948008	0.0710823909531502	965	393	44	454	209	0.0	ALL
-C14	Cardiovascular Diseases	Myocardial Infarction	454	C10;C14	Cardiovascular Diseases; Nervous System Diseases	Cerebrovascular accident	331	C0027051	C0038454	0.0694822888283379	965	767	51	454	331	0.0	ALL
+version https://git-lfs.github.com/spec/v1
+oid sha256:83e189fdd7f1939f8f3e44670dd35ecdda7a8bbb5056991be7cf8f6384a9ee8e
+size 2029

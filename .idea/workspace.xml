@@ -105,7 +105,7 @@
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Practicing\Library" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.node2vec_emb">
+  <component name="RunManager" selected="Python.train_model">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,6 +131,39 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="apply_preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Recreate_GeneDisease" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sources/Preprocessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Sources\Preprocessing\apply_preprocessing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +227,7 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" />
-      <option name="PARAMETERS" value="--add_qualified_edges top_k --dataset GPSim --edges_percent 1 --added_edges_percent_of GPSim" />
+      <option name="PARAMETERS" value="--add_qualified_edges top_k --dataset GeneDisease --edges_percent 1 --added_edges_percent_of GPSim" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -257,7 +290,7 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Models/train_model.py" />
-      <option name="PARAMETERS" value="--use_saved_emb_file --dataset no --edges_number 24 --cv --k_fold 4" />
+      <option name="PARAMETERS" value="--use_saved_emb_file --add_qualified_edges top_k  --dataset GPSim --edges_percent 1 --added_edges_percent_of GPSim --cv --use_weighted_edges --k_fold 4" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -365,13 +398,15 @@
       <item itemvalue="Python.train_model" />
       <item itemvalue="Python.build_features" />
       <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
+      <item itemvalue="Python.apply_preprocessing" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.node2vec_emb" />
         <item itemvalue="Python.train_model" />
-        <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
         <item itemvalue="Python.build_features" />
+        <item itemvalue="Python.node2vec_emb" />
+        <item itemvalue="Python.apply_preprocessing" />
+        <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
       </list>
     </recent_temporary>
   </component>
@@ -458,7 +493,7 @@
       <workItem from="1579876750745" duration="21454000" />
       <workItem from="1579906744459" duration="922000" />
       <workItem from="1579907824113" duration="127238000" />
-      <workItem from="1580237546650" duration="60570000" />
+      <workItem from="1580237546650" duration="85115000" />
     </task>
     <servers />
   </component>
@@ -515,32 +550,32 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="448" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577435822767" />
-    <state x="626" y="72" width="544" height="540" key="#node2vec_emb" timestamp="1580453005497">
+    <state x="452" y="72" width="1084" height="540" key="#node2vec_emb" timestamp="1580704498902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="626" y="72" width="544" height="540" key="#node2vec_emb/0.0.1536.824@0.0.1536.824" timestamp="1580453005497" />
-    <state x="938" y="0" width="544" height="824" key="#train_model" timestamp="1580415109056">
+    <state x="452" y="72" width="1084" height="540" key="#node2vec_emb/0.0.1536.824@0.0.1536.824" timestamp="1580704498902" />
+    <state x="938" y="0" width="544" height="824" key="#train_model" timestamp="1580705143683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="938" y="0" width="544" height="824" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1580415109056" />
-    <state x="806" y="268" width="582" height="556" key="#xdebugger.evaluate" timestamp="1580448615579">
+    <state x="938" y="0" width="544" height="824" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1580705143683" />
+    <state x="805" y="268" width="582" height="556" key="#xdebugger.evaluate" timestamp="1580703504030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="100" key="#xdebugger.evaluate/0.0.1536.783@0.0.1536.783" timestamp="1576918218922" />
-    <state x="806" y="268" width="582" height="556" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1580448615579" />
-    <state x="329" y="106" key="Cacher.FindSnippetDialog" timestamp="1580529916094">
+    <state x="805" y="268" width="582" height="556" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1580703504030" />
+    <state x="329" y="106" key="Cacher.FindSnippetDialog" timestamp="1580583115588">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="103" key="Cacher.FindSnippetDialog/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577132240505" />
     <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900029272" />
     <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578940018995" />
-    <state x="329" y="106" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580529916094" />
-    <state x="755" y="0" width="814" height="824" key="Cacher.NewSnippetDialog" timestamp="1580514420348">
+    <state x="329" y="106" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580583115588" />
+    <state x="722" y="0" width="814" height="824" key="Cacher.NewSnippetDialog" timestamp="1580673316973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="311" y="23" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643776331" />
     <state x="2197" y="20" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577261405183" />
-    <state x="755" y="0" width="814" height="824" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580514420348" />
+    <state x="722" y="0" width="814" height="824" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1580673316973" />
     <state width="1534" height="440" key="DebuggerActiveHint" timestamp="1580321660568">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -552,54 +587,54 @@
     <state x="932" y="139" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578964735869" />
     <state x="2749" y="123" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577256820309" />
     <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579876219685" />
-    <state width="1537" height="233" key="GridCell.Tab.0.bottom" timestamp="1580453025009">
+    <state width="1537" height="522" key="GridCell.Tab.0.bottom" timestamp="1580705145102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
-    <state width="1537" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
-    <state width="1537" height="233" key="GridCell.Tab.0.center" timestamp="1580453025009">
+    <state width="1537" height="522" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580705145102" />
+    <state width="1537" height="522" key="GridCell.Tab.0.center" timestamp="1580705145102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="228" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
-    <state width="1537" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
-    <state width="1537" height="233" key="GridCell.Tab.0.left" timestamp="1580453025009">
+    <state width="1537" height="522" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580705145102" />
+    <state width="1537" height="522" key="GridCell.Tab.0.left" timestamp="1580705145102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="228" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
-    <state width="1537" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
-    <state width="1537" height="233" key="GridCell.Tab.0.right" timestamp="1580453025009">
+    <state width="1537" height="522" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580705145102" />
+    <state width="1537" height="522" key="GridCell.Tab.0.right" timestamp="1580705145102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="228" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900714237" />
-    <state width="1537" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580453025009" />
-    <state width="1537" height="233" key="GridCell.Tab.1.bottom" timestamp="1580453019643">
+    <state width="1537" height="522" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580705145102" />
+    <state width="1537" height="522" key="GridCell.Tab.1.bottom" timestamp="1580705144964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1535" height="287" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
-    <state width="1537" height="233" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580453019643" />
-    <state width="1537" height="233" key="GridCell.Tab.1.center" timestamp="1580453019642">
+    <state width="1537" height="522" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580705144964" />
+    <state width="1537" height="522" key="GridCell.Tab.1.center" timestamp="1580705144964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1535" height="287" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
-    <state width="1537" height="233" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
-    <state width="1537" height="233" key="GridCell.Tab.1.left" timestamp="1580453019642">
+    <state width="1537" height="522" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580705144964" />
+    <state width="1537" height="522" key="GridCell.Tab.1.left" timestamp="1580705144964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1535" height="287" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
-    <state width="1537" height="233" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
-    <state width="1537" height="233" key="GridCell.Tab.1.right" timestamp="1580453019642">
+    <state width="1537" height="522" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580705144964" />
+    <state width="1537" height="522" key="GridCell.Tab.1.right" timestamp="1580705144964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1535" height="287" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643927792" />
-    <state width="1537" height="233" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580453019642" />
+    <state width="1537" height="522" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580705144964" />
     <state x="276" y="53" key="SettingsEditor" timestamp="1580255662606">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -612,22 +647,22 @@
       <screen x="0" y="0" width="1536" height="783" />
     </state>
     <state x="795" y="216" key="StringManipulation.SortTypeDialog/0.0.1536.783@0.0.1536.783" timestamp="1576969449268" />
-    <state width="498" height="452" key="SwitcherDM" timestamp="1580452969454">
+    <state width="498" height="452" key="SwitcherDM" timestamp="1580704784377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="430" key="SwitcherDM/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577137151107" />
     <state width="498" height="430" key="SwitcherDM/0.0.1536.783@0.0.1536.783" timestamp="1576969368126" />
     <state width="498" height="452" key="SwitcherDM/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1579225962530" />
-    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1580452969454" />
+    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1580704784377" />
     <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1580216044893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578526811278" />
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580216044893" />
-    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1580448653317">
+    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1580703064891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1580448653317" />
+    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1580703064891" />
     <state x="93" y="98" width="1350" height="630" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577285428897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -666,19 +701,19 @@
       <screen x="0" y="0" width="1536" height="783" />
     </state>
     <state x="93" y="93" width="1350" height="598" key="dock-window-2/0.0.1536.783@0.0.1536.783" timestamp="1576924412871" />
-    <state x="523" y="179" width="740" height="606" key="find.popup" timestamp="1580416146171">
+    <state x="523" y="179" width="740" height="606" key="find.popup" timestamp="1580704792612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136316169" />
     <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783@0.0.1536.783" timestamp="1576921066285" />
     <state x="798" y="218" width="738" height="606" key="find.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578589552889" />
-    <state x="523" y="179" width="740" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580416146171" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1580448523754">
+    <state x="523" y="179" width="740" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1580704792612" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1580703290898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="600" height="403" key="javadoc.popup/0.0.1536.783@0.0.1536.783" timestamp="1576901662049" />
     <state width="600" height="425" key="javadoc.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577638561595" />
-    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1580448523754" />
+    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1580703290898" />
     <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1580253325871">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -691,35 +726,35 @@
     <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577409860929" />
     <state x="2284" y="139" width="598" height="551" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577245609484" />
     <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1577393531137" />
-    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1580530030599">
+    <state x="431" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1580704785160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136918109" />
     <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783@0.0.1536.783" timestamp="1577064146390" />
     <state x="830" y="146" width="672" height="679" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578903960727" />
-    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1580530030599" />
+    <state x="431" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1580704785160" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>230</line>
+          <line>293</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>244</line>
+          <line>307</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>40</line>
+          <line>46</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>44</line>
+          <line>50</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -734,7 +769,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>63</line>
+          <line>62</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -758,44 +793,69 @@
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/preprocessing.py</url>
-          <line>241</line>
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>251</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/preprocessing.py</url>
-          <line>167</line>
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>163</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>51</line>
+          <line>59</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
-          <line>146</line>
-          <option name="timeStamp" value="118" />
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>116</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>174</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="119" />
+          <line>36</line>
+          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py</url>
+          <line>174</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>265</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -816,15 +876,15 @@
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577416861451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_for_test_hellow_word_test_one.coverage" NAME="pytest for test_hellow_word.test_one Coverage Results" MODIFIED="1577459690751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$make_dataset.coverage" NAME="make_dataset Coverage Results" MODIFIED="1579717592562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/data" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1580415053661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1580705144921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
     <SUITE FILE_PATH="coverage/recreate_gene_disease$setup.coverage" NAME="setup Coverage Results" MODIFIED="1577406530429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_in_test_hellow_word_py.coverage" NAME="pytest in test_hellow_word.py Coverage Results" MODIFIED="1577460001187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/recreate_gene_disease$test.coverage" NAME="test Coverage Results" MODIFIED="1577409315838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preparation/data" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$build_features.coverage" NAME="build_features Coverage Results" MODIFIED="1580148278345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/Features" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$adding_sub_parser.coverage" NAME="adding_sub_parser Coverage Results" MODIFIED="1580336082118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/argparse" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$build_features.coverage" NAME="build_features Coverage Results" MODIFIED="1580702461034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/Features" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec_emb__1_.coverage" NAME="node2vec_emb (1) Coverage Results" MODIFIED="1579885721693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$test.coverage" NAME="test Coverage Results" MODIFIED="1579888423862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec_emb.coverage" NAME="node2vec_emb Coverage Results" MODIFIED="1580453005576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$node2vec_emb.coverage" NAME="node2vec_emb Coverage Results" MODIFIED="1580699941703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Modeling/Embedding" />
     <SUITE FILE_PATH="coverage/recreate_gene_disease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577415818353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

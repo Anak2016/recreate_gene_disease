@@ -4,14 +4,20 @@ import pandas as pd
 
 from Sources.Preparation.Features.get_qualified_edges import \
     get_GPSim_disease2disease_qualified_edges
+# from Sources.Preparation.Features.test import \
+#     get_GPSim_disease2disease_qualified_edges
 from Sources.Preparation.Features.get_qualified_edges import \
     get_GeneDisease_disease2disease_qualified_edges
 from Sources.Preparation.Features.select_strategy import \
     apply_edges_adding_strategies
-from Sources.Preprocessing.preprocessing import apply_normalization
-from Sources.Preprocessing.preprocessing import get_number_of_added_edges
-from Sources.Preprocessing.preprocessing import \
-    multiply_constant_multiplier_to_weighted_disease2disease_edges
+from Sources.Preprocessing.apply_preprocessing import apply_normalization
+from Sources.Preprocessing.apply_preprocessing import get_number_of_added_edges
+from Sources.Preprocessing.apply_preprocessing import \
+multiply_constant_multiplier_to_weighted_disease2disease_edges
+from Sources.Preprocessing.apply_preprocessing import \
+   select_emb_save_path
+from Sources.Preprocessing.apply_preprocessing import \
+    get_saved_file_name_for_emb
 
 
 def get_instances_with_features(graph_with_added_edges=None,
@@ -118,6 +124,8 @@ def get_data_without_using_emb_as_feat(data=None,
             constant_multiplier=1,
             weighted_disease2disease_edges=disease2disease_edges_to_be_added)
 
+        # add weihted qualified edges to graph
+        # note: if added_weighted_edges is False, all edges weigth are 1.
         data.add_weighted_qualified_edges_to_graph(
             disease2disease_edges_to_be_added)
         graph_with_added_disease2disease = data.G.copy()
@@ -159,14 +167,30 @@ def get_data_with_emb_as_feat(data,
                               edges_percent,
                               edges_number,
                               added_edges_percent_of):
+
     # catching not yet implmented conditions
-    if added_edges_percent_of is not None:
-        raise ValueError("not yet implemented")
+    # if added_edges_percent_of is not None:
+    #     raise ValueError("not yet implemented")
 
     # TODO implement added_edges_percent_of when edgs_percent is not None
     # TODO implement edges_percent and edges_nubmer when add_qualified_edges is true.
     # TODO add weight of gene2disease edges
     # TODO add normalized weight edges (min-max normalization)
+
+    # TODO here>> can I use selecte_emb_save_path what are teh differeces? I don't think there are any.
+    path_to_saved_emb_dir = select_emb_save_path(emb_type='node2vec',
+                                                     add_qualified_edges=add_qualified_edges,
+                                                     dataset=dataset,
+                                                     use_weighted_edges=use_weighted_edges,
+                                                     edges_percent = edges_percent,
+                                                     edges_number = edges_number,
+                                                     added_edges_percent_of = added_edges_percent_of)
+
+
+    file_name = get_saved_file_name_for_emb(add_qualified_edges, edges_percent, edges_number, 64, 30, 200, 10)
+    path_to_saved_emb_file = path_to_saved_emb_dir + file_name
+
+    # TODO code paragraph below should be put in select_emb_save_path for consistency between running train_model and node2vec
     if use_weighted_edges:
         if add_qualified_edges is not None:
             if dataset == 'GeneDisease':
@@ -174,7 +198,8 @@ def get_data_with_emb_as_feat(data,
                     "no yet implemented => haven't yet created a emb_file for --use_weight_edges --dataset GeneDisease --add_qualified_edges")
 
             elif dataset == 'GPSim':
-                path_to_saved_emb_file = r"C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt"
+                pass
+                # path_to_saved_emb_file = r"C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt"
             else:
                 raise ValueError("correct/availble dataaset must be specified")
         else:
@@ -185,15 +210,17 @@ def get_data_with_emb_as_feat(data,
     else:
         if add_qualified_edges is not None:
             if dataset == 'GeneDisease':
+                pass
                 # path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\AddedEdges\dim64_walk_len30_num_walks200_window10.txt'
-                path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
+                # path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
             elif dataset == 'GPSim':
-                path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
+                pass
+                # path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
             else:
                 raise ValueError("correct/availble dataaset must be specified")
         else:
             assert dataset == 'no', 'no need to specified dataset if no qualified edges will be added (this prevent unexpected beahabior that could be caused by unintentionally provided dataset as argument)'
-            path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges\dim64_walk_len30_num_walks200_window10.txt'
+            # path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges\dim64_walk_len30_num_walks200_window10.txt'
 
     data_with_features = get_instances_with_features(
         path_to_saved_emb_file=path_to_saved_emb_file,
@@ -201,6 +228,42 @@ def get_data_with_emb_as_feat(data,
         normalized_weighted_edges=normalized_weighted_edges)
 
     return data_with_features
+
+    # TODO old code: i keep it to make your raied VAle Error are raised in certain condition
+    # if use_weighted_edges:
+    #     if add_qualified_edges is not None:
+    #         if dataset == 'GeneDisease':
+    #             raise ValueError(
+    #                 "no yet implemented => haven't yet created a emb_file for --use_weight_edges --dataset GeneDisease --add_qualified_edges")
+    #
+    #         elif dataset == 'GPSim':
+    #             path_to_saved_emb_file = r"C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt"
+    #         else:
+    #             raise ValueError("correct/availble dataaset must be specified")
+    #     else:
+    #         assert dataset == 'no', 'no need to specified dataset if no qualified edges will be added (this prevent unexpected beahabior that could be caused by unintentionally provided dataset as argument)'
+    #         raise ValueError(
+    #             "no yet implemented => currently there is no weighted_edges that run with node2vec.")
+    #
+    # else:
+    #     if add_qualified_edges is not None:
+    #         if dataset == 'GeneDisease':
+    #             # path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\AddedEdges\dim64_walk_len30_num_walks200_window10.txt'
+    #             path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
+    #         elif dataset == 'GPSim':
+    #             path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesNumber\top_k=24_dim64_walk_len30_num_walks200_window10.txt'
+    #         else:
+    #             raise ValueError("correct/availble dataaset must be specified")
+    #     else:
+    #         assert dataset == 'no', 'no need to specified dataset if no qualified edges will be added (this prevent unexpected beahabior that could be caused by unintentionally provided dataset as argument)'
+    #         path_to_saved_emb_file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges\dim64_walk_len30_num_walks200_window10.txt'
+    #
+    # data_with_features = get_instances_with_features(
+    #     path_to_saved_emb_file=path_to_saved_emb_file,
+    #     use_saved_emb_file=use_saved_emb_file,
+    #     normalized_weighted_edges=normalized_weighted_edges)
+    #
+    # return data_with_features
 
 
 def get_data_feat(data=None, use_saved_emb_file=None, add_qualified_edges=None,

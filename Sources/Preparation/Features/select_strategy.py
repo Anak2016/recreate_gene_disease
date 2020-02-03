@@ -24,6 +24,14 @@ def select_edges_with_top_alpha(G,edges_with_weight, number_of_added_edges):
 
     jaccoff = np.array(list(nx.jaccard_coefficient(G,edges_without_weight)))
 
+    # select only none zero value edges
+    weighted_value = jaccoff[:, 2]
+    non_zero_weighted_value_ind = weighted_value.nonzero()
+
+    ## use non_zero weighted_value to select row index from jaccoff
+    ## note: I decided (for now ) to not change name jaccoff to reflect state of value it contains for consistency reason
+    jaccoff = jaccoff[non_zero_weighted_value_ind]
+
     # sorted GeneDisease_jaccoff by jaccoff value
     index_sorted_by_jaccoff = np.argsort(jaccoff[:, 2])[::-1]
     jaccoff_sorted = jaccoff[index_sorted_by_jaccoff]

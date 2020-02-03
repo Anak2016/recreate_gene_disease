@@ -111,11 +111,11 @@ def run_svm_using_cross_validation(data, data_with_features, k_fold):
         y_test_pred = clf.decision_function(x_test_with_features).argmax(1)
         y_test_pred_proba = clf.decision_function(x_test_with_features)
 
-        print(f"================training cv ={i+1}==================")
+        print(f"================training cv ={i}==================")
         report_final_train_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
             y_train, y_train_pred, y_train_pred_proba, np.unique(y_train),
             plot=False, return_value=True)
-        print(f"================test cv ={i+1}==================")
+        print(f"================test cv ={i}==================")
         report_final_test_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
             y_test, y_test_pred, y_test_pred_proba, np.unique(y_test),
             plot=False, return_value=True)
@@ -153,11 +153,11 @@ def run_svm_using_cross_validation(data, data_with_features, k_fold):
         index=indices_of_performance_metric)
 
     # report performance of model
-    print(f'=======training set cv={k_fold}=======')
+    print(f'=======training set cv k_fold={k_fold}=======')
     print(avg_final_train_performance_report_pd)
     # report_performance(  y_train,  y_train_pred, y_train_pred_proba,  np.unique(y_train), plot=True)
 
-    print(f'=======test set cv={k_fold}=======')
+    print(f'=======test set cv k_fold={k_fold}=======')
     print(avg_final_test_performance_report_pd)
     # report_performance(  y_test,  y_test_pred, y_test_pred_proba,  np.unique(y_test), plot=True )
 

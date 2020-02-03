@@ -7,9 +7,9 @@ from Sources.Preparation.Data import GeneDiseaseGeometricDataset
 from Sources.Preparation.Features.build_features import \
     get_data_without_using_emb_as_feat
 # from Sources.Preprocessing.preprocessing import add_disease2disease_edges
-from Sources.Preprocessing.preprocessing import select_emb_save_path
+from Sources.Preprocessing.apply_preprocessing import select_emb_save_path
 from arg_parser import args
-from Sources.Preprocessing.preprocessing import get_saved_file_name_for_emb
+from Sources.Preprocessing.apply_preprocessing import get_saved_file_name_for_emb
 
 def run_node2vec(data=None, G=None, embedding_model_file_path=None, add_qualified_edges = None,
                  use_weighted_edges=None,
@@ -60,9 +60,8 @@ def run_node2vec(data=None, G=None, embedding_model_file_path=None, add_qualifie
         assert data.is_graph_edges_weighted(G,
                                             use_outside_graph=True), "use_weighted_edges is True, but graph contains no weighted edges (defined as edges with weight != 1)"
     else:
-        # TODO fix error here>>
         assert not data.is_graph_edges_weighted(G,
-                                                use_outside_graph=True), "use_weighted_edges is True, but graph contains no weighted edges (defined as edges with weight != 1)"
+                                                use_outside_graph=True), "use_weighted_edges is Flase, but graph contains weighted edges (defined as edges with weight != 1)"
 
     node2vec = Node2Vec(G, weight_key='weight', dimensions=dim,
                         walk_length=walk_len, num_walks=num_walks, workers=4)
@@ -103,7 +102,6 @@ if __name__ == '__main__':
         edges_percent= args.edges_percent,
         added_edges_percent_of= args.added_edges_percent_of)
 
-    # TODO add path for added_edges_percent_of GeneDisease and GPsim
     emb_type = "node2vec"
     embedding_model_file_path = select_emb_save_path(emb_type=emb_type,
                                                      add_qualified_edges=args.add_qualified_edges,

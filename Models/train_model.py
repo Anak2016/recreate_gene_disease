@@ -2,7 +2,7 @@ from Sources.Modeling.Classifier.SVM import run_svm
 from Sources.Preparation.Data import GeneDiseaseGeometricDataset
 from Sources.Preparation.Features.build_features import get_data_feat
 from arg_parser import args
-from Sources.Preprocessing.preprocessing import get_number_of_added_edges
+from Sources.Preprocessing.apply_preprocessing import get_number_of_added_edges
 
 if __name__ == '__main__':
     # =====================

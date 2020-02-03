@@ -1,9 +1,10 @@
-from itertools import combinations
-
-import networkx as nx
 import numpy as np
 import pandas as pd
 from sklearn import preprocessing
+from Sources.Preparation.Features.get_qualified_edges import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
+from Sources.Preparation.Features.get_qualified_edges import get_GPSim_disease2disease_qualified_edges
+# from Sources.Preparation.Features.test import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
+# from Sources.Preparation.Features.test import get_GPSim_disease2disease_qualified_edges
 
 
 def onehot(labels):
@@ -155,8 +156,6 @@ def get_number_of_added_edges(data, add_qualified_edges, edges_percent,
                               edges_number, added_edges_percent_of):
     if edges_percent is not None:
         if added_edges_percent_of == 'GeneDisease':
-            # TODO get number of qulifed edges from GEneDisease
-            # TODO use get_all_disease2disease_GeneDisease_qulaified_edges() instead
             all_qualified_GeneDisease_disease2disease_edges_df = get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data)
 
             # qualified_edges_df = get_all_GeneDisease_qualified_edges(data,
@@ -170,8 +169,12 @@ def get_number_of_added_edges(data, add_qualified_edges, edges_percent,
             # raise ValueError(
             #     " working on creating added_edges_percent_of == 'GeneDisease' rightnow!")
         else:
-            raise ValueError(
-                "not yet implemented: when edges_percent is not None, I must also specified 'percentage of which set of qualified edges; (this question has not yet asnwer)  ")
+            all_qualified_GPSim_weighted_disease2disease_edges_pd = get_GPSim_disease2disease_qualified_edges(data, False) # what is the expected output of this
+            number_of_qualfied_edges = all_qualified_GPSim_weighted_disease2disease_edges_pd.shape[0]
+            number_of_added_edges = int(edges_percent * number_of_qualfied_edges)
+            return number_of_added_edges
+            # raise ValueError(
+            #     "not yet implemented: when edges_percent is not None, I must also specified 'percentage of which set of qualified edges; (this question has not yet asnwer)  ")
         # return int(edges_without_weight * edges_percent)
     if edges_number is not None:
         return edges_number
@@ -193,21 +196,31 @@ def get_saved_file_name_for_emb(add_qualified_edges, edges_percent,
                 "only edges_number and edges_pecent is acceptable as subparser for add qulified_edges")
     else:
         return f'dim{dim}_walk_len{walk_len}_num_walks{num_walks}_window{window}.txt'
-def get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data):
-    
-    nodes = data.diseases_np
 
-    all_disease2disease_edges = list(combinations(nodes, 2))
+# def get_all_GPsim_weighted_disease2disease_qualified_edges():
+#     # assert isinstance( with_weight , bool), "weith_weight is expected to be type bool"
+#     GPSim_cui_qualified_edges_files_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\Edges\cui_edges_weight.csv'
+#     GPSim_cui_qualified_edges_pd = pd.read_csv(GPSim_cui_qualified_edges_files_path, sep = ',')
+#     return GPSim_cui_qualified_edges_pd
+#     # if with_weight:
+#     #    pass
 
-    all_disease2disease_qualified_edges = np.array(
-        [edge for edge in all_disease2disease_edges if
-         len(list(nx.common_neighbors(data.G, edge[0], edge[1]))) > 0])
 
-    G = nx.Graph()
-    G.add_edges_from(all_disease2disease_qualified_edges, weight=1)
-    all_qualified_disease2disease_edges_df = nx.to_pandas_edgelist(G)
-
-    return all_qualified_disease2disease_edges_df
+# def get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data):
+#
+#     nodes = data.diseases_np
+#
+#     all_disease2disease_edges = list(combinations(nodes, 2))
+#
+#     all_disease2disease_qualified_edges = np.array(
+#         [edge for edge in all_disease2disease_edges if
+#          len(list(nx.common_neighbors(data.G, edge[0], edge[1]))) > 0])
+#
+#     G = nx.Graph()
+#     G.add_edges_from(all_disease2disease_qualified_edges, weight=1)
+#     all_qualified_disease2disease_edges_df = nx.to_pandas_edgelist(G)
+#
+#     return all_qualified_disease2disease_edges_df
 
 # def get_all_disease2disease_GeneDisease_qualified_edges(G, nodes):
 # 

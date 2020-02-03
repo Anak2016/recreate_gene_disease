@@ -2,18 +2,29 @@ import networkx as nx
 import numpy as np
 import pandas as pd
 
-# from Sources.Preprocessing.preprocessing import Converter
-from Sources.Preprocessing.convertion import Converter
+# from Sources.Preparation.Features.test import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
+# from Sources.Preparation.Features. import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
+# from Sources.Preprocessing.convertion import Converter
+from Sources.Preparation.Data.conversion import Converter
 from itertools import combinations
-from Sources.Preprocessing.preprocessing import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
 
 def get_GPSim_disease2disease_qualified_edges(data, use_weight_edges):
     """
     note: self loop is not a qualified edges ( so it will be removed here)
 
-    # TODO create "weighted_edges" argument. and pass qualified_edges with weighted here
     @return:
     """
+    # TODO read_csv from qualfied_cui_disease2disease_edges_with_no_self_loop ( I have not create this yet)
+    # # note: This should be created in GPSim (because it is EDA)
+
+    # # TODO use cui_edges_weighted for use_weighted_edges = True nad False
+    # # note: code that create cui_edges_weight.csv is in notebook/Dataset/GPSim.ipynb (which is where code support to be because it is a part of Exploratory Data Analysis aka eda)
+    # file_name = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\Edges\cui_edges_weight.csv'
+    # non_zero_GPsim_disease_cui_disease_pair_with_no_self_loop_df = pd.read_csv(file_name, sep=",") # varaible name should reflect state of its content
+    #
+    # return non_zero_GPsim_disease_cui_disease_pair_with_no_self_loop_df
+
+    # TODO code below can be found in GPSim.ipynb as stated in note of get_GPSim_disease2disease_qulified_edges()
     disease_pair_similarity = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\copd_comorbidity_similarity.txt'
     disease_pair_similarity_pd = pd.read_csv(disease_pair_similarity, sep='\t',
                                              header=None)
@@ -79,7 +90,6 @@ def get_GPSim_disease2disease_qualified_edges(data, use_weight_edges):
 
         G.remove_edges_from(nx.selfloop_edges(G))
 
-        # TODO error
         assert data.is_graph_edges_weighted(G,
                                             use_outside_graph=True), "use_weighted_edges is True, but all edges in graph has weight == 1"
 
@@ -88,6 +98,8 @@ def get_GPSim_disease2disease_qualified_edges(data, use_weight_edges):
 
     else:
         G = nx.Graph()
+
+        # use weighted_edges = 1
         unweighted_edges_value = np.ones(
             non_zero_GPsim_disease_cui_disease_pair.shape[1])[np.newaxis,
                                  :]  # type = float64
@@ -105,7 +117,6 @@ def get_GPSim_disease2disease_qualified_edges(data, use_weight_edges):
 
         non_zero_GPsim_disease_cui_disease_pair_with_no_self_loop_df = nx.to_pandas_edgelist(
             G)
-
     return non_zero_GPsim_disease_cui_disease_pair_with_no_self_loop_df
 
 
@@ -148,3 +159,20 @@ def get_GeneDisease_disease2disease_qualified_edges(data,
         #                                          use_outside_graph=True)), "use_weighted_edges is True, but all edges in graph has weight == 1"
     return all_qualified_disease2disease_edges
 
+def get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data):
+
+    nodes = data.diseases_np
+
+    all_disease2disease_edges = list(combinations(nodes, 2))
+
+    all_disease2disease_qualified_edges = np.array(
+        [edge for edge in all_disease2disease_edges if
+         len(list(nx.common_neighbors(data.G, edge[0], edge[1]))) > 0])
+
+    G = nx.Graph()
+    G.add_edges_from(all_disease2disease_qualified_edges, weight=1)
+    # remove selfloop
+    G.remove_edges_from(nx.selfloop_edges(G))
+    all_qualified_disease2disease_edges_df = nx.to_pandas_edgelist(G)
+
+    return all_qualified_disease2disease_edges_df

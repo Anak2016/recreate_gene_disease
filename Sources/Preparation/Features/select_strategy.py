@@ -14,7 +14,9 @@ def select_edges_with_top_alpha(G,edges_with_weight, number_of_added_edges):
     """
     @param G: nx.Graph() object
     @param edges: type np.ndarray or list: shape = (-1, 3) where last columns is weight
-    @return:
+    @return: selected_edges_with_weight; type = np;
+        desc:
+            > for use_weighted_edges = False; weight of edges are expected to be all 1's
     """
     edges_without_weight = edges_with_weight[:,:2] # exclude weight
 

@@ -26,7 +26,9 @@ if __name__ == '__main__':
                                        normalized_weighted_edges=args.normalized_weighted_edges,
                                        edges_percent= args.edges_percent,
                                        edges_number = args.edges_number,
-                                       added_edges_percent_of=args.added_edges_percent_of)
+                                       added_edges_percent_of=args.added_edges_percent_of,
+                                       use_shared_gene_edges = args.use_shared_gene_edges,
+                                       use_shared_phenotype_edges=args.use_shared_phenotype_edges)
 
     # =====================
     # == run classifier

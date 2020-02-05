@@ -100,7 +100,10 @@ if __name__ == '__main__':
         use_saved_emb_file=args.use_saved_emb_file,
         edges_number = args.edges_number,
         edges_percent= args.edges_percent,
-        added_edges_percent_of= args.added_edges_percent_of)
+        added_edges_percent_of= args.added_edges_percent_of,
+        use_shared_phenotype_edges=args.use_shared_phenotype_edges,
+        use_shared_gene_edges = args.use_shared_gene_edges
+    )
 
     emb_type = "node2vec"
     embedding_model_file_path = select_emb_save_path(emb_type=emb_type,
@@ -109,7 +112,9 @@ if __name__ == '__main__':
                                                      use_weighted_edges=args.use_weighted_edges,
                                                      edges_percent = args.edges_percent,
                                                      edges_number = args.edges_number,
-                                                     added_edges_percent_of = args.added_edges_percent_of)
+                                                     added_edges_percent_of = args.added_edges_percent_of,
+                                                     use_shared_phenotype_edges=args.use_shared_phenotype_edges,
+                                                     use_shared_gene_edges=args.use_shared_gene_edges)
 
     # =====================
     # == run embedding (it should save result in appropriate folder within Data

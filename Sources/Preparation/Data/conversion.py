@@ -1,7 +1,7 @@
 import pandas as pd
 
 class Converter:
-    def __init__(self, ):
+    def __init__(self, GeneDisease_data):
         # Read disease_mapping (cui and doid) => create another preprocessing function called (convert_cui2doid) and (convert_doid2cui)
         self._disease_mapping_df = None
         self._disease_mappings_file_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\DisGeNET\mapping\disease_mappings.tsv'
@@ -12,6 +12,7 @@ class Converter:
         self._disease_mapping_df['doid'] = self._disease_mapping_df['vocabulary'] + 'ID:' + self._disease_mapping_df['code']
 
 
+        # cui2class_id_dict
         self._cui2class_id_dict = None
 
         self._file = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GeneDiseaseProject\COPD\Nodes\copd_label_content07_14_19_46.txt'
@@ -20,6 +21,18 @@ class Converter:
         self._cui2class_id_dict = {cui: cls for cui, cls in
                                    zip(self._cui2class_id_dict[0].values(), self._cui2class_id_dict[1].values())}
 
+        disease_mapping_df_for_orignal_disease_101 = self.disease_mapping_df[
+            self.disease_mapping_df['diseaseId'].isin(GeneDisease_data.diseases_np)]
+        self._original_cui2doid_dict = {i: j for i, j in
+                         zip(disease_mapping_df_for_orignal_disease_101['diseaseId'],
+                             disease_mapping_df_for_orignal_disease_101[
+                                 'doid'])}
+    @property
+    def original_cui2doid_dict(self):
+        return self._original_cui2doid_dict
+    @property
+    def original_doid2cui_dict(self):
+        return {j:i for i,j in self._original_cui2doid_dict.items()}
     @property
     def disease_mapping_df(self):
         return self._disease_mapping_df

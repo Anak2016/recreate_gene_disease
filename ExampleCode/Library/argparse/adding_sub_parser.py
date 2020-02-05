@@ -9,3 +9,5 @@ a_parser = subparsers.add_parser("A")
 b_parser = subparsers.add_parser("B")
 
 a_parser.add_argument("something", choices=['a1', 'a2'])
+
+

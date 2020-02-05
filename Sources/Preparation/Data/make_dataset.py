@@ -63,6 +63,7 @@ class GeneDiseaseGeometricDataset(InMemoryDataset, Dataset):
         G = nx.Graph()
         G.add_edges_from(self.gene_disease_edges, weight=1)
 
+        self.original_GeneDisease_edges = G.copy()
         self.G = G
         self.edges_np = np.array(list(G.edges))
         self.node_np = np.array(list(G.nodes))
@@ -101,7 +102,29 @@ class GeneDiseaseGeometricDataset(InMemoryDataset, Dataset):
         """
         self.G.add_weighted_edges_from(weighted_qualified_edges)
 
-    def is_disease2disease_edges_added_to_graph(self, outside_graph,
+    def is_in_original_diseases(self, diseases_to_be_validated):
+        """validate that list of diseases are in the originla diseases"""
+        # TODO is self.diseases_np numpy array that contains all original diseases
+        return np.all([True if i in self.diseases_np.flatten() else False for i in diseases_to_be_validated])
+
+
+    def is_isomorphic_to_original_GeneDisease_Graph( self, Graph_to_be_tested):
+        """
+            references url : https://stackoverflow.com/questions/17428516/test-graph-equality-in-networkx/26807248#26807248
+            
+            check whether graph is the unmodified original gene2disease edges
+            
+            note:
+                > the function does not considiered edges attributed
+        @param Graph_to_be_tested: type = nx.Graph();
+        @return: boolean
+        """
+
+        # check if edges between two graph are the same
+        import networkx.algorithms.isomorphism as iso
+        return nx.is_isomorphic(self.original_GeneDisease_edges, Graph_to_be_tested)
+
+    def is_disease2disease_edges_added_to_graph(self, outside_graph = None,
                                                 use_outside_graph=False):
         """
         check self.G whether the graph has disease2disease edges
@@ -153,6 +176,15 @@ class GeneDiseaseGeometricDataset(InMemoryDataset, Dataset):
 
         return has_weighted_edges
 
+def get_diseases_that_are_overlapped_between_GPSim_and_GeneDisease_graph():
+    """
+
+    @return: overlapped_disease_np; type = np ;shape = (-1,1)
+    """
+    overlapped_disease_file_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\GPsim_overlapped_diseases.txt'
+    overlapped_disease_pd = pd.read_csv(overlapped_disease_file_path, header=None)
+
+    return overlapped_disease_pd.to_numpy()
 
 if __name__ == '__main__':
     # =====================

@@ -1,5 +1,4 @@
 import argparse
-
 '''
 example of a command argument assuming that current directory is my_utility/python_script
     python __init__.py --merge
@@ -17,6 +16,14 @@ example of a command argument assuming that current directory is my_utility/pyth
             args.something == [1,2, 3,4,5] is true
         parser.add_argument('--weighted_class', default=[1,1,1,1,1], nargs='+', help='list of weighted_class of diseases only in order <0,1,2,3,4,5>')
 '''
+"""
+example of use case 
+> for node2vec 
+    --add_qualified_edges top_k --dataset GeneDisease --edges_percent 1 --added_edges_percent_of GPSim
+> for train_model
+    
+    
+"""
 parser = argparse.ArgumentParser()
 
 # TODO testing parser that required subparser
@@ -44,7 +51,8 @@ parser.add_argument('--added_edges_percent_of', type=str, default=None,
                     help='which dataset is the toal number of qualified edges in which to calculate percentage from ; when ars.edges_percent is not None, arg.added_edges_percent_of must not be NOne ')
 parser.add_argument('--edges_number', type=int, default=None,
                     help='if strategy is invoked, either edges_number or edges_percent must also be passed ')
-# parser.add_
+parser.add_argument('--use_shared_gene_edges', action='store_true', help="")
+parser.add_argument('--use_shared_phenotype_edges', action='store_true', help="")
 
 ### spliting train and test dataset
 #### train_test_split
@@ -63,6 +71,12 @@ parser.add_argument('--k_fold', type=int, default=None,
 args = parser.parse_args()
 
 # section for subparser
+
+# if (not args.use_shared_phenotype_edges) and (not args.use_shared_gene_edges):
+#     # note: this if condition is against by philosophy to always be explicit when specify condition to run
+#     # TODO create args.use_shared_phenotype_and_genes_edges to be explicit
+#     args.use_shared_phenotype_edges = True
+#     args.use_shared_gene_edges = True
 
 ## on edges_percent cases
 ### note: added_number_of_edges is implemented in get_number_of_added_edges()

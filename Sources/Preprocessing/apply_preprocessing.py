@@ -16,12 +16,15 @@ def onehot(labels):
     return labels_onehot
 
 
-def select_emb_save_path(emb_type=None, add_qualified_edges=None, dataset=None,
+def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edges=None, dataset=None,
                          use_weighted_edges=None, edges_number=None,
                          edges_percent=None,
                          added_edges_percent_of=None,
                          use_shared_gene_edges = None,
-                         use_shared_phenotype_edges = None):
+                         use_shared_phenotype_edges = None,
+                         use_shared_gene_and_phenotype_edges= None,
+                         use_shared_gene_but_not_phenotype_edges=None,
+                         use_shared_phenotype_but_not_gene_edges=None):
     """
 
     @param add_qualified_edges: type = Boolean eg True or False:
@@ -31,19 +34,28 @@ def select_emb_save_path(emb_type=None, add_qualified_edges=None, dataset=None,
 
     # if added_edges_percent_of is not None:
     #     raise ValueError("not yet implemented ")
-
+    assert save_path_base is not None, "save_path_base must be specified to avoid ambiguity"
     assert emb_type is not None, "emb_type mst be specified to avoide ambiguity "
     # assert add_qualified_edges is not None, "added_qualified_edges must be specified to avoid ambiguity"
     assert dataset is not None, "dataset must be specified to avoid ambiguity"
     assert use_weighted_edges is not None, "use_weighted_edges must be specified to avoid ambiguity "
     assert use_shared_gene_edges is not None, "use_shared_gene_edges must be specified to avoid ambiguity"
     assert use_shared_phenotype_edges is not None, "use_shared_phenotype_edges must be specified to avoid ambiguity"
+    assert use_shared_gene_and_phenotype_edges is not None, "use_shared_gene_and_phenotype_edges must be specified to avoid ambiguity"
+    assert use_shared_gene_but_not_phenotype_edges is not None, "use_shared_gene_but_not_phenotype_edges must be specified to avoid ambiguity"
+    assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
+
+    if save_path_base == 'data':
+        save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\"
+    elif save_path_base == 'report_performance':
+        save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\PerformanceResult\\"
+
 
     if add_qualified_edges is not None:
         assert dataset != "no", "NoAddedEdges Folder can be accessed only when add_qualified_edges is False"
         if edges_percent is not None:
             # note that input of added_edges_percent_of must be valid folder naming (look at notion/principle/ for more information of folder naming)
-            assert added_edges_percent_of in ['GeneDisease', 'GPSim'], ""
+            assert added_edges_percent_of in ['GeneDisease', 'GPSim','no'], ""
             number_of_added_edges = f"EdgesPercent\\{added_edges_percent_of}\\"
         elif edges_number is not None:
             number_of_added_edges = f"EdgesNumber\\"
@@ -51,7 +63,6 @@ def select_emb_save_path(emb_type=None, add_qualified_edges=None, dataset=None,
             raise ValueError(
                 " when add_qualified_edges is true, only edges_percent and edges_nuber id acceptable")
 
-    save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\"
 
     if dataset == 'GeneDisease' or dataset == 'no':
         dataset_processed_dir = f"GeneDiseaseProject\\copd\\"
@@ -71,44 +82,95 @@ def select_emb_save_path(emb_type=None, add_qualified_edges=None, dataset=None,
     else:
         weighted_status_dir = "UnweightedEdges\\"
 
-    # if use_shared_gene_edges:
-    #     shared_nodes_edges_dir = 'SharedGeneEdges\\'
-    # elif use_shared_phenotype_edges:
-    #     shared_nodes_edges_dir = "SharedPhenotypeEdges\\"
-    # elif (not use_shared_phenotype_edges) and (not use_shared_gene_edges):
-    #     raise ValueError("not yet implemented: first I need to resolve validateion process of shared nodes condition")
-    #     # shared_nodes_edges_dir = "SharedGenePhenotype\\"
-    # else:
-    #     raise ValueError('There are 3 shared noded implmented: shared_gene, shared_phenotype, and shared_gene_and_phenotype')
-
     if add_qualified_edges is not None:
         add_edges_status = "AddedEdges\\"
 
-        if use_shared_gene_edges:
-            assert dataset == "GeneDisease", "currenlty, only implmented shared_nodes for dataset == GeneDisease"
-            shared_nodes_edges_dir = 'SharedGeneEdges\\'
-        elif use_shared_phenotype_edges:
-            assert dataset == "GeneDisease", "currenlty, only implmented shared_nodes for dataset == GeneDisease"
-            shared_nodes_edges_dir = "SharedPhenotypeEdges\\"
-        elif (not use_shared_phenotype_edges) and (not use_shared_gene_edges):
-            raise ValueError("not yet implemented: first I need to resolve validateion process of shared nodes condition")
-            # shared_nodes_edges_dir = "SharedGenePhenotype\\"
+        # code below within add_qualified_edges is not None is folder for "use_initial_qualified_edges_option" condition
+
+        use_initial_qualified_edges_option1 = [use_shared_gene_edges,
+                                               use_shared_phenotype_edges]
+        use_initial_qualified_edges_option2 = [
+            use_shared_gene_and_phenotype_edges,
+            use_shared_gene_but_not_phenotype_edges,
+            use_shared_phenotype_but_not_gene_edges]
+        assert sum(
+            use_initial_qualified_edges_option2) <= 1, "no more than 1 of the following can be true at the same time:" \
+                                                       "1. shared_gene_and_phenotype_edges OR" \
+                                                       "2. use_shared_gene_but_not_phenotype_edges OR " \
+                                                       "3. use_shared_phenotype_but_not_gene_edges "
+        if sum(use_initial_qualified_edges_option2) > 0:
+
+            assert sum(
+                use_initial_qualified_edges_option1) == 0, "option1: use_shared_gene_edges or use_shared_phenotypes_edges are Ture or " \
+                                                           "option2: one of the following is true " \
+                                                           "         1. shared_gene_and_phenotype_edges OR" \
+                                                           "         2. use_shared_gene_but_not_phenotype_edges OR " \
+                                                           "         3. use_shared_phenotype_but_not_gene_edges "
+            if use_shared_gene_and_phenotype_edges:
+                shared_nodes_edges_dir = "SharedGeneAndPhenotypeEdges\\"
+
+            elif use_shared_gene_but_not_phenotype_edges:
+                shared_nodes_edges_dir = "SharedGeneNotPhenotypeEdges\\"
+
+            elif use_shared_phenotype_but_not_gene_edges:
+                shared_nodes_edges_dir = "SharedPhenotypeNotGeneEdges\\"
+
+            else:
+                raise ValueError('For option1, There are 3 option: '
+                                 'shared_gene_and_phenotype_edges'
+                                 'shared_gene_but_not_phenotype_edges'
+                                 'shared_phenotype_but_not_gene_edges')
         else:
-            raise ValueError('There are 3 shared noded implmented: shared_gene, shared_phenotype, and shared_gene_and_phenotype')
+            assert sum(
+                use_initial_qualified_edges_option1) > 0, "option1: use_shared_gene_edges or use_shared_phenotypes_edges are Ture or " \
+                                                          "option2: one of the following is true " \
+                                                          "         1. shared_gene_and_phenotype_edges OR" \
+                                                          "         2. use_shared_gene_but_not_phenotype_edges OR " \
+                                                          "         3. use_shared_phenotype_but_not_gene_edges "
+
+            ## assign folder name of the given option for "use_initial_qualified_edges_option"
+            assert dataset == "GeneDisease", "currenlty, only implmented shared_nodes for dataset == GeneDisease"
+
+            if use_shared_phenotype_edges and use_shared_gene_edges:
+                shared_nodes_edges_dir = "SharedGeneOrPhenotypeEdges\\"
+
+            elif use_shared_phenotype_edges:
+                shared_nodes_edges_dir = "SharedPhenotypeEdges\\"
+
+            elif use_shared_gene_edges :
+                shared_nodes_edges_dir = 'SharedGeneEdges\\'
+
+            else:
+                raise ValueError('For option1, There are 3 shared noded implmented: shared_gene, shared_phenotype, and shared_gene_and_phenotype')
+
+        # if use_shared_gene_edges:
+        #     assert dataset == "GeneDisease", "currenlty, only implmented shared_nodes for dataset == GeneDisease"
+        #     shared_nodes_edges_dir = 'SharedGeneEdges\\'
+        # elif use_shared_phenotype_edges:
+        #     assert dataset == "GeneDisease", "currenlty, only implmented shared_nodes for dataset == GeneDisease"
+        #     shared_nodes_edges_dir = "SharedPhenotypeEdges\\"
+        # elif use_shared_phenotype_edges and use_shared_gene_edges:
+        #     shared_nodes_edges_dir = "SharedGeneAndPhenotypeEdges\\"
+        #     # raise ValueError("not yet implemented: first I need to resolve validateion process of shared nodes condition")
+        #     # shared_nodes_edges_dir = "SharedGenePhenotype\\"
+        # else:
+        #     raise ValueError('There are 3 shared noded implmented: shared_gene, shared_phenotype, and shared_gene_and_phenotype')
 
     else:
+        add_edges_status = 'NoAddedEdges\\'
+
         if use_shared_gene_edges:
             raise ValueError("argument combination is not correct; when NoAddedEdges, no shared_gene should be specified ")
         elif use_shared_phenotype_edges:
             raise ValueError("argument combination is not correct; when NoAddedEdges, no shared_gene should be specified ")
-        elif (not use_shared_phenotype_edges) and (not use_shared_gene_edges):
+        elif not use_shared_phenotype_edges and not use_shared_gene_edges:
             shared_nodes_edges_dir = None
         else:
             raise ValueError("argument combination is not correct; when NoAddedEdges, no shared_gene should be specified ")
 
     if shared_nodes_edges_dir is None:
         assert dataset == 'no', "shared_nodes_edges_dir can only be None when NoAddedEdges "
-        embedding_model_file_path = save_path_base + dataset_processed_dir + emb_type_dir + weighted_status_dir +  add_edges_status + number_of_added_edges
+        embedding_model_file_path = save_path_base + dataset_processed_dir + emb_type_dir + weighted_status_dir +  add_edges_status
     else:
         embedding_model_file_path = save_path_base + dataset_processed_dir + emb_type_dir + weighted_status_dir +  add_edges_status + shared_nodes_edges_dir +number_of_added_edges
 
@@ -190,14 +252,18 @@ def multiply_constant_multiplier_to_weighted_disease2disease_edges(
     return weighted_disease2disease_edges
 
 
-def get_number_of_added_edges(data, add_qualified_edges, edges_percent,
+def get_number_of_added_edges(data,all_qualified_edges_df , edges_percent,
                               edges_number, added_edges_percent_of):
     if edges_percent is not None:
         if added_edges_percent_of == 'GeneDisease':
+            # note: GeneDisease originally use shared gene
             all_qualified_GeneDisease_disease2disease_edges_df = get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data,
                                                                                                                                 use_shared_phenotype_edges=False,
-                                                                                                                                use_shared_gene_edges=False)
-            
+                                                                                                                                use_shared_gene_edges=True,
+                                                                                                                                use_shared_gene_and_phenotype_edges = False,
+                                                                                                                                use_shared_gene_but_not_phenotype_edges = False,
+                                                                                                                                use_shared_phenotype_but_not_gene_edges = False)
+
 
             # qualified_edges_df = get_all_GeneDisease_qualified_edges(data,
             #                                     data.G,
@@ -207,16 +273,23 @@ def get_number_of_added_edges(data, add_qualified_edges, edges_percent,
             number_of_added_edges = int(edges_percent * number_of_qualified_edges)
             return number_of_added_edges
 
-            # raise ValueError(
-            #     " working on creating added_edges_percent_of == 'GeneDisease' rightnow!")
-        else:
+        elif added_edges_percent_of == 'GPSim':
             all_qualified_GPSim_weighted_disease2disease_edges_pd = get_GPSim_disease2disease_qualified_edges(data, False) # what is the expected output of this
             number_of_qualfied_edges = all_qualified_GPSim_weighted_disease2disease_edges_pd.shape[0]
             number_of_added_edges = int(edges_percent * number_of_qualfied_edges)
             return number_of_added_edges
-            # raise ValueError(
-            #     "not yet implemented: when edges_percent is not None, I must also specified 'percentage of which set of qualified edges; (this question has not yet asnwer)  ")
-        # return int(edges_without_weight * edges_percent)
+
+        elif added_edges_percent_of == 'no':
+
+            # all_qualified_GPSim_weighted_disease2disease_edges_pd = get_GPSim_disease2disease_qualified_edges(data, False) # what is the expected output of this
+
+            number_of_qualfied_edges = all_qualified_edges_df.shape[0]
+            number_of_added_edges = int(edges_percent * number_of_qualfied_edges)
+            return number_of_added_edges
+
+        else:
+            raise ValueError("added_percent_edges_of only have 3 options currently including GeneDisease, GPSim, and no")
+
     if edges_number is not None:
         return edges_number
 

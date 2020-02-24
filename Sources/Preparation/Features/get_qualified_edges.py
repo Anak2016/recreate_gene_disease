@@ -1,4 +1,5 @@
 from itertools import combinations
+from os import path
 
 import networkx as nx
 import numpy as np
@@ -7,7 +8,7 @@ import pandas as pd
 from Sources.Preparation.Data.conversion import Converter
 from Sources.Preparation.Data.make_dataset import \
     get_diseases_that_are_overlapped_between_GPSim_and_GeneDisease_graph
-
+from global_param import *
 
 # =====================
 # ==Conditional Code
@@ -181,22 +182,25 @@ def get_GPSim_disease2disease_qualified_edges(data, use_weight_edges):
     non_zero_GPsim_disease_doid_disease_pair = np.concatenate(
         (disease_1, disease_2), axis=0)
 
+    # converter = Converter(data)
+    # original_disease_101 = np.array(list(converter.cui2class_id_dict.keys()))
+    #
+    # # Create cui2doid_dict and doid2cui_dict
+    # disease_mapping_df_for_orignal_disease_101 = converter.disease_mapping_df[
+    #     converter.disease_mapping_df['diseaseId'].isin(original_disease_101)]
+    # doid2cui_dict = {i: j for i, j in
+    #                  zip(disease_mapping_df_for_orignal_disease_101['doid'],
+    #                      disease_mapping_df_for_orignal_disease_101[
+    #                          'diseaseId'])}
+    # cui2doid_dict = {i: j for i, j in doid2cui_dict.items()}
+    #
+    # # For non_zero_GPsim_disease_doid_disease_pair, map doid to cui
+    # vfunc = np.vectorize(lambda x: doid2cui_dict[x])
+    # non_zero_GPsim_disease_cui_disease_pair = vfunc(
+    #     non_zero_GPsim_disease_doid_disease_pair)
+
     converter = Converter(data)
-    original_disease_101 = np.array(list(converter.cui2class_id_dict.keys()))
-
-    # Create cui2doid_dict and doid2cui_dict
-    disease_mapping_df_for_orignal_disease_101 = converter.disease_mapping_df[
-        converter.disease_mapping_df['diseaseId'].isin(original_disease_101)]
-    doid2cui_dict = {i: j for i, j in
-                     zip(disease_mapping_df_for_orignal_disease_101['doid'],
-                         disease_mapping_df_for_orignal_disease_101[
-                             'diseaseId'])}
-    cui2doid_dict = {i: j for i, j in doid2cui_dict.items()}
-
-    # For non_zero_GPsim_disease_doid_disease_pair, map doid to cui
-    vfunc = np.vectorize(lambda x: doid2cui_dict[x])
-
-    non_zero_GPsim_disease_cui_disease_pair = vfunc(
+    non_zero_GPsim_disease_cui_disease_pair = converter.original_doid2cui_mapping(
         non_zero_GPsim_disease_doid_disease_pair)
 
     # remove self loop (probly there is a better but I choose to use third party libary)
@@ -291,16 +295,20 @@ def get_qualified_disease2disease_edges_with_shared_phenotype(data,
 
     # convert cui2doid using dict contains key of 101 original diseases
     convertion = Converter(data)
-    cui2doid_vectorized = np.vectorize(
-        lambda x: convertion.original_cui2doid_dict[x])
+
     qualified_cui_diseases = qualified_diseases_np  # renaming for self-documentation purposes
-    qualified_doid_diseases = cui2doid_vectorized(qualified_cui_diseases)
+    qualified_doid_diseases = convertion.original_cui2doid_mapping(qualified_cui_diseases )
 
     # create graph_with_phenotype2disease_edges
     graph_with_phenotype2disease_edges = nx.Graph()
+
+    # used saved file, if already existed if not create target file and saved it
+
     phenotype2disease_edges_that_contain_qualified_nodes_pd = get_phenotype2disease_edges_that_contain_qualified_nodes(
         data,
-        qualified_doid_diseases)
+        qualified_doid_diseases,
+        saved_file_path=PHENOTYPE2DISEASE_EDGES_THAT_CONTAIN_QUALIFIED_NODES_FILE_PATH
+    )
 
     graph_with_phenotype2disease_edges.add_edges_from(
         phenotype2disease_edges_that_contain_qualified_nodes_pd.to_numpy())
@@ -319,10 +327,7 @@ def get_qualified_disease2disease_edges_with_shared_phenotype(data,
         graph_with_phenotype2disease_edges,
         all_disease2disease_edges_that_have_diseases_in_phenotype2disease_edges)
 
-    doid2cui_vectorize = np.vectorize(
-        lambda x: convertion.original_doid2cui_dict[x])
-    all_cui_disease2disease_qualified_edges = doid2cui_vectorize(
-        all_doid_disease2disease_qualified_edges)
+    all_cui_disease2disease_qualified_edges = convertion.original_doid2cui_mapping(all_doid_disease2disease_qualified_edges)
 
     graph_with_no_self_loop_edges = get_graph_with_no_self_loop_edges(
         all_cui_disease2disease_qualified_edges)
@@ -489,7 +494,10 @@ def get_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_edges
             all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_graph.remove_edge(
                 *list(edge))
 
-    all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_np = np.array(list(all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_graph.edges.data('weight')))
+    all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_np = np.array(
+        list(
+            all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_graph.edges.data(
+                'weight')))
 
     # all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_np = np.array(
     #     all_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_graph)
@@ -542,7 +550,8 @@ def get_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_edges
     ## get overlapped shared_phenotype_but_not shared_gene
     # all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene = all_qualified_disease2disease_edges_with_shared_phenotype_np.tolist()
     all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph = nx.Graph()
-    all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.add_weighted_edges_from(all_qualified_disease2disease_edges_with_shared_phenotype_np)
+    all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.add_weighted_edges_from(
+        all_qualified_disease2disease_edges_with_shared_phenotype_np)
 
     for edge_with_weight in all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.edges:
         edge = edge_with_weight[:2]
@@ -550,7 +559,10 @@ def get_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_edges
             all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.remove_edge(
                 *list(edge))
 
-    all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_np =  np.array(list(all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.edges.data('weight')))
+    all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_np = np.array(
+        list(
+            all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph.edges.data(
+                'weight')))
     # all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_np = np.array(
     #     all_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_graph)
 
@@ -568,22 +580,31 @@ def get_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_edges
 
 # --------for shared_phenotype
 def get_phenotype2disease_edges_that_contain_qualified_nodes(data,
-                                                             qualified_nodes):
+                                                             qualified_nodes,
+                                                             saved_file_path=None):
     """qualified_nodes are used to filter  edges whose either nodes are qualified_nodes"""
+    assert saved_file_path is not None, "if save_to_file is true, saved_file_path must be specified"
 
-    qualified_doid_nodes = qualified_nodes  # renaming for self-documentation purposes
+    # check that no files with the same name existed within these folder
+    if path.exists(saved_file_path):
+        edges_disease2phenotypes_that_contain_qualified_nodes_pd = pd.read_csv(
+            saved_file_path, sep=',')
+    else:
+        qualified_doid_nodes = qualified_nodes  # renaming for self-documentation purposes
 
-    disease2phenotypes_edges_pd = get_phenotype2diseiase_edges_from_disease_hpo2_dataset()
-    edges_disease2phenotypes_that_contain_qualified_nodes_pd = \
-        disease2phenotypes_edges_pd[
-            disease2phenotypes_edges_pd['disease_id'].isin(
-                qualified_doid_nodes)]
+        disease2phenotypes_edges_pd = get_phenotype2diseiase_edges_from_disease_hpo2_dataset()
+        edges_disease2phenotypes_that_contain_qualified_nodes_pd = \
+            disease2phenotypes_edges_pd[
+                disease2phenotypes_edges_pd['disease_id'].isin(
+                    qualified_doid_nodes)]
+        edges_disease2phenotypes_that_contain_qualified_nodes_pd.to_csv(
+            saved_file_path, index=False)
 
     return edges_disease2phenotypes_that_contain_qualified_nodes_pd
 
 
 def get_phenotype2diseiase_edges_from_disease_hpo2_dataset():
-    disease2phenotype_edges_file_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\Edges\DiseasePhenotype\disease_hpo.csv'
+    disease2phenotype_edges_file_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\Edges\disease_hpo.csv'
 
     # disease_id, hpo_id, disease_name, hpo_name, is_do
     edges_disease2phenotypes_pd = \

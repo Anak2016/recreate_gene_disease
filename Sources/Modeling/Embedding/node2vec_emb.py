@@ -13,6 +13,7 @@ from arg_parser import apply_parser_constraint
 from arg_parser import run_args_conditions
 from Sources.Preprocessing.apply_preprocessing import get_saved_file_name_for_emb
 from Models.train_model import run_train_model
+from global_param import GENEDISEASE_ROOT
 
 def run_node2vec_emb(data=None, G=None, embedding_model_file_path=None, add_qualified_edges = None,
                  use_weighted_edges=None,
@@ -42,7 +43,7 @@ def run_node2vec_emb(data=None, G=None, embedding_model_file_path=None, add_qual
     assert data is not None, "dataset Class must be explitcitly specified to avoid ambiguity"
     assert G is not None, "Graph of type nx.Graph() must be explicitly specified to avoide ambiguity"
     assert embedding_model_file_path is not None, "please specifiied embedding_model_file_path  to save emb_file "
-    assert add_qualified_edges is not None, "add_qualified_edges must be specified to avoid ambiguity"
+    # assert add_qualified_edges is not None, "add_qualified_edges must be specified to avoid ambiguity"
     assert use_weighted_edges is not None, "use_weighted_edges must be explicitly specified to avoide ambiguity"
 
     file_name = get_saved_file_name_for_emb(add_qualified_edges, edges_percent, edges_number, dim, walk_len, num_walks, window)
@@ -78,8 +79,10 @@ def run_node2vec():
     # == Datsets
     # =====================
     ## GeneDisease
-    GeneDisease_root = r'c:\users\anak\pycharmprojects\recreate_gene_disease\data'  # indicate where file should be stored
-    data = GeneDiseaseGeometricDataset(GeneDisease_root)
+    # GeneDisease_root = r'c:\users\anak\pycharmprojects\recreate_gene_disease\data'  # indicate where file should be stored
+    # data = GeneDiseaseGeometricDataset(GeneDisease_root)
+
+    data = GeneDiseaseGeometricDataset(GENEDISEASE_ROOT)
 
     # # split into train_set and test_set
     # convert_disease2class_id = np.vectorize(lambda x: data.disease2class_id_dict[x])
@@ -108,7 +111,11 @@ def run_node2vec():
         use_shared_gene_edges = args.use_shared_gene_edges,
         use_shared_gene_and_phenotype_edges=args.use_shared_gene_and_phenotype_edges,
         use_shared_gene_but_not_phenotype_edges=args.use_shared_gene_but_not_phenotype_edges,
-        use_shared_phenotype_but_not_gene_edges=args.use_shared_phenotype_but_not_gene_edges)
+        use_shared_phenotype_but_not_gene_edges=args.use_shared_phenotype_but_not_gene_edges,
+        use_gene_disease_graph=args.use_gene_disease_graph,
+        use_phenotype_gene_disease_graph=args.use_phenotype_gene_disease_graph,
+        graph_edges_type = args.graph_edges_type
+    )
 
     emb_type = "node2vec"
     embedding_model_file_path = select_emb_save_path(save_path_base = 'data',
@@ -123,7 +130,11 @@ def run_node2vec():
                                                      use_shared_gene_edges=args.use_shared_gene_edges,
                                                      use_shared_gene_and_phenotype_edges=args.use_shared_gene_and_phenotype_edges,
                                                      use_shared_gene_but_not_phenotype_edges=args.use_shared_gene_but_not_phenotype_edges,
-                                                     use_shared_phenotype_but_not_gene_edges=args.use_shared_phenotype_but_not_gene_edges)
+                                                     use_shared_phenotype_but_not_gene_edges=args.use_shared_phenotype_but_not_gene_edges,
+                                                     use_gene_disease_graph=args.use_gene_disease_graph,
+                                                     use_phenotype_gene_disease_graph=args.use_phenotype_gene_disease_graph,
+                                                     graph_edges_type=args.graph_edges_type
+                                                     )
 
     # =====================
     # == run embedding (it should save result in appropriate folder within Data
@@ -140,7 +151,7 @@ def run_node2vec():
 if __name__ == '__main__':
     """
     example of running node2vec_emb.py
-       --add_qualified_edges top_k --dataset GeneDisease --edges_percent 0.05 --added_edges_percent_of GeneDisease --use_shared_phenotype_edges 
+       --use_phenotype_gene_disease_graph --graph_edges_type phenotype_gene_disease_phenotype --add_qualified_edges top_k --dataset GeneDisease --edges_percent 0.05 --added_edges_percent_of GeneDisease --use_shared_phenotype_edges 
        --run_multiple_args_conditions node2vec
     """
 

@@ -50,7 +50,7 @@ def run_svm_using_test_train_split(data, data_with_features, split):
 
 
 def run_svm_using_cross_validation(data, data_with_features, k_fold,
-                                   only_show_average_result=False,
+                                   show_only_average_result=False,
                                    save_report_performance=None,
                                    report_performance_file_path=None):
     """
@@ -116,20 +116,20 @@ def run_svm_using_cross_validation(data, data_with_features, k_fold,
         y_test_pred = clf.decision_function(x_test_with_features).argmax(1)
         y_test_pred_proba = clf.decision_function(x_test_with_features)
 
-        if not only_show_average_result:
+        if not show_only_average_result:
             print(f"================training cv ={i}==================")
 
         report_final_train_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
             y_train, y_train_pred, y_train_pred_proba, np.unique(y_train),
-            verbose=not only_show_average_result,
+            verbose=not show_only_average_result,
             plot=False, return_value=True)
 
-        if not only_show_average_result:
+        if not show_only_average_result:
             print(f"================test cv ={i}==================")
 
         report_final_test_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
             y_test, y_test_pred, y_test_pred_proba, np.unique(y_test),
-            verbose=not only_show_average_result,
+            verbose=not show_only_average_result,
             plot=False, return_value=True)
 
         if sum_final_test_performance_report_np is None:
@@ -213,7 +213,12 @@ def run_svm(data=None, x_with_features=None, cross_validation=None,
             use_shared_phenotype_edges=None,
             use_shared_gene_and_phenotype_edges=None,
             use_shared_gene_but_not_phenotype_edges=None,
-            use_shared_phenotype_but_not_gene_edges=None):
+            use_shared_phenotype_but_not_gene_edges=None,
+            use_gene_disease_graph=None,
+            use_phenotype_gene_disease_graph=None,
+            graph_edges_type = None,
+            task = None
+            ):
     """
 
     @param X: numpy
@@ -235,32 +240,43 @@ def run_svm(data=None, x_with_features=None, cross_validation=None,
     assert use_shared_gene_and_phenotype_edges is not None, "use_shared_gene_and_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_gene_but_not_phenotype_edges is not None, "use_shared_gene_but_not_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
+    assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    assert task is not None, "task must be specified to avoid ambiguity"
 
-    path_to_saved_emb_dir = select_emb_save_path(save_path_base='report_performance',
-                                                 emb_type='node2vec',
-                                                 add_qualified_edges=add_qualified_edges,
-                                                 dataset=dataset,
-                                                 use_weighted_edges=use_weighted_edges,
-                                                 edges_percent=edges_percent,
-                                                 edges_number=edges_number,
-                                                 added_edges_percent_of=added_edges_percent_of,
-                                                 use_shared_gene_edges=use_shared_gene_edges,
-                                                 use_shared_phenotype_edges=use_shared_phenotype_edges,
-                                                 use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
-                                                 use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
-                                                 use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges)
-
-    file_name = get_saved_file_name_for_emb(add_qualified_edges, edges_percent,
-                                            edges_number, 64, 30, 200, 10)
-    report_performance_file_path = path_to_saved_emb_dir + file_name
+    # TODO looks of the saved pd are not readable: This option will be avialbe when I make the saved file readable
+    # path_to_saved_emb_dir = select_emb_save_path(save_path_base='report_performance',
+    #                                              emb_type='node2vec',
+    #                                              add_qualified_edges=add_qualified_edges,
+    #                                              dataset=dataset,
+    #                                              use_weighted_edges=use_weighted_edges,
+    #                                              edges_percent=edges_percent,
+    #                                              edges_number=edges_number,
+    #                                              added_edges_percent_of=added_edges_percent_of,
+    #                                              use_shared_gene_edges=use_shared_gene_edges,
+    #                                              use_shared_phenotype_edges=use_shared_phenotype_edges,
+    #                                              use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+    #                                              use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+    #                                              use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+    #                                              use_gene_disease_graph=use_gene_disease_graph,
+    #                                              use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph
+    #                                              )
+    # file_name = get_saved_file_name_for_emb(add_qualified_edges, edges_percent,
+    #                                         edges_number, 64, 30, 200, 10)
+    # report_performance_file_path = path_to_saved_emb_dir + file_name
 
     if cross_validation:
         assert split is None, "split have to be None, if corss_validation is True ( Prevent subtle error and encorage more explicit command argument) "
         assert k_fold is not None, "if cross_validation is True, k_fold must be specified "
+
         run_svm_using_cross_validation(data, x_with_features, k_fold,
-                                       only_show_average_result=True,
-                                       save_report_performance=True,
-                                       report_performance_file_path=report_performance_file_path)
+                                       show_only_average_result=True,
+                                       save_report_performance=False)
+
+        # run_svm_using_cross_validation(data, x_with_features, k_fold,
+        #                                only_show_average_result=True,
+        #                                save_report_performance=True,
+        #                                report_performance_file_path=report_performance_file_path)
+
     else:
         assert split is not None, "split have to be explicitly specify in command argument (prevent sbutle error and encorgae more explicit command arugment)"
         run_svm_using_test_train_split(data, x_with_features, split)

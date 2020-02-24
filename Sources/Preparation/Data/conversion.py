@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 class Converter:
     def __init__(self, GeneDisease_data):
@@ -21,18 +22,63 @@ class Converter:
         self._cui2class_id_dict = {cui: cls for cui, cls in
                                    zip(self._cui2class_id_dict[0].values(), self._cui2class_id_dict[1].values())}
 
-        disease_mapping_df_for_orignal_disease_101 = self.disease_mapping_df[
-            self.disease_mapping_df['diseaseId'].isin(GeneDisease_data.diseases_np)]
-        self._original_cui2doid_dict = {i: j for i, j in
-                         zip(disease_mapping_df_for_orignal_disease_101['diseaseId'],
-                             disease_mapping_df_for_orignal_disease_101[
-                                 'doid'])}
-    @property
-    def original_cui2doid_dict(self):
-        return self._original_cui2doid_dict
-    @property
-    def original_doid2cui_dict(self):
-        return {j:i for i,j in self._original_cui2doid_dict.items()}
+        #     disease_mapping_df_for_orignal_disease_101 = self.disease_mapping_df[
+        #         self.disease_mapping_df['diseaseId'].isin(GeneDisease_data.diseases_np)]
+        #     self._original_cui2doid_dict = {i: j for i, j in
+        #                      zip(disease_mapping_df_for_orignal_disease_101['diseaseId'],
+        #                          disease_mapping_df_for_orignal_disease_101[
+        #                              'doid'])}
+        # @property
+        # def original_cui2doid_dict(self):
+        #     return self._original_cui2doid_dict
+        # @property
+        # def original_doid2cui_dict(self):
+        #     return {j:i for i,j in self._original_cui2doid_dict.items()}
+
+        # create_disease_mapping_for_original_disease_101_dict
+        self._disease_mapping_for_orignal_disease_101_dict = self._create_disease_mapping_for_orignal_disease_101_dict()
+
+    def _create_disease_mapping_for_orignal_disease_101_dict(self):
+        # get orginal 101 disease from GeneDisease
+        original_disease_101 = np.array(
+            list(self.cui2class_id_dict.keys()))
+
+        # Create cui2doid_dict and doid2cui_dict
+        disease_mapping_for_orignal_disease_101_df = \
+            self.disease_mapping_df[
+                self.disease_mapping_df['diseaseId'].isin(
+                    original_disease_101)]
+
+        # TODO currently I only use 130 diseases; use 139 doid disease;
+        ## > fix all code that convert from cui2doid (make sure all of them use 139 doid disease mapping)
+
+        # x = {}
+        # for i, j in zip(disease_mapping_for_orignal_disease_101_df['doid'],
+        #                 disease_mapping_for_orignal_disease_101_df[
+        #                     'diseaseId']):
+        #     x.setdefault(i, []).append(j)
+        # print(len(list(x.keys())))
+        # print(sum([len(i) for i in x.values()]))
+
+        disease_mapping_df_for_orignal_disease_101_dict = {i: j for i, j in
+                                                           zip(
+                                                               disease_mapping_for_orignal_disease_101_df[
+                                                                   'doid'],
+                                                               disease_mapping_for_orignal_disease_101_df[
+                                                                   'diseaseId'])}
+
+        return disease_mapping_df_for_orignal_disease_101_dict
+
+    def original_cui2doid_mapping(self, cui_diseases):
+        cui2doid_dict = {j: i for i, j in
+                         self._disease_mapping_for_orignal_disease_101_dict.items()}
+        return np.vectorize(
+            lambda x: cui2doid_dict[x])(cui_diseases)
+
+    def original_doid2cui_mapping(self, doid_diseases):
+        return np.vectorize(
+            lambda x: self._disease_mapping_for_orignal_disease_101_dict[x])(doid_diseases)
+
     @property
     def disease_mapping_df(self):
         return self._disease_mapping_df

@@ -3,7 +3,6 @@ import numpy as np
 
 def apply_edges_adding_strategies( add_qualified_edges, G,edges_with_weight, number_of_added_edges):
 
-    # TODO add arg.strategy to function argument
     # assert number_of_added_edges is not None,"when add_qualified_edges is not None, it implies that some edges is expected to be added"
     if add_qualified_edges == 'top_k':
         return select_edges_with_top_alpha(G,edges_with_weight, number_of_added_edges)

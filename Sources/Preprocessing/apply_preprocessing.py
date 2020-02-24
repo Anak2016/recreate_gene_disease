@@ -24,7 +24,11 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
                          use_shared_phenotype_edges = None,
                          use_shared_gene_and_phenotype_edges= None,
                          use_shared_gene_but_not_phenotype_edges=None,
-                         use_shared_phenotype_but_not_gene_edges=None):
+                         use_shared_phenotype_but_not_gene_edges=None,
+                         use_gene_disease_graph=None,
+                         use_phenotype_gene_disease_graph=None,
+                         graph_edges_type = None
+                         ):
     """
 
     @param add_qualified_edges: type = Boolean eg True or False:
@@ -44,12 +48,15 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
     assert use_shared_gene_and_phenotype_edges is not None, "use_shared_gene_and_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_gene_but_not_phenotype_edges is not None, "use_shared_gene_but_not_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
+    assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
+    assert use_phenotype_gene_disease_graph is not None, "use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
+    assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
 
     if save_path_base == 'data':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\"
     elif save_path_base == 'report_performance':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\PerformanceResult\\"
-
+        raise ValueError("looks of the saved pd are not readable, This option will be available when I make the saved file readable")
 
     if add_qualified_edges is not None:
         assert dataset != "no", "NoAddedEdges Folder can be accessed only when add_qualified_edges is False"
@@ -63,13 +70,30 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
             raise ValueError(
                 " when add_qualified_edges is true, only edges_percent and edges_nuber id acceptable")
 
-
     if dataset == 'GeneDisease' or dataset == 'no':
         dataset_processed_dir = f"GeneDiseaseProject\\copd\\"
     elif dataset == "GPSim":
         dataset_processed_dir = f"GPSim\\"
     else:
         raise ValueError("please specified dataset that existed or available ")
+
+    if use_gene_disease_graph:
+        starter_graph_dir = "GeneDisease\\"
+        starter_graph_with_edges_type_dir = starter_graph_dir
+    elif use_phenotype_gene_disease_graph:
+        starter_graph_dir = "PhenotypeGeneDisease\\"
+        if graph_edges_type == 'phenotype_gene_disease':
+            graph_edges_type_dir = 'PGD\\'
+        elif graph_edges_type == 'phenotype_gene_disease_phenotype':
+            graph_edges_type_dir = 'PGDP\\'
+        else:
+            raise ValueError('graph_edges_type only support for phenotype_gene_disease and phenotype_gene_disease_phenotype')
+        starter_graph_with_edges_type_dir  = starter_graph_dir + graph_edges_type_dir
+    else:
+        raise ValueError("currently there are only 2 options for starter graph\n"
+                         "1. use_gene_disease_graph\n"
+                         "2. use_phenotype_gene_disease_graph\n")
+
 
     if emb_type == 'node2vec':
         emb_type_dir = "Node2Vec\\"
@@ -170,9 +194,9 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
 
     if shared_nodes_edges_dir is None:
         assert dataset == 'no', "shared_nodes_edges_dir can only be None when NoAddedEdges "
-        embedding_model_file_path = save_path_base + dataset_processed_dir + emb_type_dir + weighted_status_dir +  add_edges_status
+        embedding_model_file_path = save_path_base + dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +   add_edges_status
     else:
-        embedding_model_file_path = save_path_base + dataset_processed_dir + emb_type_dir + weighted_status_dir +  add_edges_status + shared_nodes_edges_dir +number_of_added_edges
+        embedding_model_file_path = save_path_base + dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +  add_edges_status + shared_nodes_edges_dir +number_of_added_edges
 
     return embedding_model_file_path
 

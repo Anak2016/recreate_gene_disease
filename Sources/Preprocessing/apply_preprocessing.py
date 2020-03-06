@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import pandas as pd
 from sklearn import preprocessing
@@ -5,6 +6,7 @@ from Sources.Preparation.Features.get_qualified_edges import get_all_GeneDisease
 from Sources.Preparation.Features.get_qualified_edges import get_GPSim_disease2disease_qualified_edges
 # from Sources.Preparation.Features.test import get_all_GeneDisease_unweighted_disease2disease_qualified_edges
 # from Sources.Preparation.Features.test import get_GPSim_disease2disease_qualified_edges
+from itertools import combinations
 
 
 def onehot(labels):
@@ -14,6 +16,43 @@ def onehot(labels):
     labels_onehot = np.array(list(map(classes_dict.get, labels)),
                              dtype=np.int32)
     return labels_onehot
+
+
+def remove_edges_from_graph_for_link_prediction(data, graph, train_set_np, test_set_np):
+# def remove_edges_from_graph_for_link_prediction(data, graph_with_no_added_qualified_edges, train_set_np, split):
+    '''
+
+    @param data:
+    @param graph_with_no_added_qualified_edges:
+    @param train_set_np:
+    @param split: desc= test_split
+    @return:
+    '''
+    graph_with_no_added_qualified_edges = graph.copy()
+    # TODO here>>-1 what is splti used for; hwo can it make it to be compatible with cross valiation and train_test_splti
+    train_set_edges = set(map(tuple, train_set_np[:, :2].tolist()))
+    # assert len(train_set_edges) == int(len(data.gene_disease_edges) * (1-split)) * 2, "train_set_edges = int(len(original_gene_disease_edges * training_split)) * 2"
+    # assert
+
+    count_removed_edges = 0
+    # print(len(graph_with_no_added_qualified_edges.edges))
+    for edge in data.gene_disease_edges:  # np or pd ?
+        if graph_with_no_added_qualified_edges.has_edge(*edge):
+            edge_with_gene_as_str = tuple(str(i) for i in
+                                          edge)  # I hould have use gene as str in the first place, I instead used int, so I am *patching* that mistake
+            if edge_with_gene_as_str not in train_set_edges:
+                count_removed_edges += 1
+                graph_with_no_added_qualified_edges.remove_edge(*edge)
+        else:
+            print(edge)
+            raise ValueError(
+                "some edges from dataset.gene_disease-edges is not contained in starter_graph (aka. graph_with_no_added_qualified_edges)")
+
+    # print(count_removed_edges)
+    graph_with_no_added_qualified_edges_with_removed_test_edges = graph_with_no_added_qualified_edges
+
+
+    return graph_with_no_added_qualified_edges_with_removed_test_edges
 
 
 def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edges=None, dataset=None,
@@ -27,7 +66,12 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
                          use_shared_phenotype_but_not_gene_edges=None,
                          use_gene_disease_graph=None,
                          use_phenotype_gene_disease_graph=None,
-                         graph_edges_type = None
+                         graph_edges_type = None,
+                         task = None,
+                         split=None,
+                         k_fold =None,
+                         k_fold_ind = None,
+                         split_by_node=None
                          ):
     """
 
@@ -51,12 +95,39 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
     assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
     assert use_phenotype_gene_disease_graph is not None, "use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
     assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    assert task is not None, "task must be specified to avoid ambiguity"
+    # assert split is not None, "split must be specified to avoid ambiguity"
+
+    # if task ==
+    # if k_fold is not None:
+    #     assert k_fold_ind is not None, "k_fold_ind must be specified to avoid ambiguity"
 
     if save_path_base == 'data':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\"
     elif save_path_base == 'report_performance':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\PerformanceResult\\"
         raise ValueError("looks of the saved pd are not readable, This option will be available when I make the saved file readable")
+
+    if task == 'link_prediction':
+        task_dir = 'LinkPrediction\\'
+        assert split_by_node is not None, "split_by_node must be specified to avoid ambiguity"
+        # TODO here>> how should I name folder for k-fold vs split
+        # assert split is not None, "split must be specified to avoid ambiguity"
+        if split is not None:
+            split_dir = f'TrainingSplit=={1 - split}\\'
+        elif k_fold is not None:
+            assert k_fold_ind is not None, "k_fold_ind must be specified to avoid ambiguity"
+            k_fold_dir = f'KFold={k_fold}\\{k_fold_ind}\\'
+        else:
+            raise ValueError("when task_predictiion, K_fold or split must be used as folder name ")
+        if split_by_node:
+            split_by_node_dir = 'SplitByNode\\'
+        else:
+            split_by_node_dir = 'SplitByEdge\\'
+    elif task == 'node_classification':
+        task_dir = 'NodeClassification\\'
+    else:
+        raise ValueError("for task, please choose either link_prediction or node_classification")
 
     if add_qualified_edges is not None:
         assert dataset != "no", "NoAddedEdges Folder can be accessed only when add_qualified_edges is False"
@@ -96,7 +167,7 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
 
 
     if emb_type == 'node2vec':
-        emb_type_dir = "Node2Vec\\"
+       emb_type_dir = "Node2Vec\\"
     else:
         raise ValueError("please specified em_type correctly")
 
@@ -194,24 +265,87 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
 
     if shared_nodes_edges_dir is None:
         assert dataset == 'no', "shared_nodes_edges_dir can only be None when NoAddedEdges "
-        embedding_model_file_path = save_path_base + dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +   add_edges_status
+        embedding_model_file_path = save_path_base + task_dir + dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +   add_edges_status
+        # if task == 'link_prediction':
+        if task == 'link_prediction':
+            embedding_model_file_path += split_by_node_dir
+            if split is not None:
+                embedding_model_file_path += split_dir
+            elif k_fold is not None:
+                embedding_model_file_path += k_fold_dir
+            else:
+                raise ValueError(" ")
     else:
-        embedding_model_file_path = save_path_base + dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +  add_edges_status + shared_nodes_edges_dir +number_of_added_edges
+        embedding_model_file_path = save_path_base + task_dir +dataset_processed_dir + starter_graph_with_edges_type_dir + emb_type_dir + weighted_status_dir +  add_edges_status + shared_nodes_edges_dir +number_of_added_edges
 
     return embedding_model_file_path
 
 
-def split_train_test(data, split):
-    # split into train_set and test_set
-    convert_disease2class_id = np.vectorize(
-        lambda x: data.disease2class_id_dict[x])
-    disease_class = convert_disease2class_id(data.diseases_np)
+def split_train_test(data, split,task):
+    if task == 'node_classification':
+        raise ValueError('no longer use; split_train_test migrate to dataset.split_train_test')
 
-    train_set, test_set = data.split_train_test(data.diseases_np,
-                                                disease_class, split,
-                                                stratify=disease_class)
-    (x_train, y_train), (x_test, y_test) = train_set, test_set
-    return train_set, test_set
+        # TODO move this whole function of node_classification into split_train_Test
+        # # split into train_set and test_set
+        # convert_disease2class_id = np.vectorize(
+        #     lambda x: data.disease2class_id_dict[x])
+        # disease_class = convert_disease2class_id(data.diseases_np)
+        #
+        # train_set, test_set = data.split_train_test(data.diseases_np,
+        #                                             disease_class, split,
+        #                                             stratify=disease_class)
+        # (x_train, y_train), (x_test, y_test) = train_set, test_set
+        # return train_set, test_set
+
+        # return data.split_train_test(split, stratify=True)
+
+    elif task == 'link_prediction':
+        raise ValueError('no longer use; split_train_test migrate to dataset.split_train_test')
+
+        # # TODO move split_train_test like prediction to dataset.split_train_testkk
+        # # note: I use combination to produce non_directional edges
+        # all_possible_gene_disease_edges = list(combinations(np.concatenate(( data.diseases_np, data.genes_np )),2))
+        # all_possible_gene_disease_edges = np.unique(np.array(all_possible_gene_disease_edges))
+        #
+        # all_possible_gene_disease_edges_with_label_dict = {}
+        # for edge in all_possible_gene_disease_edges:
+        #     if edge in data.edges_np.tolist():
+        #         all_possible_gene_disease_edges_with_label_dict.setdefault('existed_edges', []).append(edge)
+        #     else:
+        #         all_possible_gene_disease_edges_with_label_dict.setdefault('non_existed_edges', []).append(edge)
+        #
+        # pos_edges = all_possible_gene_disease_edges_with_label_dict['existed_edges']
+        # neg_edges = all_possible_gene_disease_edges_with_label_dict['non_existed_edges']
+        #
+        # # spliiting pos
+        # pos_x_train, pos_x_test, pos_y_train, pos_y_test = data.split_train_test(pos_edges, np.ones_like(np.array(pos_edges)), split)
+        #
+        # # splitting neg
+        # # TODO for neg, just select neg of size pos_x_train + pos_x_test ==> pass it to data.split
+        # train_test_size =  pos_x_train.shape[0] + pos_x_test.shape[0]
+        # selected_neg_edges = np.random.choice(neg_edges, train_test_size,replace=False)
+        # neg_x_train, neg_x_test, neg_y_train, neg_y_test = data.split_train_test(neg_edges, np.zeros_like(np.array(neg_edges)), split)
+        #
+        #
+        # # TODO x and y have to be shuffled the same way
+        # def concat_and_shuffle(pos_x,pos_y, neg_x,neg_y):
+        #     x = np.concatenate([pos_x,neg_x])
+        #     y = np.concatenate([pos_y,neg_y])
+        #     x_y = [(i,j) for i,j in zip(x,y)]
+        #
+        #     random.shuffle(x_y)
+        #     shuffled_x = np.array(x_y)[:, 0]
+        #     shuffled_y =np.array(x_y)[:, 1]
+        #     return shuffled_x, shuffled_y
+        #
+        #
+        # shuffled_x_train, shuffled_y_train = concat_and_shuffle(pos_x_train, pos_y_train,  neg_x_train, neg_y_train)
+        # shuffled_x_test, shuffled_y_test = concat_and_shuffle(pos_x_test, pos_y_test,  neg_x_test, neg_y_test)
+        #
+        # train_set, test_set =  (shuffled_x_train, shuffled_y_train), (shuffled_x_test, shuffled_y_test)
+        #
+        # return train_set, test_set
+
 
 
 def apply_normalization(data_with_features, use_saved_emb_file,

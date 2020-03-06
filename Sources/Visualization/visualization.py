@@ -21,7 +21,7 @@ def visualize_roc_curve(fpr, tpr, roc_auc):
     for i in range(len(list(fpr.keys()))):
         plt.plot(fpr[i], tpr[i], color=colors[i],
                  lw=lw,
-                 label=f'Class = {i}; ROC curve (area = {roc_auc[i]: .2f})')
+                 label=f'Class = {i}; ROC curve (area = {roc_auc[i][0]: .2f})')
     plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])

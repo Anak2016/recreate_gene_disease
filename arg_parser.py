@@ -79,7 +79,9 @@ parser.add_argument('--graph_edges_type', type=str, default=None, help='there ar
 ### spliting train and test dataset
 #### train_test_split
 parser.add_argument('--split', type=float, default=None,
-                    help='split is used when args.cross_validation is False')
+                    help='split specify test_size as percentage of dataset size; split is used when args.cross_validation is False')
+parser.add_argument('--split_by_node', action='store_true', help="split_by_node only used when task = 'link_prediction' ")
+
 #### k fold cross validation
 parser.add_argument('--cv', action='store_true',
                     help="activate cross_validation")
@@ -91,6 +93,11 @@ parser.add_argument('--k_fold', type=int, default=None,
 parser.add_argument('--task', type=str, default=None, help='please select between \n'
                                                             '1. link prediction\n'
                                                             '2. nodes classification\n')
+parser.add_argument('--enforce_end2end', action='store_true', help="apply emb then use emb as input to run_task. \n"
+                                                                   "note: error will be raised as following\n"
+                                                                   " 1. if --use_saved_emb_File is False, error is raised.\n "
+                                                                   " 2. if --use_saved_emb_file is True and emb_file does not exist, error is raised.\n"
+                                                                   "    error is raised to avoid unpredicted behavior\n")
 ## run multiple args condition
 parser.add_argument('--run_multiple_args_conditions', type=str, default=None,
                     help='')
@@ -105,8 +112,25 @@ assert args.run_multiple_args_conditions in [None, 'train_model',
 
 def apply_parser_constraint():
     # section for subparser
+    ## cross valdiation and train_tset_split
+    if args.cv:
+        assert args.k_fold is not None, "if cv is true, k_fold must be set"
+    else:
+        assert args.k_fold is None, "if cv is false, k_fold have to be None; this implies that train_test_split will be used in stead "
+        assert  0< args.split < 1," split can only be between 0 and 1 "
+
     ## about task
     assert args.task in ['link_prediction', 'node_classification'], 'for args.task, please select link_repdcition or node_classification'
+
+    if args.task == 'link_prediction':
+        assert args.dataset == 'no' and  args.graph_edges_type == 'phenotype_gene_disease_phenotype' and args.use_phenotype_gene_disease_graph, 'arg.task == link prediction, only support  the following condition\n' \
+                                                                                                                      '1. use_phenotype_gene_disease_graph is true\n' \
+                                                                                                                      '2. args.graph_edges_type == "phenotype_gene_disease_phenotype"'
+
+    ## about enforce_end2end
+    if args.enforce_end2end:
+        assert args.use_saved_emb_file, "args.enforce_end2end only apply with embedding"
+
 
     ## about starter graph
     starter_graph_constraint = [args.use_gene_disease_graph,
@@ -273,8 +297,8 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
         # 'use_shared_phenotype_edges': True,
         # 'use_shared_gene_or_phenotype_edges': True,
         # 'use_shared_gene_and_phenotype_edges': True,
-        # 'use_shared_gene_but_not_phenotype_edges': True,
-        'use_shared_phenotype_but_not_gene_edges': True
+        'use_shared_gene_but_not_phenotype_edges': True,
+        # 'use_shared_phenotype_but_not_gene_edges': True
     }
     cv = True
     k_fold = 4
@@ -353,8 +377,6 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
                                     f'args.use_shared_phenotype_but_not_gene_edges  = {args.use_shared_phenotype_but_not_gene_edges}')
 
                                 if key in ['use_shared_gene_and_phenotype_edges'] and percent in [0.2,0.3,0.4,0.5]:
-                                    pass
-                                elif key in ['use_shared_phenotype_but_not_gene_edges'] and percent in [0.05]:
                                     pass
                                 else:
                                     # aplly constrain

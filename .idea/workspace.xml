@@ -2,105 +2,186 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff25f7-8fba-40e8-b520-dddacbb722a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sources/Modeling/Task/link_prediction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global_param.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExampleCode/Library/Keras/feed_forward_nn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExampleCode/Library/Pytorch/feed_forward_nn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sources/Modeling/Task/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sources/Modeling/Task/run_task.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/Mistake/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/Mistake/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GPSim/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/AddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/UnweightedEdges/NoAddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/Node2Vec/emb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/raw/GPSim/Edges/DiseasePhenotype/disease_hpo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/raw/GPSim/Edges/disease_hpo.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/debuggin_train_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/interim/GeneDiseaseProject/copd/no_name_disease_DINOR.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Edges/GPSim_overlapped_bottom_24.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Edges/GPSim_overlapped_top_24.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Edges/edges_from_GPSim_overlapped_diseases.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Edges/phenotype2disease_edges_that_contain_qualified_nodes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Node2Vec/UnweightedEdges/AddedEdges/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Node2Vec/UnweightedEdges/AddedEdges/EdgesPercent/GPSim/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Node2Vec/WeightedEdges/AddedEdges/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Node2Vec/WeightedEdges/AddedEdges/EdgesPercent/GPSim/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Nodes/SQL/get_edges_of_shared_diseases_that_shared_at_least_1_phenotype.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Nodes/SQL/select_distinct_diseaseId_from_gpsim.copd_doid.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Nodes/SQL/select_distinct_doid_from_gpsim.copd_doid.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GPSim/Nodes/unique_doid_that_overlap_between_gene2_hpo2_and_genedisease_doid.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/Mistake/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/Mistake/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesNumber/top_k=24_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GPSim/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/EdgesPercent/GeneDisease/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/bottom_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/no/top_k=1.0_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/AddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/UnweightedEdges/NoAddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/GeneDisease/Node2Vec/emb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGD/Node2Vec/UnweightedEdges/NoAddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneAndPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneNotPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedGeneOrPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.05_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.1_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.2_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.3_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.4_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease/top_k=0.5_dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/GeneDiseaseProject/copd/copd_label07_14_19_46.txt/copd_name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/HumanNet2/IntegratedNetworks/HumanNet-XN-change_header.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/processed/HumanNet2/IntegratedNetworks/HumanNet-XN-change_header_normalized.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/train_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Evaluation/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Evaluation/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/Task/link_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Task/link_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Preparation/Data/conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Data/conversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/build_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/build_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preprocessing/convertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preprocessing/convertion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Visualization/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Visualization/visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arg_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/arg_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/eda/Dataset/.ipynb_checkpoints/GPSim-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/eda/Dataset/.ipynb_checkpoints/GPSim-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/eda/Dataset/GPSim.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/eda/Dataset/GPSim.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +248,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../multi-armed-bandit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReinforcementLearning" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -177,7 +258,7 @@
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -191,18 +272,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\PhenotypeGeneDisease" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\GPSim\Edges" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\SharedGeneEdges\EdgesPercent\GeneDisease" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\SharedPhenotypeEdges\EdgesPercent\GeneDisease" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\AddedEdges\SharedGeneEdges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByEdge\WithShuffledDiseaseNodes" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode\TrainTestSetHaveSameNonExistedGeneDiseaseEdges" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByEdge" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\KFold=4" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\DisGeNET\all_gene_disease_pmid_associations.tsv" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesPercent" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesPercent" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GeneDiseaseProject\copd\Node2Vec\UnweightedEdges\NoAddedEdges\EdgesPercent" />
     </key>
   </component>
   <component name="RunManager" selected="Python.train_model">
@@ -404,7 +485,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -426,7 +507,7 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Models/train_model.py" />
-      <option name="PARAMETERS" value="--run_multiple_args_conditions train_model" />
+      <option name="PARAMETERS" value="--task link_prediction --enforce_end2end --use_phenotype_gene_disease_graph --graph_edges_type phenotype_gene_disease_phenotype --use_saved_emb_file --dataset no --split 0.2" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -530,15 +611,16 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.train_model" />
       <item itemvalue="Python.node2vec_emb" />
       <item itemvalue="Python.apply_preprocessing" />
       <item itemvalue="Python.plot_roc_cuve_with_cross_validation" />
       <item itemvalue="Python.build_features" />
       <item itemvalue="Python.debuggin_train_model" />
+      <item itemvalue="Python.train_model" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train_model" />
         <item itemvalue="Python.debuggin_train_model" />
         <item itemvalue="Python.build_features" />
         <item itemvalue="Python.apply_preprocessing" />
@@ -637,7 +719,11 @@
       <workItem from="1581698218915" duration="33262000" />
       <workItem from="1582159334167" duration="49585000" />
       <workItem from="1582554364280" duration="304000" />
-      <workItem from="1582554709679" duration="2451000" />
+      <workItem from="1582554709679" duration="10146000" />
+      <workItem from="1582665832977" duration="1625000" />
+      <workItem from="1582691883813" duration="95253000" />
+      <workItem from="1583074643121" duration="97282000" />
+      <workItem from="1583503895058" duration="8588000" />
     </task>
     <servers />
   </component>
@@ -699,119 +785,119 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="452" y="280" width="1084" height="530" key="#node2vec_emb/0.0.1536.824@0.0.1536.824" timestamp="1582426824771" />
-    <state x="56" y="66" width="1480" height="550" key="#train_model" timestamp="1582569895922">
+    <state x="0" y="274" width="1536" height="550" key="#train_model" timestamp="1583533848278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="56" y="66" width="1480" height="550" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1582569895922" />
-    <state x="901" y="82" width="632" height="486" key="#xdebugger.evaluate" timestamp="1582216402922">
+    <state x="0" y="274" width="1536" height="550" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1583533848278" />
+    <state x="878" y="322" width="632" height="502" key="#xdebugger.evaluate" timestamp="1583526707463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="100" key="#xdebugger.evaluate/0.0.1536.783@0.0.1536.783" timestamp="1576918218922" />
-    <state x="901" y="82" width="632" height="486" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1582216402922" />
-    <state x="329" y="106" key="Cacher.FindSnippetDialog" timestamp="1582163872551">
+    <state x="878" y="322" width="632" height="502" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1583526707463" />
+    <state x="329" y="106" key="Cacher.FindSnippetDialog" timestamp="1583434012297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="103" key="Cacher.FindSnippetDialog/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577132240505" />
     <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578900029272" />
     <state x="249" y="108" key="Cacher.FindSnippetDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1578940018995" />
-    <state x="329" y="106" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1582163872551" />
-    <state x="530" y="217" width="814" height="607" key="Cacher.NewSnippetDialog" timestamp="1582163966476">
+    <state x="329" y="106" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1583434012297" />
+    <state x="530" y="217" width="814" height="607" key="Cacher.NewSnippetDialog" timestamp="1582898053577">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="311" y="23" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577643776331" />
     <state x="2197" y="20" key="Cacher.NewSnippetDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577261405183" />
-    <state x="530" y="217" width="814" height="607" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1582163966476" />
+    <state x="530" y="217" width="814" height="607" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1582898053577" />
     <state width="1534" height="440" key="DebuggerActiveHint" timestamp="1581639239699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1534" height="440" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1581639239699" />
-    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl" timestamp="1582554730866">
+    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl" timestamp="1583274198375">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="932" y="132" key="FileChooserDialogImpl/0.0.1536.783@0.0.1536.783" timestamp="1577028661745" />
     <state x="932" y="139" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578964735869" />
     <state x="2749" y="123" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577256820309" />
-    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582554730866" />
+    <state x="822" y="144" width="438" height="494" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583274198375" />
     <state x="361" y="72" key="GrepConsoleSettings" timestamp="1580929017332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="GrepConsoleSettings/0.0.1536.824@0.0.1536.824" timestamp="1580929017332" />
-    <state width="1537" height="240" key="GridCell.Tab.0.bottom" timestamp="1582421834633">
+    <state width="1537" height="254" key="GridCell.Tab.0.bottom" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582421834633" />
-    <state width="1537" height="240" key="GridCell.Tab.0.center" timestamp="1582421834633">
+    <state width="1537" height="254" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.0.center" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="260" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582421834633" />
-    <state width="1537" height="240" key="GridCell.Tab.0.left" timestamp="1582421834633">
+    <state width="1537" height="254" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.0.left" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="260" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582421834633" />
-    <state width="1537" height="240" key="GridCell.Tab.0.right" timestamp="1582421834633">
+    <state width="1537" height="254" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.0.right" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.0.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059579" />
     <state width="1537" height="260" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582421834633" />
-    <state width="1537" height="240" key="GridCell.Tab.1.bottom" timestamp="1582421834635">
+    <state width="1537" height="254" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.1.bottom" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.bottom/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1537" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224319" />
-    <state width="1537" height="240" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582421834635" />
-    <state width="1537" height="240" key="GridCell.Tab.1.center" timestamp="1582421834634">
+    <state width="1537" height="254" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.1.center" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.center/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1537" height="260" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1582421834634" />
-    <state width="1537" height="240" key="GridCell.Tab.1.left" timestamp="1582421834633">
+    <state width="1537" height="254" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.1.left" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.left/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1537" height="260" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1582421834633" />
-    <state width="1537" height="240" key="GridCell.Tab.1.right" timestamp="1582421834634">
+    <state width="1537" height="254" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state width="1537" height="254" key="GridCell.Tab.1.right" timestamp="1583533870758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1535" height="273" key="GridCell.Tab.1.right/0.0.1536.783@0.0.1536.783" timestamp="1577002059580" />
     <state width="1537" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1581086224318" />
-    <state width="1537" height="240" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1582421834634" />
-    <state x="276" y="53" key="SettingsEditor" timestamp="1582422688273">
+    <state width="1537" height="254" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583533870758" />
+    <state x="276" y="53" key="SettingsEditor" timestamp="1582691980412">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="374" y="48" key="SettingsEditor/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577137050293" />
     <state x="374" y="48" key="SettingsEditor/0.0.1536.783@0.0.1536.783" timestamp="1577115237003" />
     <state x="374" y="51" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1579223963053" />
     <state x="2253" y="10" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577261136773" />
-    <state x="276" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582422688273" />
+    <state x="276" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582691980412" />
     <state x="795" y="216" key="StringManipulation.SortTypeDialog" timestamp="1576969449268">
       <screen x="0" y="0" width="1536" height="783" />
     </state>
     <state x="795" y="216" key="StringManipulation.SortTypeDialog/0.0.1536.783@0.0.1536.783" timestamp="1576969449268" />
-    <state width="498" height="452" key="SwitcherDM" timestamp="1582570028424">
+    <state width="498" height="452" key="SwitcherDM" timestamp="1583536128951">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="430" key="SwitcherDM/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577137151107" />
     <state width="498" height="430" key="SwitcherDM/0.0.1536.783@0.0.1536.783" timestamp="1576969368126" />
     <state width="498" height="452" key="SwitcherDM/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1579225962530" />
-    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1582570028424" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1582422724447">
+    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1583536128951" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1583075019924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578526811278" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582422724447" />
-    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1582216875341">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583075019924" />
+    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1583452919358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1582216875341" />
+    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1583452919358" />
     <state x="93" y="98" width="1350" height="630" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577285428897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -834,10 +920,11 @@
     <state x="463" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578532504609" />
     <state x="2332" y="206" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577256522362" />
     <state x="463" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578361452655" />
-    <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576921420005">
-      <screen x="0" y="0" width="1536" height="783" />
+    <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583376939857">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.783@0.0.1536.783" timestamp="1576921420005" />
+    <state x="475" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1583376939857" />
     <state x="323" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1580082333325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -850,19 +937,19 @@
       <screen x="0" y="0" width="1536" height="783" />
     </state>
     <state x="93" y="93" width="1350" height="598" key="dock-window-2/0.0.1536.783@0.0.1536.783" timestamp="1576924412871" />
-    <state x="454" y="218" width="1082" height="606" key="find.popup" timestamp="1582197439963">
+    <state x="454" y="218" width="1082" height="606" key="find.popup" timestamp="1583453321585">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136316169" />
     <state x="462" y="129" width="611" height="526" key="find.popup/0.0.1536.783@0.0.1536.783" timestamp="1576921066285" />
     <state x="798" y="218" width="738" height="606" key="find.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578589552889" />
-    <state x="454" y="218" width="1082" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1582197439963" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1582569122907">
+    <state x="454" y="218" width="1082" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1583453321585" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1583523065318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="600" height="403" key="javadoc.popup/0.0.1536.783@0.0.1536.783" timestamp="1576901662049" />
     <state width="600" height="425" key="javadoc.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577638561595" />
-    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1582569122907" />
+    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1583523065318" />
     <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1580253325871">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -875,30 +962,20 @@
     <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1577409860929" />
     <state x="2284" y="139" width="598" height="551" key="recent.locations.popup/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1577245609484" />
     <state x="409" y="157" width="599" height="622" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1577393531137" />
-    <state x="431" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1582422648647">
+    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1583535745632">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783/1920.0.768.1326@0.0.1536.783" timestamp="1577136918109" />
     <state x="828" y="138" width="672" height="645" key="search.everywhere.popup/0.0.1536.783@0.0.1536.783" timestamp="1577064146390" />
     <state x="830" y="146" width="672" height="679" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1578903960727" />
-    <state x="431" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582422648647" />
+    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583535745632" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>347</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>370</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>45</line>
+          <line>49</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -908,12 +985,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>63</line>
+          <line>82</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>66</line>
+          <line>85</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -928,7 +1005,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>146</line>
+          <line>200</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -937,39 +1014,24 @@
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>193</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>218</line>
+          <line>581</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>69</line>
+          <line>88</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>303</line>
+          <line>437</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>300</line>
+          <line>329</line>
           <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>200</line>
-          <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ExampleCode/Library/argparse/adding_sub_parser.py</url>
@@ -983,7 +1045,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>311</line>
+          <line>445</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1013,132 +1075,72 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>139</line>
+          <line>210</line>
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>136</line>
+          <line>207</line>
           <option name="timeStamp" value="200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>133</line>
+          <line>204</line>
           <option name="timeStamp" value="201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>142</line>
+          <line>213</line>
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>167</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>158</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
-          <line>164</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>187</line>
+          <line>550</line>
           <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>310</line>
+          <line>334</line>
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>163</line>
+          <line>499</line>
           <option name="timeStamp" value="217" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>159</line>
+          <line>453</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>120</line>
-          <option name="timeStamp" value="220" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Models/train_model.py</url>
-          <line>161</line>
+          <line>116</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Models/train_model.py</url>
-          <line>127</line>
+          <line>82</line>
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>216</line>
+          <line>240</line>
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>220</line>
+          <line>244</line>
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>158</line>
+          <line>182</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>325</line>
+          <line>349</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1147,49 +1149,23 @@
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="235" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>63</line>
-          <option name="temporary" value="true" />
-          <option name="timeStamp" value="236" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="237" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="238" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>187</line>
+          <line>248</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>263</line>
+          <line>287</line>
           <option name="timeStamp" value="241" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="253" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>363</line>
+          <line>385</line>
           <option name="timeStamp" value="254" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>168</line>
+          <line>181</line>
           <option name="timeStamp" value="255" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1204,71 +1180,259 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="265" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
           <line>77</line>
           <option name="timeStamp" value="266" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="269" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="271" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>122</line>
-          <option name="timeStamp" value="281" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="288" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="292" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="293" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>496</line>
+          <line>518</line>
           <option name="timeStamp" value="297" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>471</line>
+          <line>493</line>
           <option name="timeStamp" value="298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
+          <line>352</line>
+          <option name="timeStamp" value="300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="353" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>251</line>
+          <option name="timeStamp" value="360" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>244</line>
+          <option name="timeStamp" value="361" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="365" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>175</line>
+          <option name="timeStamp" value="370" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>342</line>
+          <option name="timeStamp" value="371" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>276</line>
+          <option name="timeStamp" value="382" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>329</line>
+          <option name="timeStamp" value="390" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="394" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>278</line>
+          <option name="timeStamp" value="395" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>440</line>
+          <option name="timeStamp" value="397" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>237</line>
+          <option name="timeStamp" value="398" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>331</line>
+          <option name="timeStamp" value="401" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>286</line>
+          <option name="timeStamp" value="406" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="407" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>163</line>
+          <option name="timeStamp" value="408" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>160</line>
+          <option name="timeStamp" value="409" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>301</line>
+          <option name="timeStamp" value="410" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>272</line>
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>197</line>
+          <option name="timeStamp" value="412" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>198</line>
+          <option name="timeStamp" value="413" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>543</line>
+          <option name="timeStamp" value="416" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>587</line>
+          <option name="timeStamp" value="418" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>353</line>
+          <option name="timeStamp" value="421" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>321</line>
+          <option name="timeStamp" value="422" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>371</line>
+          <option name="timeStamp" value="424" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>562</line>
+          <option name="timeStamp" value="425" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="426" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>250</line>
+          <option name="timeStamp" value="427" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="430" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>144</line>
+          <option name="timeStamp" value="431" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>345</line>
+          <option name="timeStamp" value="436" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>340</line>
+          <option name="timeStamp" value="437" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
+          <line>327</line>
+          <option name="timeStamp" value="438" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="440" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="441" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
+          <line>410</line>
+          <option name="timeStamp" value="444" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>264</line>
+          <option name="timeStamp" value="445" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
+          <line>318</line>
+          <option name="timeStamp" value="446" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="report_support_pred_class['support'].dtype" language="Python" />
-        <watch expression="report_support_pred_class['predicted'].dtype" language="Python" />
-        <watch expression="report_df['support'].dtype" language="Python" />
-        <watch expression="added_dim" language="Python" />
-        <watch expression="all_overlapped_disease2disease_edges" language="Python" />
-        <watch expression="795+564" language="Python" />
-        <watch expression="all_overlapped_disease2disease_edges" language="Python" />
-        <watch expression="use_overlapped_disease" language="Python" />
-        <watch expression="phenotype2disease_edges_that_contain_qualified_nodes_pd" language="Python" />
-        <watch expression="j" language="Python" />
-        <watch expression="phenotype2gene_np.shape" language="Python" />
-        <watch expression="phenotype2disease_np.shape" language="Python" />
-        <watch expression="phenotype2gene_pd['gene_id'][not_nan]" language="Python" />
+        <watch expression="y_true" language="Python" />
+        <watch expression="y_true[:,i]" language="Python" />
+        <watch expression="y_score" language="Python" />
+        <watch expression="normalized_row[:,0]" language="Python" />
+        <watch expression="pd.get_dummies(y_true).to_numpy()" language="Python" />
+        <watch expression="self.stratified_k_fold" language="Python" />
+        <watch expression="data_with_features_dict[0]" language="Python" />
+        <watch expression="train_set" language="Python" />
+        <watch expression="selected_x_with_label.shape" language="Python" />
+        <watch expression="self.stratified_k_fold" language="Python" />
+        <watch expression="edges_with_" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -1280,7 +1444,7 @@
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577416861451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_for_test_hellow_word_test_one.coverage" NAME="pytest for test_hellow_word.test_one Coverage Results" MODIFIED="1577459690751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$make_dataset.coverage" NAME="make_dataset Coverage Results" MODIFIED="1579717592562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/data" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1582216244060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1583533848343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
     <SUITE FILE_PATH="coverage/recreate_gene_disease$setup.coverage" NAME="setup Coverage Results" MODIFIED="1577406530429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_in_test_hellow_word_py.coverage" NAME="pytest in test_hellow_word.py Coverage Results" MODIFIED="1577460001187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/recreate_gene_disease$test.coverage" NAME="test Coverage Results" MODIFIED="1577409315838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preparation/data" />

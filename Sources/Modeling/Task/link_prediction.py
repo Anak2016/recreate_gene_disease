@@ -1,2 +1,30 @@
-def run_link_prediction():
-    pass
+from Sources.Modeling.Classifier.NN import run_neural_network
+def run_link_prediction(data=None, x_with_features=None,
+                            cross_validation=None,
+                            k_fold=None, split=None,
+                            use_saved_emb_file=None,
+                            add_qualified_edges=None,
+                            dataset=None, use_weighted_edges=None,
+                            normalized_weighted_edges=None,
+                            edges_percent=None,
+                            edges_number=None,
+                            added_edges_percent_of=None,
+                            use_shared_gene_edges=None,
+                            use_shared_phenotype_edges=None,
+                            use_shared_gene_and_phenotype_edges=None,
+                            use_shared_gene_but_not_phenotype_edges=None,
+                            use_shared_phenotype_but_not_gene_edges=None,
+                            use_gene_disease_graph=None,
+                            use_phenotype_gene_disease_graph=None,
+                            graph_edges_type=None,
+                            task=None ,
+                            split_by_node=None):
+
+    run_neural_network(data,
+                       x_with_features,
+                       cross_validation,
+                       split,
+                       k_fold,
+                       task,
+                       split_by_node)
+

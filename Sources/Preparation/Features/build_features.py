@@ -1,7 +1,7 @@
-import networkx as nx
-import numpy as np
 import pandas as pd
 
+# from Sources.Modeling.Embedding.node2vec_emb import preprocess_node2vec
+from Sources.Modeling.Embedding.node2vec_emb import run_node2vec
 from Sources.Preparation.Features.get_qualified_edges import \
     get_disease2disease_qualified_edges
 from Sources.Preparation.Features.get_starter_graph import get_graph
@@ -18,6 +18,8 @@ from Sources.Preprocessing.apply_preprocessing import \
 from Sources.Preprocessing.apply_preprocessing import \
     select_emb_save_path
 
+import networkx as nx
+import numpy as np
 
 def get_instances_with_features(graph_with_added_edges=None,
                                 path_to_saved_emb_file=None,
@@ -37,9 +39,11 @@ def get_instances_with_features(graph_with_added_edges=None,
         assert path_to_saved_emb_file is not None, "if use_saved_emb_file is not None, please specified path to emb_file"
 
         # emb_df = pd.read_csv(path_to_saved_emb_file, sep=' ', skiprows=0)
+        # TODO here>> raise error if path_to_saved_emb_filed does not exist and args.enforce_end2end is False
         df = pd.read_csv(path_to_saved_emb_file, sep=' ', skiprows=0, header=1)
         emb_df = pd.DataFrame(
             np.insert(df.values, 0, values=list(df.columns), axis=0))
+        print('content of saved_emb_file is shown below ')
         print(emb_df.head())
         emb_df.set_index(0, inplace=True)
         del emb_df.index.name
@@ -61,8 +65,8 @@ def get_data_without_using_emb_as_feat(data=None,
                                        dataset=None,
                                        use_weighted_edges=None,
                                        normalized_weighted_edges=None,
-                                       return_graph_and_data_with_features=None,
-                                       use_saved_emb_file=None,
+                                       # return_graph_and_data_with_features=None,
+                                       # use_saved_emb_file=False,
                                        edges_percent=None,
                                        edges_number=None,
                                        added_edges_percent_of=None,
@@ -73,7 +77,7 @@ def get_data_without_using_emb_as_feat(data=None,
                                        use_shared_phenotype_but_not_gene_edges=None,
                                        use_gene_disease_graph=None,
                                        use_phenotype_gene_disease_graph=None,
-                                       graph_edges_type = None
+                                       graph_edges_type=None,
                                        ):
     """
 
@@ -88,8 +92,8 @@ def get_data_without_using_emb_as_feat(data=None,
     assert dataset is not None, 'dataset must be explicitly stated to avoid ambiguity'
     assert use_weighted_edges is not None, 'use_weighted_eFalsedges must be explicitly stated to avoid ambiguity'
     assert normalized_weighted_edges is not None, 'use_weighted_eFalsedges must be explicitly stated to avoid ambiguity'
-    assert return_graph_and_data_with_features is not None, 'use_weighted_eFalsedges must be explicitly stated to avoid ambiguity'
-    assert use_saved_emb_file is not None, "use_saved_emb_file must be speherecified to avoid ambiguity"
+    # assert return_graph_and_data_with_features is not None, 'use_weighted_eFalsedges must be explicitly stated to avoid ambiguity'
+    # assert use_saved_emb_file is not None, "use_saved_emb_file must be speherecified to avoid ambiguity"
     # assert (edges_percent is not None) or (
     #         edges_number is not None), "either edges_percent or edges_number must be specified to avoid ambiguity"
     assert use_shared_gene_edges is not None, "use_shared_gene_edges must be specified to avoid ambiguity"
@@ -101,7 +105,12 @@ def get_data_without_using_emb_as_feat(data=None,
     assert use_phenotype_gene_disease_graph is not None, " use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
     assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
 
-    starter_graph = get_graph(use_gene_disease_graph=use_gene_disease_graph, use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph, graph_edges_type=graph_edges_type)
+    # set variables to be certain values (variables is directly depended function/method that it is in)
+    use_saved_emb_file = False
+
+    starter_graph = get_graph(use_gene_disease_graph=use_gene_disease_graph,
+                              use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+                              graph_edges_type=graph_edges_type)
 
     if add_qualified_edges is not None:
         # select disease2disease edges
@@ -136,10 +145,10 @@ def get_data_without_using_emb_as_feat(data=None,
         # data.add_weighted_qualified_edges_to_graph(
         #     disease2disease_edges_to_be_added)
 
-
         # TODO check edges of graph_with_added_disease2disease in both grpah_edges_types
         graph_with_added_disease2disease = starter_graph.copy()
-        graph_with_added_disease2disease.add_weighted_edges_from(disease2disease_edges_to_be_added)
+        graph_with_added_disease2disease.add_weighted_edges_from(
+            disease2disease_edges_to_be_added)
 
         assert data.is_disease2disease_edges_added_to_graph(
             graph_with_added_disease2disease,
@@ -150,9 +159,11 @@ def get_data_without_using_emb_as_feat(data=None,
             use_saved_emb_file=use_saved_emb_file,
             normalized_weighted_edges=normalized_weighted_edges)
 
-        # returning graph with added disease2disease edges
-        if return_graph_and_data_with_features:
-            return graph_with_added_disease2disease, data_with_features
+        starter_graph = graph_with_added_disease2disease
+
+        # # returning graph with added disease2disease edges
+        # if return_graph_and_data_with_features:
+        #     return graph_with_added_disease2disease, data_with_features
 
 
     else:
@@ -162,15 +173,17 @@ def get_data_without_using_emb_as_feat(data=None,
                                                          use_saved_emb_file=use_saved_emb_file,
                                                          normalized_weighted_edges=normalized_weighted_edges)
 
-        # return graph with no added edges
-        if return_graph_and_data_with_features:
-            return starter_graph, data_with_features
+        # # return graph with no added edges
+        # if return_graph_and_data_with_features:
+        #     return starter_graph, data_with_features
 
-    return data_with_features
+    return starter_graph, data_with_features
+
+    # return data_with_features
 
 
 def get_data_with_emb_as_feat(data,
-                              use_saved_emb_file,
+                              # use_saved_emb_file,
                               add_qualified_edges,
                               dataset,
                               use_weighted_edges,
@@ -185,10 +198,21 @@ def get_data_with_emb_as_feat(data,
                               use_shared_phenotype_but_not_gene_edges,
                               use_gene_disease_graph,
                               use_phenotype_gene_disease_graph,
-                              graph_edges_type
+                              graph_edges_type,
+                              task,
+                              split,
+                              k_fold,
+                              split_by_node,
+                              k_fold_ind = None
                               ):
+    if k_fold is not None:
+        assert k_fold_ind is not None, "k_fold_ind must be specified to avoid ambiguity"
+        
     assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
     assert use_phenotype_gene_disease_graph is not None, " use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
+
+    # set variables to be certain values (variables is directly depended function/method that it is in)
+    use_saved_emb_file = True
 
     # # catching not yet implmented conditions
     # if use_gene_disease_graph is not None:
@@ -218,7 +242,12 @@ def get_data_with_emb_as_feat(data,
                                                  use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
                                                  use_gene_disease_graph=use_gene_disease_graph,
                                                  use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
-                                                 graph_edges_type=graph_edges_type
+                                                 graph_edges_type=graph_edges_type,
+                                                 task=task,
+                                                 split=split,
+                                                 k_fold=k_fold,
+                                                 k_fold_ind=k_fold_ind,
+                                                 split_by_node = split_by_node
                                                  )
 
     file_name = get_saved_file_name_for_emb(add_qualified_edges, edges_percent,
@@ -316,9 +345,14 @@ def get_data_feat(data=None,
                   use_shared_phenotype_but_not_gene_edges=None,
                   use_gene_disease_graph=None,
                   use_phenotype_gene_disease_graph=None,
-                  graph_edges_type=None
+                  graph_edges_type=None,
+                  task=None,
+                  enforce_end2end=None,
+                  cross_validation=None,
+                  k_fold=None,
+                  split=None,
+                  split_by_node=None
                   ):
-
     assert data is not None, 'data must be explicitly stated to avoid ambiguity'
     assert use_saved_emb_file is not None, 'use_saved_emb_file must be explicitly stated to avoid ambiguity'
     # assert add_qualified_edges is not None, 'add_qualified_edges must be explicitly stated to avoid ambiguity'
@@ -335,9 +369,108 @@ def get_data_feat(data=None,
     assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
     assert use_phenotype_gene_disease_graph is not None, " use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
     assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    assert task is not None, "task must be specified to avoid ambiguity"
+    assert enforce_end2end is not None, "enforce_end2end must be specified to avoid ambiguity"
+    assert cross_validation is not None, "cross_validation must be specified to avoid ambiguity"
+    assert split_by_node is not None, "split_by_node must be specified to avoid ambiguity"
 
-    data_with_features = None
+    # add feature to Data (no embedding)
+    # note: node embedding is only expected to be read from emb_file
+    # TODO all of the argument variation output same report_performancea
+    graph_with_added_qualified_edges, data_with_features = get_data_without_using_emb_as_feat(
+        data=data,
+        add_qualified_edges=add_qualified_edges,
+        dataset=dataset,
+        use_weighted_edges=use_weighted_edges,
+        # return_graph_and_data_with_features=False,
+        # use_saved_emb_file=use_saved_emb_file,
+        normalized_weighted_edges=normalized_weighted_edges,
+        edges_percent=edges_percent,
+        edges_number=edges_number,
+        added_edges_percent_of=added_edges_percent_of,
+        use_shared_gene_edges=use_shared_gene_edges,
+        use_shared_phenotype_edges=use_shared_phenotype_edges,
+        use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+        use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+        use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+        use_gene_disease_graph=use_gene_disease_graph,
+        use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+        graph_edges_type=graph_edges_type,
+    )
+
     if use_saved_emb_file:
+        if enforce_end2end:
+
+            # TODO
+            ## > here>>3 make sure that there is not disease2disease edges added for link_prediction,
+            ## > test that train_model and node2vec work as expected before moving to the next step
+            if task == 'link_prediction':
+
+                graph_with_no_added_qualified_edges = graph_with_added_qualified_edges
+
+                data_with_features = run_node2vec(data,
+                                                  graph_with_no_added_qualified_edges,
+                                                  data_with_features,
+                                                  use_saved_emb_file=use_saved_emb_file,
+                                                  add_qualified_edges=add_qualified_edges,
+                                                  dataset=dataset,
+                                                  use_weighted_edges=use_weighted_edges,
+                                                  normalized_weighted_edges=normalized_weighted_edges,
+                                                  edges_percent=edges_percent,
+                                                  edges_number=edges_number,
+                                                  added_edges_percent_of=added_edges_percent_of,
+                                                  use_shared_gene_edges=use_shared_gene_edges,
+                                                  use_shared_phenotype_edges=use_shared_phenotype_edges,
+                                                  use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+                                                  use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+                                                  use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+                                                  use_gene_disease_graph=use_gene_disease_graph,
+                                                  use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+                                                  graph_edges_type=graph_edges_type,
+                                                  task=task,
+                                                  enforce_end2end=enforce_end2end,
+                                                  cross_validation=cross_validation,
+                                                  k_fold=k_fold,
+                                                  split=split,
+                                                  get_data_with_emb_as_feat=get_data_with_emb_as_feat,
+                                                  split_by_node=split_by_node)
+
+            elif task == 'node_classification':
+
+                data_with_features = run_node2vec(data,
+                                                  graph_with_added_qualified_edges,
+                                                  data_with_features,
+                                                  use_saved_emb_file=use_saved_emb_file,
+                                                  add_qualified_edges=add_qualified_edges,
+                                                  dataset=dataset,
+                                                  use_weighted_edges=use_weighted_edges,
+                                                  normalized_weighted_edges=normalized_weighted_edges,
+                                                  edges_percent=edges_percent,
+                                                  edges_number=edges_number,
+                                                  added_edges_percent_of=added_edges_percent_of,
+                                                  use_shared_gene_edges=use_shared_gene_edges,
+                                                  use_shared_phenotype_edges=use_shared_phenotype_edges,
+                                                  use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+                                                  use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+                                                  use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+                                                  use_gene_disease_graph=use_gene_disease_graph,
+                                                  use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+                                                  graph_edges_type=graph_edges_type,
+                                                  task=task,
+                                                  enforce_end2end=enforce_end2end,
+                                                  cross_validation=cross_validation,
+                                                  k_fold=k_fold,
+                                                  split=split,
+                                                  get_data_with_emb_as_feat=get_data_with_emb_as_feat,
+                                                  split_by_node = split_by_node)
+
+
+            else:
+                raise ValueError(
+                    'task only appect link_prediction or node_classification as its value')
+
+        # TODO here>>-5 figure out a way to get data_with_features > for each split in cross validation
+
         # add features to data (read from emb_File)
         # note: step to create emb_file is as followed
         #     1. run Embedding.node2vec_emb.py (it will save to file location for you)
@@ -345,48 +478,29 @@ def get_data_feat(data=None,
         # TODO all of the argument variation output same report_performancea
         # TODO add agument option for use_weighted_edges
         # TODO edges_number of edges_adding strategy is not yet implementing
-        data_with_features = get_data_with_emb_as_feat(data,
-                                                       use_saved_emb_file,
-                                                       add_qualified_edges,
-                                                       dataset,
-                                                       use_weighted_edges,
-                                                       normalized_weighted_edges,
-                                                       edges_percent,
-                                                       edges_number,
-                                                       added_edges_percent_of,
-                                                       use_shared_gene_edges,
-                                                       use_shared_phenotype_edges,
-                                                       use_shared_gene_and_phenotype_edges,
-                                                       use_shared_gene_but_not_phenotype_edges,
-                                                       use_shared_phenotype_but_not_gene_edges,
-                                                       use_gene_disease_graph,
-                                                       use_phenotype_gene_disease_graph,
-                                                       graph_edges_type
-                                                       )
+        # data_with_features = get_data_with_emb_as_feat(data,
+        #                                                # use_saved_emb_file,
+        #                                                add_qualified_edges,
+        #                                                dataset,
+        #                                                use_weighted_edges,
+        #                                                normalized_weighted_edges,
+        #                                                edges_percent,
+        #                                                edges_number,
+        #                                                added_edges_percent_of,
+        #                                                use_shared_gene_edges,
+        #                                                use_shared_phenotype_edges,
+        #                                                use_shared_gene_and_phenotype_edges,
+        #                                                use_shared_gene_but_not_phenotype_edges,
+        #                                                use_shared_phenotype_but_not_gene_edges,
+        #                                                use_gene_disease_graph,
+        #                                                use_phenotype_gene_disease_graph,
+        #                                                graph_edges_type,
+        #                                                task,
+        #                                                split,
+        #                                                k_fold,
+        #                                                # need it to choose file name
+        #                                                )
 
-    else:
-        # add feature to Data (no embedding)
-        # note: node embedding is only expected to be read from emb_file
-        # TODO all of the argument variation output same report_performancea
-        data_with_features = get_data_without_using_emb_as_feat(data=data,
-                                                                add_qualified_edges=add_qualified_edges,
-                                                                dataset=dataset,
-                                                                use_weighted_edges=use_weighted_edges,
-                                                                return_graph_and_data_with_features=False,
-                                                                use_saved_emb_file=use_saved_emb_file,
-                                                                normalized_weighted_edges=normalized_weighted_edges,
-                                                                edges_percent=edges_percent,
-                                                                edges_number=edges_number,
-                                                                added_edges_percent_of=added_edges_percent_of,
-                                                                use_shared_gene_edges=use_shared_gene_edges,
-                                                                use_shared_phenotype_edges=use_shared_phenotype_edges,
-                                                                use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
-                                                                use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
-                                                                use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
-                                                                use_gene_disease_graph=use_gene_disease_graph,
-                                                                use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
-                                                                graph_edges_type = graph_edges_type
-                                                                )
     assert data_with_features is not None, ""
 
     # # get edges that were added

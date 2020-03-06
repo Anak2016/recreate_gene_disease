@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import networkx as nx
 
 class Converter:
     def __init__(self, GeneDisease_data):
@@ -86,6 +87,22 @@ class Converter:
     @property
     def cui2class_id_dict(self):
         return self._cui2class_id_dict
+
+# def create_grpah_from_emb_file(use_saved_emb_file,emb_file):
+#     """
+#
+#     @param use_saved_emb_file: it should be passed in, just to make sure that the function is placed in the correct location
+#     @param emb_file:
+#     @return:
+#     """
+#     assert use_saved_emb_file, "to use create_graph_from_emb_file(), use_saved_emb_file has to be passed in "
+#     graph_from_emb_file = nx.Graph()
+#
+#     # emb_pd = pd.read_csv(emb_file)
+#     # TODO  how to get edges from emd_file
+#
+#
+#     return
 
 def convert2binary_classifier_prediction(multiclass_clf):
     """

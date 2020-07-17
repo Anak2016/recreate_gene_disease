@@ -9,6 +9,7 @@ from Sources.Preparation.Data.conversion import Converter
 from Sources.Preparation.Data.make_dataset import \
     get_diseases_that_are_overlapped_between_GPSim_and_GeneDisease_graph
 from global_param import *
+from Sources.Preparation.Data import GeneDiseaseGeometricDataset
 
 # =====================
 # ==Conditional Code
@@ -20,7 +21,8 @@ def get_disease2disease_qualified_edges(data, dataset, use_weighted_edges,
                                         use_shared_phenotype_edges,
                                         use_shared_gene_and_phenotype_edges,
                                         use_shared_gene_but_not_phenotype_edges,
-                                        use_shared_phenotype_but_not_gene_edges):  # expect to return df
+                                        use_shared_phenotype_but_not_gene_edges,
+                                        use_shared_gene_or_phenotype_edges):  # expect to return df
     ### for all edges if it has common neighbor select them
     if dataset == "GeneDisease":
         all_qualified_disease2disease_edges_df = get_GeneDisease_disease2disease_qualified_edges(
@@ -30,7 +32,9 @@ def get_disease2disease_qualified_edges(data, dataset, use_weighted_edges,
             use_shared_phenotype_edges,
             use_shared_gene_and_phenotype_edges,
             use_shared_gene_but_not_phenotype_edges,
-            use_shared_phenotype_but_not_gene_edges)  # expect to return df
+            use_shared_phenotype_but_not_gene_edges,
+            use_shared_gene_or_phenotype_edges
+        )  # expect to return df
 
     elif dataset == 'GPSim':
 
@@ -51,7 +55,8 @@ def get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data,
                                                                    use_shared_phenotype_edges=None,
                                                                    use_shared_gene_and_phenotype_edges=None,
                                                                    use_shared_gene_but_not_phenotype_edges=None,
-                                                                   use_shared_phenotype_but_not_gene_edges=None):
+                                                                   use_shared_phenotype_but_not_gene_edges=None,
+                                                                   use_shared_gene_or_phenotype_edges=None):
     """
         This function currently only implmented for UNWEIGHTED edges 
         @todo implement the function for weighted verion -> where should I change or adjust it?
@@ -65,25 +70,33 @@ def get_all_GeneDisease_unweighted_disease2disease_qualified_edges(data,
     assert use_shared_gene_and_phenotype_edges is not None, "use_shared_gene_and_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_gene_but_not_phenotype_edges is not None, "use_shared_gene_but_not_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
+    assert use_shared_gene_or_phenotype_edges is not None, " must be specified to avoid ambiguity"
 
     if use_shared_gene_edges and (not use_shared_phenotype_edges):
+        # Note: There are 795 edges
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_genes(
             data, use_overlapped_disease=False)
 
     elif use_shared_phenotype_edges and (not use_shared_gene_edges):
+        # Note: There are 673 edges
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_phenotype(
             data, use_overlapped_disease=False)
 
-    elif use_shared_gene_edges and use_shared_phenotype_edges:
+    # elif use_shared_gene_edges and use_shared_phenotype_edges:
+    elif use_shared_gene_or_phenotype_edges:
+        # Note: There are 1404 edges
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_gene_or_phenotype(
             data, use_overlapped_disease=False)
     elif use_shared_gene_and_phenotype_edges:
+        # Note: There are 64 edges
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_gene_and_phenotype(
             data, use_overlapped_disease=False)
     elif use_shared_gene_but_not_phenotype_edges:
+        # Note: There are 731 edges
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_gene_but_not_phenotype_edges(
             data, use_overlapped_disease=False)
     elif use_shared_phenotype_but_not_gene_edges:
+        # Note: There are 609 edges.
         all_qualified_disease2disease_edges_pd = get_qualified_disease2disease_edges_with_shared_phenotype_but_not_gene_edges(
             data, use_overlapped_disease=False)
     else:
@@ -104,7 +117,8 @@ def get_GeneDisease_disease2disease_qualified_edges(data,
                                                     use_shared_phenotype_edges,
                                                     use_shared_gene_and_phenotype_edges,
                                                     use_shared_gene_but_not_phenotype_edges,
-                                                    use_shared_phenotype_but_not_gene_edges):
+                                                    use_shared_phenotype_but_not_gene_edges,
+                                                    use_shared_gene_or_phenotype_edges):
     """
 
     @param G: networkx.Graph()
@@ -112,8 +126,9 @@ def get_GeneDisease_disease2disease_qualified_edges(data,
     @return: list of qualified edges; shape = (-1, 2)
     """
 
-    # TODO currently there is no different between use_weighted_edges = True/False because qualified edges of GeneDisease has no weight
-    # note: potential weight of qualified edges are jaccard coefficient among other
+    # Note
+    #   >currently there is no different between use_weighted_edges = True/False because qualified edges of GeneDisease has no weight
+    #   > potential weight of qualified edges are jaccard coefficient among other
     if use_weighted_edges:
         raise ValueError(
             'not yet implemented: currently i am not working any qualified edges of GeneDisease that has weight')
@@ -126,7 +141,10 @@ def get_GeneDisease_disease2disease_qualified_edges(data,
             use_shared_phenotype_edges=use_shared_phenotype_edges,
             use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
             use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
-            use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges)
+            use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+            use_shared_gene_or_phenotype_edges=use_shared_gene_or_phenotype_edges,
+        )
+
 
     return all_qualified_disease2disease_edges
 
@@ -260,6 +278,7 @@ def get_qualified_disease2disease_edges_with_shared_genes(data,
 
     qualified_diseases_np = get_qualified_diseases(data,
                                                    use_overlapped_disease)
+
 
     # overlapped_diseases_np = get_diseases_that_are_overlapped_between_GPSim_and_GeneDisease_graph()
     all_qualified_disease2disease_edges = list(
@@ -651,3 +670,21 @@ def get_qualified_diseases(data, use_overlapped_disease):
         qualified_diseases_np), "some of the generated overlapped diseases are not in the original GEneDisease diseases nodes "
 
     return qualified_diseases_np
+
+
+
+# def are_nodes_pair_shared_at_least_a_node(G, node1, node2):
+#
+#     assert isinstance(node1, str), f'node1 must have type = str: we get {node1}'
+#     assert isinstance(node2, str), f'node2 must have type = str; we get {node2}'
+#     gene_disease_geometric_datset = GeneDiseaseGeometricDataset(GENEDISEASE_ROOT)
+#     assert gene_disease_geometric_datset.is_in_original_diseases([node1, node2])
+#     node1_neighbor = set(G[node1])
+#
+#     node2_neighbor = set(G[node2])
+#
+#     return len(node1_neighbor.intersection(node2_neighbor)) >
+
+
+
+

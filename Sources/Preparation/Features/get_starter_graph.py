@@ -6,7 +6,7 @@ from Sources.Preparation.Data.make_dataset import GeneDiseaseGeometricDataset
 from global_param import *
 
 
-def get_graph(use_gene_disease_graph=None,
+def get_graph(data, use_gene_disease_graph=None,
               use_phenotype_gene_disease_graph=None,
               graph_edges_type=None):
     """
@@ -16,15 +16,17 @@ def get_graph(use_gene_disease_graph=None,
     """
     assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
     assert use_phenotype_gene_disease_graph is not None, "use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
-    assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    # assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
 
     if use_phenotype_gene_disease_graph:
         assert isinstance(use_phenotype_gene_disease_graph,
                           bool), "add_phenotype_nodes only accept boolean type"
 
     # get GeneDisease graph as a starter grap
-    data = GeneDiseaseGeometricDataset(GENEDISEASE_ROOT)
-    GeneDisease_graph = data.original_GeneDisease_edges
+    # TODO here>>-10
+    # data = GeneDiseaseGeometricDataset(GENEDISEASE_ROOT)
+    # GeneDisease_graph = data.original_GeneDisease_edges
+    GeneDisease_graph = data.G
 
     if use_phenotype_gene_disease_graph:
         if graph_edges_type == 'phenotype_gene_disease':
@@ -73,7 +75,6 @@ def get_graph(use_gene_disease_graph=None,
         else:
             raise ValueError("")
 
-
     elif use_gene_disease_graph:
         starter_graph = GeneDisease_graph
     else:
@@ -84,7 +85,10 @@ def get_graph(use_gene_disease_graph=None,
 
 
 def add_phenotype_gene_disease_phenotype_edges_to_graph(data, G):
+    # Note: phenotype2disease_pd.shape[0] = 685 and phenotype2gene_pd.shape[0] = 380
     weighted_phenotype_gene_disease_phenotype_edges_np, phenotype2disease_pd, phenotype2gene_pd  = get_phenotype_gene_disease_phenotype_edges(data)
+
+    # Note: uniq_nodes = 467
     uniq_nodes = np.unique(weighted_phenotype_gene_disease_phenotype_edges_np[:,
               :-1].flatten().astype(str))
 
@@ -150,9 +154,11 @@ def add_phenotype_gene_disease_edges_to_graph(data, G):
     @param G: type=nx.Graph
     @return: graph_with_added_phenotype_gene_disease_edges: type=nx.Graph
     """
+    # Note: weighted_phenotype2disease_edges_that_contain_qualified_cui_nodes_np.shape[0] == 685
     weighted_phenotype2disease_edges_that_contain_qualified_cui_nodes_np = get_phenotype_gene_disease_edges(
         data)
 
+    # Note: 441
     uniq_nodes = np.unique(weighted_phenotype2disease_edges_that_contain_qualified_cui_nodes_np[:,
                            :-1].flatten().astype(str))
 

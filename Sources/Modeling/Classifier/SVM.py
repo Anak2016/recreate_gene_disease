@@ -1,15 +1,21 @@
-import matplotlib.pyplot as plt
+import pandas as pd
 import numpy as np
 from sklearn import svm
-from sklearn.model_selection import StratifiedKFold
 
-from Sources.Evaluation.evaluation import \
-    report_average_performance_of_cross_validation
+from Sources.Preprocessing import get_saved_file_name_for_emb
+from Sources.Preprocessing import select_emb_save_path
 from Sources.Evaluation.evaluation import report_performance
 from Sources.Evaluation.evaluation import run_clf_using_cross_validation
 
 
 # from Sources.Evaluation.evaluation import run_cross_validation
+from Utilities.saver import save2file
+from arg_parser import args
+from global_param import DIM
+from global_param import NUM_WALKS
+from global_param import WALK_LEN
+from global_param import WINDOW
+
 
 
 def run_svm_using_test_train_split(data, data_with_features, split, task):
@@ -23,8 +29,10 @@ def run_svm_using_test_train_split(data, data_with_features, split, task):
     # split training set and test set
     (x_train, y_train), (x_test, y_test) = data.split_train_test(split,
                                                                  stratify=True,
-                                                                 task=task,
-                                                                 reset_train_test_split=True)
+                                                                 task=task)
+                                                                 # reset_train_test_split=True,
+                                                                 # splitted_edges_dir=
+                                                                 # split_by_node=True)
     x_train_with_features, x_test_with_features = data_with_features.loc[
                                                       x_train], \
                                                   data_with_features.loc[
@@ -47,11 +55,15 @@ def run_svm_using_test_train_split(data, data_with_features, split, task):
 
     # report performance of model 
     print('=======training set=======')
-    report_performance(y_train, y_train_pred, y_train_pred_proba,
-                       np.unique(y_train), plot=True, verbose=True)
+    train_report_np, train_columns, train_index = report_performance(y_train, y_train_pred, y_train_pred_proba,
+                       np.unique(y_train), plot=True, verbose=True, return_value_for_cv=True)
     print('=======test set=======')
-    report_performance(y_test, y_test_pred, y_test_pred_proba,
-                       np.unique(y_test), plot=True, verbose=True)
+    test_report_np, test_columns,  test_index = report_performance(y_test, y_test_pred, y_test_pred_proba,
+                       np.unique(y_test), plot=True, verbose=True, return_value_for_cv=True)
+
+    #========= save to file=========
+    save2file(train_report_np, train_columns, train_index,
+              test_report_np, test_columns, test_index)
 
 
 def run_svm_for_each_fold(x_train_with_features,
@@ -85,7 +97,9 @@ def run_svm_using_cross_validation(data, data_with_features, k_fold,
                                    show_only_average_result=False,
                                    save_report_performance=None,
                                    report_performance_file_path=None,
-                                   task=None):
+                                   task=None,
+                                   split_by_node=None
+                                   ):
     """
 
     @param X: numpy
@@ -100,7 +114,8 @@ def run_svm_using_cross_validation(data, data_with_features, k_fold,
                                    report_performance_file_path=report_performance_file_path,
                                    run_clf_for_each_fold=run_svm_for_each_fold,
                                    task=task,
-                                   edges_as_data=False
+                                   edges_as_data=False,
+                                   split_by_node=split_by_node
                                    )
 
     # assert save_report_performance is not None, "save_report_performance must be specified to avoid ambiguity"
@@ -265,7 +280,7 @@ def run_svm_node_classification(data,
                                 cross_validation,
                                 split,
                                 k_fold,
-                                task
+                                task,
                                 ):
     # TODO looks of the saved pd are not readable: This option will be avialbe when I make the saved file readable
     # path_to_saved_emb_dir = select_emb_save_path(save_path_base='report_performance',
@@ -295,7 +310,8 @@ def run_svm_node_classification(data,
         run_svm_using_cross_validation(data, x_with_features, k_fold,
                                        show_only_average_result=True,
                                        save_report_performance=False,
-                                       task=task)
+                                       task=task,
+                                       split_by_node=True)
 
         # run_svm_using_cross_validation(data, x_with_features, k_fold,
         #                                only_show_average_result=True,
@@ -324,7 +340,7 @@ def run_svm(data=None, x_with_features=None, cross_validation=None,
             use_gene_disease_graph=None,
             use_phenotype_gene_disease_graph=None,
             graph_edges_type=None,
-            task=None
+            task=None,
             ):
     """
 
@@ -347,13 +363,14 @@ def run_svm(data=None, x_with_features=None, cross_validation=None,
     assert use_shared_gene_and_phenotype_edges is not None, "use_shared_gene_and_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_gene_but_not_phenotype_edges is not None, "use_shared_gene_but_not_phenotype_edges must be specified to avoid ambiguity"
     assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
-    assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    # assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
     assert task is not None, "task must be specified to avoid ambiguity"
+
 
     run_svm_node_classification(data,
                                 x_with_features,
                                 cross_validation,
                                 split,
                                 k_fold,
-                                task
+                                task,
                                 )

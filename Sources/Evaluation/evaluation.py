@@ -28,6 +28,8 @@ def report_performance(y_true, y_pred, y_score, labels, verbose=None,
 
     assert len(labels) > 1 , "minimum label = 2 (aka binary classification)"
 
+    plot = False
+
     report_sklearn_classification_report = classification_report(y_true,
                                                                  y_pred,
                                                                  labels,
@@ -68,20 +70,24 @@ def report_performance(y_true, y_pred, y_score, labels, verbose=None,
     normalized_row = np.apply_along_axis(lambda x: [i / sum(x) for i in x], 1,
                                          y_score)
 
-    ## create total_roc_auc_score; output shape = 1
-    if 2 == np.unique(y_true).shape[0] and 2 == normalized_row.shape[1]:
-        total_roc_auc_score = roc_auc_score(y_true, normalized_row[:, 1],
-                                            multi_class='ovo')
-    else:
-        total_roc_auc_score = roc_auc_score(y_true, normalized_row,
-                                            multi_class='ovo')
+    # ## create total_roc_auc_score; output shape = 1
+    # if 2 == np.unique(y_true).shape[0] and 2 == normalized_row.shape[1]:
+    #     total_roc_auc_score = roc_auc_score(y_true, normalized_row[:, 1],
+    #                                         multi_class='ovo')
+    # else:
+    #     total_roc_auc_score = roc_auc_score(y_true, normalized_row,
+    #                                         multi_class='ovo')
+
     # print(roc_auc_score(y_true, normalized_row, multi_class='ovo'))
 
     # TODO figure out why roc score is very low? what did I do wrong?
     ## read how get_roc_curve() works
 
     ##  create per class roc_auc_score; output shape = [# of instances]
-    fpr, tpr, roc_auc = get_roc_curve(pd.get_dummies(y_true).to_numpy(),
+
+    tmp = pd.get_dummies(y_true).to_numpy()
+    tmp = np.hstack((tmp, np.zeros(tmp.shape[0]).reshape(-1, 1)))
+    fpr, tpr, roc_auc = get_roc_curve(tmp,
                                       y_score, labels.shape[0])
 
     roc_auc = {i: [j] for i, j in roc_auc.items()}
@@ -202,8 +208,10 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
                                    run_clf_for_each_fold=None,
                                    task=None,
                                    edges_as_data=None,
-                                   splitted_edges_dir=None
+                                   splitted_edges_dir=None,
+                                   split_by_node=None
                                    ):
+
     assert save_report_performance is not None, "save_report_performance must be specified to avoid ambiguity"
     assert run_clf_for_each_fold is not None, "run_clf_for_each_fold must be specified to avoid ambiguity"
     assert isinstance(edges_as_data, bool), ''
@@ -247,10 +255,137 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
     #                                     # reset_cross_validation_split=False,
     #                                     splitted_edges_dir=splitted_edges_dir
     #                                     )):
+
+    # TODO to be deleted after finished getting result from k_fold = 101
+
+    # for i, (train_test_dict) in enumerate(
+    #         data.split_cross_validation(data, k_fold, stratify=True, task=task,
+    #                                     split_by_node=split_by_node,
+    #                                     # reset_cross_validation_split=False,
+    #                                     splitted_edges_dir=splitted_edges_dir,
+    #                                     )):
+    #     train_set = train_test_dict['train_set']
+    #     test_set = train_test_dict['test_set']
+    #     # for i, (train_ind, test_ind) in enumerate(skf.split(x, disease_class)):
+    #
+    #     x_train, y_train = train_set[:, :-1], train_set[:, -1]
+    #     x_test, y_test = test_set[:, :-1], test_set[:, -1]
+    #
+    #     # TODO here>>-2 paragraph of code below will be move to run_node2vec with task == 'node_classification'
+    #     # x_train, y_train = x[train_ind], disease_class[train_ind]
+    #     # x_test, y_test = x[test_ind], disease_class[test_ind]
+    #     if edges_as_data:
+    #         train_instances = []
+    #         test_instances = []
+    #
+    #         for node1, node2, _ in train_set:
+    #             edge_instance = f'{node1}_{node2}'
+    #             train_instances.append(edge_instance)
+    #         for node1, node2, _ in test_set:
+    #             edge_instance = f'{node1}_{node2}'
+    #             test_instances.append(edge_instance)
+    #
+    #     # x = f'C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\LinkPrediction\\GeneDiseaseProject\\copd\\PhenotypeGeneDisease\\PGDP\\Node2Vec\\UnweightedEdges\\NoAddedEdges\\SplitByNode\\KFold=101\\DecendingOrder\\{i}\\dim64_walk_len30_num_walks200_window10.txt'
+    #     # from Sources.Preparation.Features import get_instances_with_features
+    #     # data_with_features_dict[i] = get_instances_with_features(
+    #     #     use_saved_emb_file=True,
+    #     #     path_to_saved_emb_file=x,
+    #     #     normalized_weighted_edges=False
+    #     # )
+    #
+    #     # TODO here>>-9 validate that slicing dataframe output desired outcome.
+    #     x_train_with_features, x_test_with_features = \
+    #         data_with_features_dict[i].loc[
+    #             train_instances], \
+    #         data_with_features_dict[i].loc[
+    #             test_instances]
+    #
+    #     # x_train_with_features, x_test_with_features = data_with_features.loc[
+    #     #                                                   x_train], \
+    #     #                                               data_with_features.loc[
+    #     #                                                   x_test]
+    #     y_train = y_train.astype(float)
+    #     y_train = y_train.astype(int)
+    #     y_test = y_test.astype(float)
+    #     y_test = y_test.astype(int)
+    #
+    #     # # garantee that
+    #     # assert y_train[0] == x_train_with_features.shape[0], 'Dataleakage! x_test and x_train contain the same nonexisted_edges '
+    #     # assert y_test[0] == x_test_with_features.shape[0], 'Dataleakage! x_test and x_train contain the same nonexisted_edges '
+    #
+    #     # TODO here>>-8 this is a quickfix to run the model => Goal is to see whether there are any more error other thna one cause by input dataset
+    #     ## does this effect the outcome in unpredicatable way
+    #     x_train_with_features = x_train_with_features.drop_duplicates()
+    #     x_test_with_features = x_test_with_features.drop_duplicates()
+    #
+    #
+    #     y_train_pred, y_train_pred_proba, y_test_pred, y_test_pred_proba = run_clf_for_each_fold(
+    #         x_train_with_features,
+    #         x_test_with_features,
+    #         y_train, y_test)
+    #
+    #     # TODO paragraph of code below is moved to run_svm_for_each_fold()
+    #     ## Goal is to make the function reuseable by different classifer( which is library/function dependent)
+    #     # # TODO debugging paramter of clr to make it binary clasiifier
+    #     # # train model
+    #     # clf = svm.SVC(gamma='scale', decision_function_shape='ovr',
+    #     #               probability=True)
+    #     # # clf = svm.SVC(kernel='linear', probability=True)  # her
+    #     #
+    #     # clf.fit(x_train_with_features, y_train)
+    #     #
+    #     # ## train set
+    #     # ### use decision_function
+    #     # y_train_pred = clf.decision_function(x_train_with_features).argmax(1)
+    #     # y_train_pred_proba = clf.decision_function(x_train_with_features)
+    #     #
+    #     # ## test set
+    #     # ### use decision function
+    #     # y_test_pred = clf.decision_function(x_test_with_features).argmax(1)
+    #     # y_test_pred_proba = clf.decision_function(x_test_with_features)
+    #
+    #     if not show_only_average_result:
+    #         print(f"================training cv ={i}==================")
+    #
+    #     report_final_train_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
+    #         y_train, y_train_pred, y_train_pred_proba, np.unique(y_train),
+    #         verbose=not show_only_average_result,
+    #         plot=False, return_value_for_cv=True)
+    #
+    #     if not show_only_average_result:
+    #         print(f"================test cv ={i}==================")
+    #
+    #     report_final_test_performance_report_np, columns_of_performance_metric, indices_of_performance_metric = report_performance(
+    #         y_test, y_test_pred, y_test_pred_proba, np.unique(y_test),
+    #         verbose=not show_only_average_result,
+    #         plot=False, return_value_for_cv=True)
+    #
+    #     if sum_final_test_performance_report_np is None:
+    #         sum_final_test_performance_report_np = report_final_test_performance_report_np
+    #         sum_final_train_performance_report_np = report_final_train_performance_report_np
+    #     else:
+    #         sum_final_test_performance_report_np = sum_final_test_performance_report_np + report_final_test_performance_report_np
+    #         sum_final_train_performance_report_np = sum_final_train_performance_report_np + report_final_train_performance_report_np
+    #
+    #     # = convert2binary_classifier_prediction(x_train_with_features, y_train)
+    #
+    #     # TODO convert clf to binary blf (refer to notebook for more information)
+    #     # # visualize_roc_curve with cross validation
+    #     # ## train set
+    #     # ax_train, tprs_train, aucs_train = visualize_roc_curve_with_cross_validation_1(
+    #     #     clf, i, x_train_with_features, y_train, mean_fpr_train, tprs_train,
+    #     #     aucs_train, ax_train)
+    #     # ## test_set
+    #     # ax_test, tprs_test, aucs_test = visualize_roc_curve_with_cross_validation_1(
+    #     #     clf, i, x_test_with_features, y_test, mean_fpr_test, tprs_test,
+    #     #     aucs_test, ax_test)
+
+    splitted_edges_dir = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode\KFold=101\DecendingOrder\\'
     for i, (train_test_dict) in enumerate(
-            data.split_cross_validation(data, k_fold, stratify=True, task=task,
+            data.split_cross_validation(data, 101, stratify=True, task=task,
+                                        split_by_node=split_by_node,
                                         # reset_cross_validation_split=False,
-                                        splitted_edges_dir=splitted_edges_dir
+                                        splitted_edges_dir=splitted_edges_dir,
                                         )):
         train_set = train_test_dict['train_set']
         test_set = train_test_dict['test_set']
@@ -262,6 +397,7 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
         # TODO here>>-2 paragraph of code below will be move to run_node2vec with task == 'node_classification'
         # x_train, y_train = x[train_ind], disease_class[train_ind]
         # x_test, y_test = x[test_ind], disease_class[test_ind]
+        # TODO here>>-10 create another variable type = dataframe whose row = edges
         if edges_as_data:
             train_instances = []
             test_instances = []
@@ -273,9 +409,15 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
                 edge_instance = f'{node1}_{node2}'
                 test_instances.append(edge_instance)
 
-        # todo test data doesn't exist in data_with_features_dict => because
+        x = f'C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\LinkPrediction\\GeneDiseaseProject\\copd\\PhenotypeGeneDisease\\PGDP\\Node2Vec\\UnweightedEdges\\NoAddedEdges\\SplitByNode\\KFold=101\\DecendingOrder\\{i}\\dim64_walk_len30_num_walks200_window10.txt'
+        from Sources.Preparation.Features import get_instances_with_features
+        data_with_features_dict[i] = get_instances_with_features(
+            use_saved_emb_file=True,
+            path_to_saved_emb_file=x,
+            normalized_weighted_edges=False
+        )
 
-        # TODO do I have the correct value for data_with_features_dict
+        # TODO here>>-9 validate that slicing dataframe output desired outcome.
         x_train_with_features, x_test_with_features = \
             data_with_features_dict[i].loc[
                 train_instances], \
@@ -296,8 +438,10 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
         # assert y_test[0] == x_test_with_features.shape[0], 'Dataleakage! x_test and x_train contain the same nonexisted_edges '
 
         # TODO here>>-8 this is a quickfix to run the model => Goal is to see whether there are any more error other thna one cause by input dataset
+        ## does this effect the outcome in unpredicatable way
         x_train_with_features = x_train_with_features.drop_duplicates()
         x_test_with_features = x_test_with_features.drop_duplicates()
+
 
         y_train_pred, y_train_pred_proba, y_test_pred, y_test_pred_proba = run_clf_for_each_fold(
             x_train_with_features,
@@ -311,14 +455,14 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
         # clf = svm.SVC(gamma='scale', decision_function_shape='ovr',
         #               probability=True)
         # # clf = svm.SVC(kernel='linear', probability=True)  # her
-        # 
+        #
         # clf.fit(x_train_with_features, y_train)
-        # 
+        #
         # ## train set
         # ### use decision_function
         # y_train_pred = clf.decision_function(x_train_with_features).argmax(1)
         # y_train_pred_proba = clf.decision_function(x_train_with_features)
-        # 
+        #
         # ## test set
         # ### use decision function
         # y_test_pred = clf.decision_function(x_test_with_features).argmax(1)

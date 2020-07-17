@@ -66,6 +66,7 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
                          use_shared_phenotype_but_not_gene_edges=None,
                          use_gene_disease_graph=None,
                          use_phenotype_gene_disease_graph=None,
+                        use_shared_gene_or_phenotype_edges=None,
                          graph_edges_type = None,
                          task = None,
                          split=None,
@@ -94,19 +95,20 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
     assert use_shared_phenotype_but_not_gene_edges is not None, "use_shared_phenotype_but_not_gene_edges must be specified to avoid ambiguity"
     assert use_gene_disease_graph is not None, "use_gene_disease_graph must be specified to avoid ambiguity"
     assert use_phenotype_gene_disease_graph is not None, "use_phenotype_gene_disease_graph must be specified to avoid ambiguity"
-    assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
+    # assert graph_edges_type is not None, "graph_edges_type must be specified to avoid ambiguity"
     assert task is not None, "task must be specified to avoid ambiguity"
     # assert split is not None, "split must be specified to avoid ambiguity"
 
-    # if task ==
-    # if k_fold is not None:
-    #     assert k_fold_ind is not None, "k_fold_ind must be specified to avoid ambiguity"
+    if k_fold is not None:
+        assert k_fold_ind is not None, "k_fold_ind must be specified to avoid ambiguity"
+    else:
+        assert split is not None, "if k_fold is none, split must be specified to avoid ambiguity"
 
     if save_path_base == 'data':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\"
     elif save_path_base == 'report_performance':
         save_path_base = f"C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\PerformanceResult\\"
-        raise ValueError("looks of the saved pd are not readable, This option will be available when I make the saved file readable")
+        # raise ValueError("looks of the saved pd are not readable, This option will be available when I make the saved file readable")
 
     if task == 'link_prediction':
         task_dir = 'LinkPrediction\\'
@@ -168,6 +170,8 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
 
     if emb_type == 'node2vec':
        emb_type_dir = "Node2Vec\\"
+    elif emb_type == 'gcn':
+        emb_type_dir = "GCN\\"
     else:
         raise ValueError("please specified em_type correctly")
 
@@ -187,7 +191,9 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
         use_initial_qualified_edges_option2 = [
             use_shared_gene_and_phenotype_edges,
             use_shared_gene_but_not_phenotype_edges,
-            use_shared_phenotype_but_not_gene_edges]
+            use_shared_phenotype_but_not_gene_edges,
+            use_shared_gene_or_phenotype_edges
+        ]
         assert sum(
             use_initial_qualified_edges_option2) <= 1, "no more than 1 of the following can be true at the same time:" \
                                                        "1. shared_gene_and_phenotype_edges OR" \
@@ -209,7 +215,8 @@ def select_emb_save_path(save_path_base = None, emb_type=None, add_qualified_edg
 
             elif use_shared_phenotype_but_not_gene_edges:
                 shared_nodes_edges_dir = "SharedPhenotypeNotGeneEdges\\"
-
+            elif use_shared_gene_or_phenotype_edges:
+                shared_nodes_edges_dir = "SharedGeneOrPhenotypeEdges\\"
             else:
                 raise ValueError('For option1, There are 3 option: '
                                  'shared_gene_and_phenotype_edges'
@@ -420,7 +427,9 @@ def get_number_of_added_edges(data,all_qualified_edges_df , edges_percent,
                                                                                                                                 use_shared_gene_edges=True,
                                                                                                                                 use_shared_gene_and_phenotype_edges = False,
                                                                                                                                 use_shared_gene_but_not_phenotype_edges = False,
-                                                                                                                                use_shared_phenotype_but_not_gene_edges = False)
+                                                                                                                                use_shared_phenotype_but_not_gene_edges = False,
+                                                                                                                                use_shared_gene_or_phenotype_edges=False
+                                                                                                                                )
 
 
             # qualified_edges_df = get_all_GeneDisease_qualified_edges(data,

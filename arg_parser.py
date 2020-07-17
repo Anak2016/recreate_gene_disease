@@ -39,6 +39,8 @@ parser.add_argument('--dataset', type=str, default='no',
 ### adding features
 parser.add_argument('--use_saved_emb_file', action='store_true', help="")
 # parser.add_argument('--add_qualified_edges', action='store_true', help="")
+parser.add_argument('--classifier_name', type=str, default=None,
+                    help='select between the following option: svm lr rf mlp')
 parser.add_argument('--add_qualified_edges', type=str, default=None,
                     help='specified strategy to be selected qualified edges to be added ')
 parser.add_argument('--use_weighted_edges', action='store_true', help="")
@@ -72,15 +74,17 @@ parser.add_argument('--use_gene_disease_graph', action='store_true', help="")
 #                                                                  '1. phenotype_gene_disease\n'
 #                                                                  '2. gene_disease\n')
 
-parser.add_argument('--graph_edges_type', type=str, default=None, help='there are 3 options:\n'
-                                                                       '1. phenotype_gene_disease\n'
-                                                                       '2. phenotype_gene_disease_phenotype\n')
+parser.add_argument('--graph_edges_type', type=str, default=None,
+                    help='there are 3 options:\n'
+                         '1. phenotype_gene_disease\n'
+                         '2. phenotype_gene_disease_phenotype\n')
 
 ### spliting train and test dataset
 #### train_test_split
 parser.add_argument('--split', type=float, default=None,
                     help='split specify test_size as percentage of dataset size; split is used when args.cross_validation is False')
-parser.add_argument('--split_by_node', action='store_true', help="split_by_node only used when task = 'link_prediction' ")
+parser.add_argument('--split_by_node', action='store_true',
+                    help="split_by_node only used when task = 'link_prediction' ")
 
 #### k fold cross validation
 parser.add_argument('--cv', action='store_true',
@@ -90,14 +94,16 @@ parser.add_argument('--k_fold', type=int, default=None,
 ## modeling
 
 ## task
-parser.add_argument('--task', type=str, default=None, help='please select between \n'
-                                                            '1. link prediction\n'
-                                                            '2. nodes classification\n')
-parser.add_argument('--enforce_end2end', action='store_true', help="apply emb then use emb as input to run_task. \n"
-                                                                   "note: error will be raised as following\n"
-                                                                   " 1. if --use_saved_emb_File is False, error is raised.\n "
-                                                                   " 2. if --use_saved_emb_file is True and emb_file does not exist, error is raised.\n"
-                                                                   "    error is raised to avoid unpredicted behavior\n")
+parser.add_argument('--task', type=str, default=None,
+                    help='please select between \n'
+                         '1. link prediction\n'
+                         '2. nodes classification\n')
+parser.add_argument('--enforce_end2end', action='store_true',
+                    help="apply emb then use emb as input to run_task. \n"
+                         "note: error will be raised as following\n"
+                         " 1. if --use_saved_emb_File is False, error is raised.\n "
+                         " 2. if --use_saved_emb_file is True and emb_file does not exist, error is raised.\n"
+                         "    error is raised to avoid unpredicted behavior\n")
 ## run multiple args condition
 parser.add_argument('--run_multiple_args_conditions', type=str, default=None,
                     help='')
@@ -112,25 +118,35 @@ assert args.run_multiple_args_conditions in [None, 'train_model',
 
 def apply_parser_constraint():
     # section for subparser
+
+    ##emb_type
+    assert args.emb_type in ['node2vec', 'gcn'], 'only 2 emb types are accepted '
+
+    ## classifier
+    assert args.classifier_name in ['lr', 'svm', 'rf',
+                                    'mlp'], 'only support the following classifier lr, svm, rf, and mlp '
+
     ## cross valdiation and train_tset_split
     if args.cv:
+        assert args.split is None, " split can only be between 0 and 1 "
         assert args.k_fold is not None, "if cv is true, k_fold must be set"
     else:
         assert args.k_fold is None, "if cv is false, k_fold have to be None; this implies that train_test_split will be used in stead "
-        assert  0< args.split < 1," split can only be between 0 and 1 "
+        assert 0 < args.split < 1, " split can only be between 0 and 1 "
 
     ## about task
-    assert args.task in ['link_prediction', 'node_classification'], 'for args.task, please select link_repdcition or node_classification'
+    assert args.task in ['link_prediction',
+                         'node_classification'], 'for args.task, please select link_repdcition or node_classification'
 
     if args.task == 'link_prediction':
-        assert args.dataset == 'no' and  args.graph_edges_type == 'phenotype_gene_disease_phenotype' and args.use_phenotype_gene_disease_graph, 'arg.task == link prediction, only support  the following condition\n' \
-                                                                                                                      '1. use_phenotype_gene_disease_graph is true\n' \
-                                                                                                                      '2. args.graph_edges_type == "phenotype_gene_disease_phenotype"'
+        pass
+        # assert args.dataset == 'no' and args.graph_edges_type == 'phenotype_gene_disease_phenotype' and args.use_phenotype_gene_disease_graph, 'arg.task == link prediction, only support  the following condition\n' \
+        #                                                                                                                                        '1. use_phenotype_gene_disease_graph is true\n' \
+        #                                                                                                                                        '2. args.graph_edges_type == "phenotype_gene_disease_phenotype"'
 
     ## about enforce_end2end
     if args.enforce_end2end:
         assert args.use_saved_emb_file, "args.enforce_end2end only apply with embedding"
-
 
     ## about starter graph
     starter_graph_constraint = [args.use_gene_disease_graph,
@@ -140,14 +156,15 @@ def apply_parser_constraint():
             assert args.graph_edges_type is None, "for gene_disease graph, graph_edges_type is not supported"
 
         if args.use_phenotype_gene_disease_graph:
-            if args.graph_edges_type not in ['phenotype_gene_disease','phenotype_gene_disease_phenotype']:
+            if args.graph_edges_type not in ['phenotype_gene_disease',
+                                             'phenotype_gene_disease_phenotype']:
                 raise ValueError(
                     'graph_edges_type only support for phenotype_gene_disease and phenotype_gene_disease_phenotype')
 
     else:
-        print( "you must specify exactly 1 starter graph, including\n" 
-                                        "1. use_gene_disease_graph\n" 
-                                        "2. use_phenotype_disease_graph\n")
+        print("you must specify exactly 1 starter graph, including\n"
+              "1. use_gene_disease_graph\n"
+              "2. use_phenotype_disease_graph\n")
 
     ## about shared_nodes when adding qualified edges to graph
     if args.add_qualified_edges is None:
@@ -160,7 +177,8 @@ def apply_parser_constraint():
         use_initial_qualified_edges_option2 = [
             args.use_shared_gene_and_phenotype_edges,
             args.use_shared_gene_but_not_phenotype_edges,
-            args.use_shared_phenotype_but_not_gene_edges]
+            args.use_shared_phenotype_but_not_gene_edges,
+            args.use_shared_gene_or_phenotype_edges]
         assert sum(
             use_initial_qualified_edges_option2) <= 1, "no more than 1 of the following can be true at the same time:\n" \
                                                        "1. shared_gene_and_phenotype_edges OR\n" \
@@ -189,20 +207,32 @@ def apply_parser_constraint():
     ## on edges_percent cases
     ### note: added_number_of_edges is implemented in get_number_of_added_edges()
     if args.edges_percent is None:
+        if args.dataset not in ['no']:
+            raise ValueError('if edges_percent is None, args.dataset must be "no" to be explicit that no edges will not be added to the original gene-disease graph')
         assert args.added_edges_percent_of is None, "added_edges_percent_of only need to be specified when edges_percent is not None"
     else:
         assert args.added_edges_percent_of is not None, "added_edges_percent_of need to be specified when edges_percent is not None"
 
+        # if args.added_edges_percent_of not in ["GeneDisease", "GPSim", "no"]:
         if args.added_edges_percent_of not in ["GeneDisease", "GPSim", "no"]:
             raise ValueError(
                 "edges can only be added from extracted qualified edges of GeneDisease and GPSim dataset")
+        if args.added_edges_percent_of in ["no"]:
+            raise ValueError('not sure what this condition is. have to check in detail later. I believe there is nothing serious however')
 
         assert args.edges_percent <= 1, "percent is expected to be between range of 0 to 1 "
-        assert args.edges_percent > 0, "percent need to be more than 0. (please use dataset = 'no' and add_qulified_edges is None instead) "
+        assert args.edges_percent > 0, "percent need to be more than 0. ( edges_percent = None please use dataset = 'no' and add_qulified_edges is None instead,) "
 
     ## validation about use cases of add_qualified_edges
     if args.add_qualified_edges is not None:
-        if args.add_qualified_edges not in ['top_k', 'bottom_k']:
+        # if args.add_qualified_edges not in ['top_k', 'bottom_k_']:
+        if args.add_qualified_edges not in ['top_k',
+                                            'bottom_k_deterministic',
+                                            'top_bottom_k_deterministic',
+                                            'top_k_random', 'bottom_k_random',
+                                            'top_bottom_k_random',
+                                            'shared_nodes_random',
+                                            'all_nodes_random']:
             raise ValueError(
                 "for add_qualified_edges, only top_k is implemented")
 
@@ -252,6 +282,7 @@ def run_args_conditions(run_model_func, apply_parser_constraint_func,
 def reset_args():
     args.use_shared_gene_edges = False
     args.use_shared_phenotype_edges = False
+    args.use_shared_gene_or_phenotype_edges = False
     args.use_shared_phenotype_edge = False
     args.use_share_gene_edges = False
     args.use_shared_gene_and_phenotype_edges = False
@@ -268,131 +299,239 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
     @return:
     """
 
+    # classifier_name
+    # classifier_name = ['lr']
+    classifier_name = ['svm']
+    # classifier_name = ['rf']
+    # classifier_name = ['mlp']
+
+    # classifier_name = ['svm', 'lr', 'rf', 'mlp']
+
     # task
     # tasks = ['link_prediction', 'node_classification']
-    tasks = [ 'node_classification']
+    # tasks = ['node_classification']
+    tasks = ['link_prediction']
 
-    # starter_graph = ['use_gene_disease_graph','use_phenotype_gene_disease_graph']
-    starter_graph = ['use_phenotype_gene_disease_graph']
 
-    # graph_edges_types = ['phenotype_gene_disease_phenotype', 'phenotype_gene_disease']
-    graph_edges_types = ['phenotype_gene_disease_phenotype']
+
 
     use_saved_emb_file = True
     # use_saved_emb_file = False
-
-    # add_qualified_edges = ['top_k',
+# add_qualified_edges = ['top_k',
     #                        'bottom_k']  # bottom_k is not yet implemented
     # add_qualified_edges = ['bottom_k']
-    add_qualified_edges = ['top_k']
+
+    # add_qualified_edges = ['top_k']
+    # add_qualified_edges = ['top_k_random']
+    # add_qualified_edges = ['bottom_k_deterministic']
+    # add_qualified_edges = ['bottom_k_random']
+    # add_qualified_edges = ['top_bottom_k_deterministic']
+    # add_qualified_edges = ['top_bottom_k_random']
+    # add_qualified_edges = ['shared_nodes_random']
+    # add_qualified_edges = ['all_nodes_random']
+
+    # starter_graph = ['use_phenotype_gene_disease_graph',
+    #                  'use_gene_disease_graph',
+    #                  'use_phenotype_gene_disease_graph']
+    starter_graph = ['use_phenotype_gene_disease_graph']
+    graph_edges_types = ['phenotype_gene_disease_phenotype', 'phenotype_gene_disease']
+    # graph_edges_types = ['phenotype_gene_disease_phenotype']
+
+    add_qualified_edges = ['top_k', 'top_k_random', 'bottom_k_deterministic',
+                           'bottom_k_random', 'top_bottom_k_deterministic',
+                           'top_bottom_k_random', 'shared_nodes_random',
+                           'all_nodes_random']
     dataset = 'GeneDisease'
     edges_percent = [
-          0.05, 0.1, 0.2, 0.3, 0.4,
+        0.05, 0.1, 0.4,
         0.5]  # look at my paper and see what other percentages has
-    # edges_percent = [0.05, 0.1]
-    # edges_percent = [0.05]
     added_edges_percent_of = 'GeneDisease'
+
+    # starter_graph = ['use_gene_disease_graph']
+    # graph_edges_types = [None]
+    # edges_percent = [None]  # look at my paper and see what other percentages has
+    # added_edges_percent_of = None
+    # add_qualified_edges = [None]
+    # dataset = 'no'
+
+    # added_edges_dataset = {
+    #     'use_shared_gene_edges': True,
+    #     'use_shared_phenotype_edges': True,
+    #     'use_shared_gene_or_phenotype_edges': True,
+    #     'use_shared_gene_and_phenotype_edges': True,
+    #     'use_shared_gene_but_not_phenotype_edges': True,
+    #     'use_shared_phenotype_but_not_gene_edges': True
+    # }
+
+
+    # emb_type = ['nodes2vec', 'gcn']
+    # emb_type = ['gcn']
+    emb_type = ['node2vec']
+
+    # =====================
+    # ==choose split type
+    # =====================
+# cv = True
+    # k_fold = 4
+    # args.cv = cv
+    # args.k_fold = k_fold
+
+    # starter_graph = ['use_phenotype_gene_disease_graph']
+    # classifier_name = ['svm']
+    # graph_edges_types = ['phenotype_gene_disease_phenotype']
+    # # add_qualified_edges = ['top_k_random']
+    # # add_qualified_edges = ['bottom_k_deterministic']
+    # # add_qualified_edges = ['bottom_k_random']
+    # # add_qualified_edges = ['top_bottom_k_deterministic']
+    # # add_qualified_edges = ['top_bottom_k_random']
+    # # add_qualified_edges = ['shared_nodes_random']
+    # # add_qualified_edges = ['all_nodes_random']
+    # # add_qualified_edges = ['top_k']
+    # edges_percent = [0.5]
+    # added_edges_dataset = {
+    #     'use_shared_gene_edges': True,
+    # }
+
+    cv = False
+    # args.split = 0.6
+    args.split = 0.4
+    args.cv = cv
+    args.k_fold = None
+    # ========== end choose split type
+
+    # args.emb_type = ['nodes2vec', 'gcn']
+    # emb_type = ['gcn']
+    # emb_type = ['node2vec']
+    # emb_type = ['gcn', 'node2vecc']
+    # emb_type = ['node2vec']
+
+    # add_qualified_edges = [None]
+    # dataset = 'no'
+
     added_edges_dataset = {
-        # 'use_shared_gene_edges': True,
-        # 'use_shared_phenotype_edges': True,
-        # 'use_shared_gene_or_phenotype_edges': True,
-        # 'use_shared_gene_and_phenotype_edges': True,
+        'use_shared_gene_edges': True,
+        'use_shared_phenotype_edges': True,
+        'use_shared_gene_or_phenotype_edges': True,
+        'use_shared_gene_and_phenotype_edges': True,
         'use_shared_gene_but_not_phenotype_edges': True,
-        # 'use_shared_phenotype_but_not_gene_edges': True
+        'use_shared_phenotype_but_not_gene_edges': True
     }
-    cv = True
-    k_fold = 4
+
+    # added_edges_dataset = {
+    #     'use_shared_gene_edges': False,
+    #     'use_shared_phenotype_edges': False,
+    #     'use_shared_gene_or_phenotype_edges': False,
+    #     'use_shared_gene_and_phenotype_edges': False,
+    #     'use_shared_gene_but_not_phenotype_edges': False,
+    #     'use_shared_phenotype_but_not_gene_edges': False
+    # }
 
     # assign value to args
     args.use_saved_emb_file = use_saved_emb_file
     args.dataset = dataset
     args.added_edges_percent_of = added_edges_percent_of
-    args.cv = cv
-    args.k_fold = k_fold
+    # args.starter_graph = starter_graph # optimize not sure if this is needed
+
 
     try:
         for t in tasks:
             args.task = t
-            for g in starter_graph:
-                if g == 'use_phenotype_gene_disease_graph':
-                    args.use_phenotype_gene_disease_graph = True
-                elif g == 'use_gene_disease_graph':
-                    args.use_gene_disease_graph = True
-                else:
-                    raise ValueError(
-                        "Currently only 2 options for starter graphs are offered\n"
-                        "1. use_phenotype_gene_disease_graph\n"
-                        "2. use_gene_disease_graph\n")
+            for emb in emb_type:
+                args.emb_type = emb
+                for c in classifier_name:
+                    args.classifier_name = c
+                    for g in starter_graph:
+                        if g == 'use_phenotype_gene_disease_graph':
+                            args.use_phenotype_gene_disease_graph = True
+                        elif g == 'use_gene_disease_graph':
+                            args.use_gene_disease_graph = True
+                        else:
+                            raise ValueError(
+                                "Currently only 2 options for starter graphs are offered\n"
+                                "1. use_phenotype_gene_disease_graph\n"
+                                "2. use_gene_disease_graph\n")
 
-                for g in graph_edges_types:
-                    args.graph_edges_type = g
+                        for g in graph_edges_types:
+                            args.graph_edges_type = g
 
-                    # iterate args of type list
-                    for i in add_qualified_edges:
-                        args.add_qualified_edges = i
-                        for percent in edges_percent:
-                            args.edges_percent = percent
-                            for key, val in added_edges_dataset.items():
+                            # iterate args of type list
+                            for i in add_qualified_edges:
+                                args.add_qualified_edges = i
+                                for percent in edges_percent:
+                                    args.edges_percent = percent
+                                    for key, val in added_edges_dataset.items():
 
-                                # reset args input for the next loop
-                                reset_args()
+                                        # reset args input for the next loop
+                                        reset_args()
 
-                                if key == 'use_shared_gene_edges':
-                                    args.use_shared_gene_edges = True
-                                elif key == 'use_shared_phenotype_edges':
-                                    args.use_shared_phenotype_edges = True
-                                elif key == 'use_shared_gene_or_phenotype_edges':
-                                    args.use_shared_phenotype_edge = True
-                                    args.use_shared_gene_edges = True
-                                elif key == 'use_shared_gene_and_phenotype_edges':
-                                    args.use_shared_gene_and_phenotype_edges = True
-                                elif key == 'use_shared_gene_but_not_phenotype_edges':
-                                    args.use_shared_gene_but_not_phenotype_edges = True
-                                elif key == 'use_shared_phenotype_but_not_gene_edges':
-                                    args.use_shared_phenotype_but_not_gene_edges = True
-                                else:
-                                    raise ValueError(
-                                        "non of avaliable option added edges are selected which include the follwoing:"
-                                        "use_shared_gene_edges,\n"
-                                        "use_shared_phenotyp_edges,\n"
-                                        "use_shared_gene_or_phenotype_edges,\n"
-                                        "use_shared_gene_and_phenotype_edges,\n"
-                                        "use_shared_gene_but_not_phenotype_edges, and \n"
-                                        "use_shared_phenotype_but_not_gene_edges.\n")
-                                print(
-                                    f"args.add_qualified_edges = {args.add_qualified_edges}")
-                                print(f"args.graph_edges_type = {args.graph_edges_type}")
-                                print(f"args.edges_percent = {args.edges_percent}")
-                                print(
-                                    f"args.add_qualified_edges = {args.add_qualified_edges}")
-                                print(
-                                    f"args.use_shared_gene_edges = {args.use_shared_gene_edges}")
-                                print(
-                                    f"args.use_shared_phenotype_edges = {args.use_shared_phenotype_edges} ")
-                                print(
-                                    f'args.use_shared_gene_and_phenotype_edges= {args.use_shared_gene_and_phenotype_edges}')
-                                print(
-                                    f'args.use_shared_gene_but_not_phenotype_edges = {args.use_shared_gene_but_not_phenotype_edges}')
-                                print(
-                                    f'args.use_shared_phenotype_but_not_gene_edges  = {args.use_shared_phenotype_but_not_gene_edges}')
+                                        if key == 'use_shared_gene_edges':
+                                            args.use_shared_gene_edges = val
+                                        elif key == 'use_shared_phenotype_edges':
+                                            args.use_shared_phenotype_edges = val
+                                        elif key == 'use_shared_gene_or_phenotype_edges':
+                                            # args.use_shared_phenotype_edge = val
+                                            # args.use_shared_gene_edges = val
+                                            args.use_shared_gene_or_phenotype_edges = val
+                                        elif key == 'use_shared_gene_and_phenotype_edges':
+                                            args.use_shared_gene_and_phenotype_edges = val
+                                        elif key == 'use_shared_gene_but_not_phenotype_edges':
+                                            args.use_shared_gene_but_not_phenotype_edges = val
+                                        elif key == 'use_shared_phenotype_but_not_gene_edges':
+                                            args.use_shared_phenotype_but_not_gene_edges = val
+                                        else:
+                                            raise ValueError(
+                                                "non of avaliable option added edges are selected which include the follwoing:"
+                                                "use_shared_gene_edges,\n"
+                                                "use_shared_phenotyp_edges,\n"
+                                                "use_shared_gene_or_phenotype_edges,\n"
+                                                "use_shared_gene_and_phenotype_edges,\n"
+                                                "use_shared_gene_but_not_phenotype_edges, and \n"
+                                                "use_shared_phenotype_but_not_gene_edges.\n")
+                                        print(
+                                            f"args.add_qualified_edges = {args.add_qualified_edges}")
+                                        print(
+                                            f"starter_graph = {g}")
+                                        print(
+                                            f"args.classifier_name = {args.classifier_name}")
+                                        print(
+                                            f"args.graph_edges_type = {args.graph_edges_type}")
+                                        print(
+                                            f"args.edges_percent = {args.edges_percent}")
+                                        print(
+                                            f"args.add_qualified_edges = {args.add_qualified_edges}")
+                                        print(
+                                            f"args.use_shared_gene_edges = {args.use_shared_gene_edges}")
+                                        print(
+                                            f"args.use_shared_phenotype_edges = {args.use_shared_phenotype_edges} ")
+                                        print(
+                                            f'args.use_shared_gene_and_phenotype_edges= {args.use_shared_gene_and_phenotype_edges}')
+                                        print(
+                                            f'args.use_shared_gene_but_not_phenotype_edges = {args.use_shared_gene_but_not_phenotype_edges}')
+                                        print(
+                                            f'args.use_shared_phenotype_but_not_gene_edges  = {args.use_shared_phenotype_but_not_gene_edges}')
 
-                                if key in ['use_shared_gene_and_phenotype_edges'] and percent in [0.2,0.3,0.4,0.5]:
-                                    pass
-                                else:
-                                    # aplly constrain
-                                    apply_parser_constraint_func()
+                                        # aplly constrain
+                                        apply_parser_constraint_func()
 
-                                    # run input mode
-                                    run_train_model()
+                                        # run input mode
+                                        run_train_model()
 
-                                # # aplly constrain
-                                # apply_parser_constraint_func()
+                                        # # aplly constrain
+                                        # apply_parser_constraint_func()
 
 
     except:
         print("The following args causes error")
-        print(f"args.add_qualified_edges = {args.add_qualified_edges}")
-        print(f"args.use_shared_gene_edges = {args.use_shared_gene_edges}")
+        print(
+            f"args.add_qualified_edges = {args.add_qualified_edges}")
+        print(
+            f"args.graph_edges_type = {args.graph_edges_type}")
+        print(
+            f"args.edges_percent = {args.edges_percent}")
+        print(
+            f"args.add_qualified_edges = {args.add_qualified_edges}")
+        print(
+            f"args.use_shared_gene_edges = {args.use_shared_gene_edges}")
         print(
             f"args.use_shared_phenotype_edges = {args.use_shared_phenotype_edges} ")
         print(
@@ -406,10 +545,9 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
 
 
 def use_run_node2vec_args(run_node2vec, apply_parser_constraint_func):
-
     # task
     # tasks = ['link_prediction', 'node_classification']
-    tasks = [ 'node_classification']
+    tasks = ['node_classification']
 
     # starter_graph = ['use_gene_disease_graph','use_phenotype_gene_disease_graph']
     starter_graph = ['use_phenotype_gene_disease_graph']
@@ -492,12 +630,14 @@ def use_run_node2vec_args(run_node2vec, apply_parser_constraint_func):
                                         "use_shared_phenotype_but_not_gene_edges.\n")
                                 print(
                                     f"args.use_gene_disease_graph = {args.use_gene_disease_graph}")
-                                print(f"args.graph_edges_type = {args.graph_edges_type}")
+                                print(
+                                    f"args.graph_edges_type = {args.graph_edges_type}")
                                 print(
                                     f"args.use_phenotype_gene_disease_graph = {args.use_phenotype_gene_disease_graph}")
                                 print(
                                     f"args.add_qualified_edges = {args.add_qualified_edges}")
-                                print(f"args.edges_percent = {args.edges_percent}")
+                                print(
+                                    f"args.edges_percent = {args.edges_percent}")
                                 print(
                                     f"args.use_shared_gene_edges = {args.use_shared_gene_edges}")
                                 print(
@@ -509,7 +649,9 @@ def use_run_node2vec_args(run_node2vec, apply_parser_constraint_func):
                                 print(
                                     f'args.use_shared_phenotype_but_not_gene_edges  = {args.use_shared_phenotype_but_not_gene_edges}')
 
-                                if key in ['use_shared_gene_and_phenotype_edges'] and percent in [0.2,0.3,0.4,0.5]:
+                                if key in [
+                                    'use_shared_gene_and_phenotype_edges'] and percent in [
+                                    0.2, 0.3, 0.4, 0.5]:
                                     pass
                                 else:
                                     # aplly constrain

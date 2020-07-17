@@ -1,0 +1,12 @@
+.idea
+.mypy_cache
+.pytest_cache
+.tox
+.installed.cfg
+*.egg-info
+.tox
+.idea
+
+Data
+PerformanceResult
+

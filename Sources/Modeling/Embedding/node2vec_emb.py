@@ -1,8 +1,8 @@
 import os
-import numpy as np
-import pandas as pd
 from os import path
 
+import numpy as np
+import pandas as pd
 from node2vec import Node2Vec
 
 from Sources.Preparation.Data import GeneDiseaseGeometricDataset
@@ -26,19 +26,18 @@ from global_param import GENEDISEASE_ROOT
 def run_node2vec_emb(data,
                      G,
                      embedding_model_file_path,
-                      enforce_end2end,
+                     enforce_end2end,
                      add_qualified_edges,
-                      use_weighted_edges,
-                      edges_percent,
-                      edges_number,
-                      dim,
+                     use_weighted_edges,
+                     edges_percent,
+                     edges_number,
+                     dim,
                      walk_len,
                      num_walks,
-                      window,
-                      added_edges_percent_of,
-                      emb_type,
+                     window,
+                     added_edges_percent_of,
+                     emb_type,
                      save_path):
-
     # dim = 1
     # walk_len = 1
     # num_walks =1
@@ -61,14 +60,14 @@ def run_specified_emb(data=None, G=None, embedding_model_file_path=None,
                       window=10,
                       added_edges_percent_of=None,
                       emb_type=None):
-# def run_node2vec_emb(data=None, G=None, embedding_model_file_path=None,
-#                      enforce_end2end=None, add_qualified_edges=None,
-#                      use_weighted_edges=None,
-#                      edges_percent=None,
-#                      edges_number=None,
-#                      dim=64, walk_len=30, num_walks=200,
-#                      window=10,
-#                      added_edges_percent_of=None):
+    # def run_node2vec_emb(data=None, G=None, embedding_model_file_path=None,
+    #                      enforce_end2end=None, add_qualified_edges=None,
+    #                      use_weighted_edges=None,
+    #                      edges_percent=None,
+    #                      edges_number=None,
+    #                      dim=64, walk_len=30, num_walks=200,
+    #                      window=10,
+    #                      added_edges_percent_of=None):
     """
 
     @param data:
@@ -141,24 +140,23 @@ def run_specified_emb(data=None, G=None, embedding_model_file_path=None,
         run_node2vec_emb(data,
                          G,
                          embedding_model_file_path,
-                          enforce_end2end,
+                         enforce_end2end,
                          add_qualified_edges,
-                          use_weighted_edges,
-                          edges_percent,
-                          edges_number,
-                          dim,
+                         use_weighted_edges,
+                         edges_percent,
+                         edges_number,
+                         dim,
                          walk_len,
                          num_walks,
-                          window,
-                          added_edges_percent_of,
-                          emb_type,
+                         window,
+                         added_edges_percent_of,
+                         emb_type,
                          save_path)
     elif emb_type == 'gcn':
         assert False, 'time to create gcn I assume :) '
         pass
     else:
         raise NotImplementedError()
-
 
 
 # def run_node2vec(data, graph_with_added_qualified_edges, data_with_features,
@@ -187,33 +185,33 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
             k_fold=None,
             split=None,
             get_data_with_emb_as_feat=None,
-            split_by_node = None,
+            split_by_node=None,
             emb_type=None
             ):
-# def run_node2vec(data, graph_with_added_qualified_edges, data_with_features,
-#                  use_saved_emb_file=None,
-#                  add_qualified_edges=None,
-#                  dataset=None, use_weighted_edges=None,
-#                  normalized_weighted_edges=None,
-#                  edges_percent=None,
-#                  edges_number=None,
-#                  added_edges_percent_of=None,
-#                  use_shared_gene_edges=None,
-#                  use_shared_phenotype_edges=None,
-#                  use_shared_gene_and_phenotype_edges=None,
-#                  use_shared_gene_but_not_phenotype_edges=None,
-#                  use_shared_phenotype_but_not_gene_edges=None,
-#                  use_gene_disease_graph=None,
-#                  use_phenotype_gene_disease_graph=None,
-#                  graph_edges_type=None,
-#                  task=None,
-#                  enforce_end2end=None,
-#                  cross_validation=None,
-#                  k_fold=None,
-#                  split=None,
-#                  get_data_with_emb_as_feat=None,
-#                  split_by_node = None
-#                  ):
+    # def run_node2vec(data, graph_with_added_qualified_edges, data_with_features,
+    #                  use_saved_emb_file=None,
+    #                  add_qualified_edges=None,
+    #                  dataset=None, use_weighted_edges=None,
+    #                  normalized_weighted_edges=None,
+    #                  edges_percent=None,
+    #                  edges_number=None,
+    #                  added_edges_percent_of=None,
+    #                  use_shared_gene_edges=None,
+    #                  use_shared_phenotype_edges=None,
+    #                  use_shared_gene_and_phenotype_edges=None,
+    #                  use_shared_gene_but_not_phenotype_edges=None,
+    #                  use_shared_phenotype_but_not_gene_edges=None,
+    #                  use_gene_disease_graph=None,
+    #                  use_phenotype_gene_disease_graph=None,
+    #                  graph_edges_type=None,
+    #                  task=None,
+    #                  enforce_end2end=None,
+    #                  cross_validation=None,
+    #                  k_fold=None,
+    #                  split=None,
+    #                  get_data_with_emb_as_feat=None,
+    #                  split_by_node = None
+    #                  ):
 
     # assert data is not None, 'data must be explicitly stated to avoid ambiguity'
     assert use_saved_emb_file is not None, 'use_saved_emb_file must be explicitly stated to avoid ambiguity'
@@ -251,7 +249,6 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
         #     outside_graph=graph_with_no_added_qualified_edges,
         #     use_outside_graph=True), "currently, link_prediction only support PGDP graph with no disease2disease edges added "
 
-
         if split is not None:
 
             embedding_model_file_path = select_emb_save_path(
@@ -282,25 +279,27 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
             # TODO make this function compatible with k_fold => what do I need
             splitted_edges_dir = f'C:\\Users\\Anak\\PycharmProjects\\recreate_gene_disease\\Data\\processed\\LinkPrediction\\GeneDiseaseProject\\copd\\PhenotypeGeneDisease\\PGDP\\Node2Vec\\UnweightedEdges\\NoAddedEdges\\'
             if split_by_node:
-                splitted_edges_dir += f'SplitByNode\\TrainingSplit=={1-split}\\'
+                splitted_edges_dir += f'SplitByNode\\TrainingSplit=={1 - split}\\'
             else:
-                splitted_edges_dir +=  f'SplitByEdge\\TrainingSplit=={1-split}\\'
-            train_set_np, test_set_np = data.split_train_test(split, stratify=True,
+                splitted_edges_dir += f'SplitByEdge\\TrainingSplit=={1 - split}\\'
+            train_set_np, test_set_np = data.split_train_test(split,
+                                                              stratify=True,
                                                               task=task,
                                                               splitted_edges_dir=splitted_edges_dir,
                                                               split_by_node=split_by_node)
-                                                              # reset_train_test_split=True)
+            # reset_train_test_split=True)
 
             # TODO paragraph below has been moved to run_node2vec_emb_with_removed_edges_from_graph_for_link_prediction
             # graph_with_no_added_qualified_edges_with_removed_test_edges = remove_edges_from_graph_for_link_prediction(
             #     data, graph_with_no_added_qualified_edges, train_set_np, split)
 
             import networkx as nx
-            pos_train_bool_np = [(float(i) == 1) for i in train_set_np[:,-1]]
+            pos_train_bool_np = [(float(i) == 1) for i in train_set_np[:, -1]]
             pos_train_set_np = train_set_np[pos_train_bool_np]
 
             graph_with_no_added_qualified_edges_with_removed_test_edges = nx.Graph()
-            graph_with_no_added_qualified_edges_with_removed_test_edges.add_edges_from(pos_train_set_np[:, :2], weight=1)
+            graph_with_no_added_qualified_edges_with_removed_test_edges.add_edges_from(
+                pos_train_set_np[:, :2], weight=1)
             # graph_with_no_added_qualified_edges_with_removed_test_edges = nx.from_edgelist(train_set_np[:, :2])
             # graph_with_no_added_qualified_edges_with_removed_test_edges = remove_edges_from_graph_for_link_prediction(
             #     data, graph_with_no_added_qualified_edges, train_set_np, test_set_np)
@@ -345,29 +344,29 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
             #                                                 emb_type=emb_type)
 
             node_with_feature = get_data_with_emb_as_feat(data,
-                                                           # use_saved_emb_file,
-                                                           add_qualified_edges,
-                                                           dataset,
-                                                           use_weighted_edges,
-                                                           normalized_weighted_edges,
-                                                           edges_percent,
-                                                           edges_number,
-                                                           added_edges_percent_of,
-                                                           use_shared_gene_edges,
-                                                           use_shared_phenotype_edges,
-                                                           use_shared_gene_and_phenotype_edges,
-                                                           use_shared_gene_but_not_phenotype_edges,
-                                                           use_shared_phenotype_but_not_gene_edges,
+                                                          # use_saved_emb_file,
+                                                          add_qualified_edges,
+                                                          dataset,
+                                                          use_weighted_edges,
+                                                          normalized_weighted_edges,
+                                                          edges_percent,
+                                                          edges_number,
+                                                          added_edges_percent_of,
+                                                          use_shared_gene_edges,
+                                                          use_shared_phenotype_edges,
+                                                          use_shared_gene_and_phenotype_edges,
+                                                          use_shared_gene_but_not_phenotype_edges,
+                                                          use_shared_phenotype_but_not_gene_edges,
                                                           use_shared_gene_or_phenotype_edges,
-                                                           use_gene_disease_graph,
-                                                           use_phenotype_gene_disease_graph,
-                                                           graph_edges_type,
-                                                           task,
-                                                           split,
-                                                           k_fold,
+                                                          use_gene_disease_graph,
+                                                          use_phenotype_gene_disease_graph,
+                                                          graph_edges_type,
+                                                          task,
+                                                          split,
+                                                          k_fold,
                                                           split_by_node
-                                                           # need it to choose file name
-                                                           )
+                                                          # need it to choose file name
+                                                          )
 
             # TODO return edges_with_features
             return node_with_feature
@@ -404,7 +403,8 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
             get_k_fold_data(run_emb, data, graph_with_no_added_qualified_edges,
                             use_saved_emb_file=use_saved_emb_file,
                             add_qualified_edges=add_qualified_edges,
-                            dataset=dataset, use_weighted_edges=use_weighted_edges,
+                            dataset=dataset,
+                            use_weighted_edges=use_weighted_edges,
                             normalized_weighted_edges=normalized_weighted_edges,
                             edges_percent=edges_percent,
                             edges_number=edges_number,
@@ -424,7 +424,7 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
                             k_fold=k_fold,
                             split=split,
                             get_data_with_emb_as_feat=get_data_with_emb_as_feat,
-                            split_by_node = split_by_node)
+                            split_by_node=split_by_node)
         else:
             raise ValueError(' ')
 
@@ -497,10 +497,13 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
                               enforce_end2end=enforce_end2end
                               )
 
-            node_with_feature = get_data_with_emb_as_feat(data, graph_with_added_qualified_edges, data_with_features,
+            node_with_feature = get_data_with_emb_as_feat(data,
+                                                          graph_with_added_qualified_edges,
+                                                          data_with_features,
                                                           use_saved_emb_file=use_saved_emb_file,
                                                           add_qualified_edges=add_qualified_edges,
-                                                          dataset=dataset, use_weighted_edges=use_weighted_edges,
+                                                          dataset=dataset,
+                                                          use_weighted_edges=use_weighted_edges,
                                                           normalized_weighted_edges=normalized_weighted_edges,
                                                           edges_percent=edges_percent,
                                                           edges_number=edges_number,
@@ -520,8 +523,7 @@ def run_emb(data, graph_with_added_qualified_edges, data_with_features,
                                                           k_fold=k_fold,
                                                           split=split,
                                                           # get_data_with_emb_as_feat=get_data_with_emb_as_feat,
-                                                          split_by_node = split_by_node)
-
+                                                          split_by_node=split_by_node)
 
             data_with_features = get_data_with_emb_as_feat(data,
                                                            # use_saved_emb_file,

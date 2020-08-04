@@ -65,9 +65,9 @@ def run_mlp_for_each_fold(x_train_with_features,
 
     # TODO debugging paramter of clr to make it binary clasiifier
     # train model
-    # clf = svm.SVC(gamma='scale', decision_function_shape='ovr',
+    # clf = mlp.SVC(gamma='scale', decision_function_shape='ovr',
     #               probability=True)
-    # clf = svm.SVC(kernel='linear', probability=True)  # her
+    # clf = mlp.SVC(kernel='linear', probability=True)  # her
 
     clf = MLPClassifier(random_state=1, max_iter=300)
     clf.fit(x_train_with_features, y_train)

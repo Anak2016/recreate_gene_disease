@@ -34,7 +34,9 @@ def save2file(train_report_np, train_columns, train_index,
                                        graph_edges_type=args.graph_edges_type,
                                        task=args.task,
                                        split=args.split,
-                                       k_fold=args.k_fold)
+                                       k_fold=args.k_fold,
+                                       split_by_node=args.split_by_node
+                                       )
 
     file_name = get_saved_file_name_for_emb(args.add_qualified_edges,
                                             args.edges_percent,

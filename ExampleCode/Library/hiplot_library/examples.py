@@ -16,7 +16,7 @@ def get_auc_val(folder_n, file_n):
 
 
 import os
-file_name = 'svm'
+file_name = 'mlp'
 
 
 def get_strategy_name(file_name, strategy_name):
@@ -66,7 +66,7 @@ def walk_folder():
             embedding = x[-6]
             qualified_node = x[-3]
 
-            if classifier == 'svm':
+            if classifier == 'mlp':
                 #                 print(x)
                 #                 print(qualified_node)
 

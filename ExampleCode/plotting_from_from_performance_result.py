@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 # plt.plot(range(10))
 # plt.show()
 #
-# # folder_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\PerformanceResult\NodeClassification\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\svm\Node2Vec\UnweightedEdges\AddedEdges'
+# # folder_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\PerformanceResult\NodeClassification\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\mlp\Node2Vec\UnweightedEdges\AddedEdges'
 folder_path = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\PerformanceResult\NodeClassification\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP'
 
 def get_auc_val(folder_n, file_n):
@@ -19,7 +19,7 @@ def get_auc_val(folder_n, file_n):
 
 
 import os
-file_name = 'svm'
+file_name = 'mlp'
 
 
 def get_strategy_name(file_name, strategy_name):
@@ -39,7 +39,7 @@ def walk_folder():
             embedding = x[-6]
             qualified_node = x[-3]
             qualified_node_th = {}
-            if classifier == 'svm':
+            if classifier == 'mlp':
                 print(qualified_node)
                 folder_name = '_'.join([classifier, embedding, qualified_node])
                 folder_name = folder_name # folder where list of file exists

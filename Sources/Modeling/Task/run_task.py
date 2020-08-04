@@ -1,4 +1,6 @@
 from Sources.Modeling.Embedding.gcn_emb import run_gcn_with_specified_classifier
+from Sources.Modeling.Embedding.gcn_emb import \
+    run_gcn_with_specified_classifier_for_link_prediction
 from Sources.Modeling.Task.link_prediction import run_link_prediction
 from Sources.Modeling.Task.node_classification import run_node_classification_with_unsupervised_emb
 
@@ -52,33 +54,73 @@ def run_task(data=None, x_with_features=None, cross_validation=None,
     assert classifier_name is not None, "classifier_name must be specified to avoid ambiguity"
     assert x_with_features is not None, ''
 
+    # HERE before working on link prediction, please check here. this implementattion seems to be experimental and ad_hoc => I expecte it to have unintended consequences
+    splitted_edges_dir = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\\'
+    if not split_by_node:
+        splitted_edges_dir = splitted_edges_dir + f'SplitByEdge\\'
+    else:
+        splitted_edges_dir = splitted_edges_dir + f'SplitByNode\\'
+
     if emb_type not in ['node2vec', 'gcn']:
         raise NotImplementedError
 
 
     if task == 'link_prediction':
-        run_link_prediction(data=data, x_with_features=x_with_features,
-                                cross_validation=cross_validation,
-                                k_fold=k_fold, split=split,
-                                use_saved_emb_file=use_saved_emb_file,
-                                add_qualified_edges=add_qualified_edges,
-                                dataset=dataset,
-                                use_weighted_edges=use_weighted_edges,
-                                normalized_weighted_edges=normalized_weighted_edges,
-                                edges_percent=edges_percent,
-                                edges_number=edges_number,
-                                added_edges_percent_of=added_edges_percent_of,
-                                use_shared_gene_edges=use_shared_gene_edges,
-                                use_shared_phenotype_edges=use_shared_phenotype_edges,
-                                use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
-                                use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
-                                use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
-                                use_shared_gene_or_phenotype_edges=use_shared_gene_or_phenotype_edges,
-                                use_gene_disease_graph=use_gene_disease_graph,
-                                use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+        if emb_type == 'node2vec':
+            run_link_prediction(data=data, x_with_features=x_with_features,
+                                    cross_validation=cross_validation,
+                                    k_fold=k_fold, split=split,
+                                    use_saved_emb_file=use_saved_emb_file,
+                                    add_qualified_edges=add_qualified_edges,
+                                    dataset=dataset,
+                                    use_weighted_edges=use_weighted_edges,
+                                    normalized_weighted_edges=normalized_weighted_edges,
+                                    edges_percent=edges_percent,
+                                    edges_number=edges_number,
+                                    added_edges_percent_of=added_edges_percent_of,
+                                    use_shared_gene_edges=use_shared_gene_edges,
+                                    use_shared_phenotype_edges=use_shared_phenotype_edges,
+                                    use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+                                    use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+                                    use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+                                    use_shared_gene_or_phenotype_edges=use_shared_gene_or_phenotype_edges,
+                                    use_gene_disease_graph=use_gene_disease_graph,
+                                    use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+                                classifier_name=classifier_name,
                                 graph_edges_type=graph_edges_type, task=task,
-                                split_by_node=split_by_node,
-                            )
+                                    split_by_node=split_by_node,
+                                emb_type=emb_type,
+                                splitted_edges_dir=splitted_edges_dir
+                                )
+        elif emb_type == 'gcn':
+            run_gcn_with_specified_classifier_for_link_prediction(data=data,
+                                              x_with_features=x_with_features,
+                                              cross_validation=cross_validation,
+                                              k_fold=k_fold, split=split,
+                                              use_saved_emb_file=use_saved_emb_file,
+                                              add_qualified_edges=add_qualified_edges,
+                                              dataset=dataset,
+                                              use_weighted_edges=use_weighted_edges,
+                                              normalized_weighted_edges=normalized_weighted_edges,
+                                              edges_percent=edges_percent,
+                                              edges_number=edges_number,
+                                              added_edges_percent_of=added_edges_percent_of,
+                                              use_shared_gene_edges=use_shared_gene_edges,
+                                              use_shared_phenotype_edges=use_shared_phenotype_edges,
+                                              use_shared_gene_and_phenotype_edges=use_shared_gene_and_phenotype_edges,
+                                              use_shared_gene_but_not_phenotype_edges=use_shared_gene_but_not_phenotype_edges,
+                                              use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
+                                              use_gene_disease_graph=use_gene_disease_graph,
+                                              use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
+                                              graph_edges_type=graph_edges_type,
+                                              task=task,
+                                              classifier_name=classifier_name,
+                                              emb_type=emb_type,
+                                              split_by_node=split_by_node,
+                                              splitted_edges_dir=splitted_edges_dir
+                                                                  )
+        else:
+            raise NotImplementedError
 
     elif task == 'node_classification':
         # TODO I haven't add shared_gene_or_phenotype_edges in here yet
@@ -101,7 +143,8 @@ def run_task(data=None, x_with_features=None, cross_validation=None,
                                                           use_shared_phenotype_but_not_gene_edges=use_shared_phenotype_but_not_gene_edges,
                                                           use_gene_disease_graph=use_gene_disease_graph,
                                                           use_phenotype_gene_disease_graph=use_phenotype_gene_disease_graph,
-                                                          graph_edges_type=graph_edges_type, task=task, classifier_name=classifier_name,
+                                                          graph_edges_type=graph_edges_type, task=task,
+                                                          classifier_name=classifier_name,
                                                           emb_type=emb_type)
         elif emb_type == 'gcn':
                 run_gcn_with_specified_classifier(data=data, x_with_features=x_with_features,

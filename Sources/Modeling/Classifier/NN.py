@@ -64,6 +64,8 @@ def run_neural_network_for_each_fold(x_train,
     feat_dim = x_train.shape[1]
 
     # define the keras model
+    print(f'feat_dim={feat_dim}')
+    # exit()
     model = Sequential()
     model.add(Dense(feat_dim, input_dim=feat_dim, activation='relu'))
     model.add(Dense(int(feat_dim / 2), activation='relu'))
@@ -156,28 +158,33 @@ def run_neural_network_using_train_test_split(data, x_with_features,
                                                       splitted_edges_dir=splitted_edges_dir,
                                                       split_by_node=split_by_node
                                                       )
-    # train_set_np, test_set_np = data.train_set, data.test_set
 
-    # x_train,y_train, x_test,y_test have to be used as row index to get access to x_with_features
-    x_train_ind, y_train = train_set_np[:, :2], train_set_np[:, -1].astype(
-        float)
-    x_test_ind, y_test = test_set_np[:, :2], test_set_np[:, -1].astype(float)
+    def get_train_test_set():
+        # train_set_np, test_set_np = data.train_set, data.test_set
 
-    # from keras.utils import to_categorical
-    # y_train = to_categorical(y_train.astype(int))
-    # y_test = to_categorical(y_test.astype(int))
+        # x_train,y_train, x_test,y_test have to be used as row index to get access to x_with_features
+        x_train_ind, y_train = train_set_np[:, :2], train_set_np[:, -1].astype(
+            float)
+        x_test_ind, y_test = test_set_np[:, :2], test_set_np[:, -1].astype(float)
 
-    import numpy as np
+        # from keras.utils import to_categorical
+        # y_train = to_categorical(y_train.astype(int))
+        # y_test = to_categorical(y_test.astype(int))
 
-    # what should train and test of link prediction be?
-    x_with_features.index = x_with_features.index.map(str)
-    tmp = x_with_features.reindex(x_train_ind[:,0]).dropna().to_numpy()
-    tmp_1 = x_with_features.reindex(x_train_ind[:,1]).dropna().to_numpy()
-    x_train = np.concatenate([tmp, tmp_1], axis=1)
+        import numpy as np
 
-    tmp = x_with_features.reindex(x_test_ind[:,0]).dropna().to_numpy()
-    tmp_1 = x_with_features.reindex(x_test_ind[:,1]).dropna().to_numpy()
-    x_test = np.concatenate([tmp, tmp_1], axis=1)
+        # what should train and test of link prediction be?
+        x_with_features.index = x_with_features.index.map(str)
+        tmp = x_with_features.reindex(x_train_ind[:,0]).dropna().to_numpy()
+        tmp_1 = x_with_features.reindex(x_train_ind[:,1]).dropna().to_numpy()
+        x_train = np.concatenate([tmp, tmp_1], axis=1)
+
+        tmp = x_with_features.reindex(x_test_ind[:,0]).dropna().to_numpy()
+        tmp_1 = x_with_features.reindex(x_test_ind[:,1]).dropna().to_numpy()
+        x_test = np.concatenate([tmp, tmp_1], axis=1)
+
+        return (y_train, x_train, x_train_ind), (y_test, x_test, x_test_ind)
+    (y_train, x_train, x_train_ind), (y_test, x_test, x_test_ind) = get_train_test_set()
 
     # x_train = np.concatenate([x_with_features.loc[x_train_ind[:, 0]],
     #                           x_with_features.loc[x_train_ind[:, 1]]], axis=1)
@@ -292,13 +299,9 @@ def run_neural_network(data,
                        split,
                        k_fold,
                        task,
-                       split_by_node):
-    # HERE before working on link prediction, please check here. this implementattion seems to be experimental and ad_hoc => I expecte it to have unintended consequences
-    splitted_edges_dir = r'C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\\'
-    if not split_by_node:
-        splitted_edges_dir = splitted_edges_dir + f'SplitByEdge\\'
-    else:
-        splitted_edges_dir = splitted_edges_dir + f'SplitByNode\\'
+                       split_by_node,
+                        splitted_edges_dir
+                       ):
 
     if cross_validation:
         # raise ValueError('not yet implemented')

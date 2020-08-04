@@ -40,7 +40,7 @@ parser.add_argument('--dataset', type=str, default='no',
 parser.add_argument('--use_saved_emb_file', action='store_true', help="")
 # parser.add_argument('--add_qualified_edges', action='store_true', help="")
 parser.add_argument('--classifier_name', type=str, default=None,
-                    help='select between the following option: svm lr rf mlp')
+                    help='select between the following option: mlp lr rf mlp')
 parser.add_argument('--add_qualified_edges', type=str, default=None,
                     help='specified strategy to be selected qualified edges to be added ')
 parser.add_argument('--use_weighted_edges', action='store_true', help="")
@@ -123,8 +123,8 @@ def apply_parser_constraint():
     assert args.emb_type in ['node2vec', 'gcn'], 'only 2 emb types are accepted '
 
     ## classifier
-    assert args.classifier_name in ['lr', 'svm', 'rf',
-                                    'mlp'], 'only support the following classifier lr, svm, rf, and mlp '
+    assert args.classifier_name in ['lr', 'mlp', 'rf',
+                                    'svm'], 'only support the following classifier lr, mlp, rf, and mlp '
 
     ## cross valdiation and train_tset_split
     if args.cv:
@@ -299,20 +299,19 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
     @return:
     """
 
-    # classifier_name
-    # classifier_name = ['lr']
-    classifier_name = ['svm']
-    # classifier_name = ['rf']
-    # classifier_name = ['mlp']
 
-    # classifier_name = ['svm', 'lr', 'rf', 'mlp']
+    classifier_name = ['mlp', 'lr', 'rf', 'svm']
+    # classifier_name = [ 'lr', 'rf', 'mlp']
+
+    # classifier_name = ['mlp']
+    # classifier_name = ['svm']
+    # classifier_name = ['lr']
+    # classifier_name = ['rf']
 
     # task
     # tasks = ['link_prediction', 'node_classification']
     # tasks = ['node_classification']
     tasks = ['link_prediction']
-
-
 
 
     use_saved_emb_file = True
@@ -334,13 +333,24 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
     #                  'use_gene_disease_graph',
     #                  'use_phenotype_gene_disease_graph']
     starter_graph = ['use_phenotype_gene_disease_graph']
-    graph_edges_types = ['phenotype_gene_disease_phenotype', 'phenotype_gene_disease']
-    # graph_edges_types = ['phenotype_gene_disease_phenotype']
+    # graph_edges_types = ['phenotype_gene_disease_phenotype', 'phenotype_gene_disease']
+    # graph_edges_types = ['phenotype_gene_disease_phenotype', 'phenotype_gene_disease']
+    # graph_edges_types = ['phenotype_gene_disease']
+    graph_edges_types = ['phenotype_gene_disease_phenotype']
+
+    # add_qualified_edges = ['bottom_k_random', 'top_bottom_k_deterministic', 'shared_nodes_random', 'all_nodes_random']
+
+    # add_qualified_edges = [ 'top_bottom_k_random', 'shared_nodes_random',
+    #                        'all_nodes_random']
+
+    # add_qualified_edges = ['top_bottom_k_random']
+    # add_qualified_edges = ['bottom_k_random']
 
     add_qualified_edges = ['top_k', 'top_k_random', 'bottom_k_deterministic',
                            'bottom_k_random', 'top_bottom_k_deterministic',
                            'top_bottom_k_random', 'shared_nodes_random',
                            'all_nodes_random']
+
     dataset = 'GeneDisease'
     edges_percent = [
         0.05, 0.1, 0.4,
@@ -365,8 +375,8 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
 
 
     # emb_type = ['nodes2vec', 'gcn']
-    # emb_type = ['gcn']
-    emb_type = ['node2vec']
+    emb_type = ['gcn']
+    # emb_type = ['node2vec']
 
     # =====================
     # ==choose split type
@@ -377,7 +387,7 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
     # args.k_fold = k_fold
 
     # starter_graph = ['use_phenotype_gene_disease_graph']
-    # classifier_name = ['svm']
+    # classifier_name = ['mlp']
     # graph_edges_types = ['phenotype_gene_disease_phenotype']
     # # add_qualified_edges = ['top_k_random']
     # # add_qualified_edges = ['bottom_k_deterministic']
@@ -409,8 +419,8 @@ def use_run_train_model_args(run_train_model, apply_parser_constraint_func):
     # dataset = 'no'
 
     added_edges_dataset = {
-        'use_shared_gene_edges': True,
         'use_shared_phenotype_edges': True,
+        'use_shared_gene_edges': True,
         'use_shared_gene_or_phenotype_edges': True,
         'use_shared_gene_and_phenotype_edges': True,
         'use_shared_gene_but_not_phenotype_edges': True,

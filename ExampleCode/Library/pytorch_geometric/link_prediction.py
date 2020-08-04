@@ -19,7 +19,7 @@ dataset = Planetoid(path, dataset, transform=T.NormalizeFeatures())
 data = dataset[0]
 
 # Train/validation/test
-data.train_mask = data.val_mask = data.test_mask = data.y = None
+# data.train_mask = data.val_mask = data.test_mask = data.y = None # Do I need this line here?
 data = train_test_split_edges(data)
 
 
@@ -31,7 +31,7 @@ class Net(torch.nn.Module):
 
     def forward(self, pos_edge_index, neg_edge_index):
 
-        x = F.relu(self.conv1(data.x, data.train_pos_edge_index))
+        x = F.relu(self.conv1(data.x, data.train_pos_edge_index)) # 2, 8976
         x = self.conv2(x, data.train_pos_edge_index)
 
         total_edge_index = torch.cat([pos_edge_index, neg_edge_index], dim=-1)
@@ -89,6 +89,7 @@ def test():
         link_probs = link_probs.detach().cpu().numpy()
         link_labels = link_labels.detach().cpu().numpy()
         perfs.append(roc_auc_score(link_labels, link_probs))
+
     return perfs
 
 

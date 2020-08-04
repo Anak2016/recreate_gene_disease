@@ -27,6 +27,7 @@ def run_node_classification_with_unsupervised_emb(data=None, x_with_features=Non
     assert classifier_name is not None, "classifier_name must be specified to avoid ambiguity"
     assert emb_type is not None, "emb_type must be specified to avoid ambiguity"
 
+    # if classifier_name == 'mlp':
     if classifier_name == 'svm':
         run_svm(data=data, x_with_features=x_with_features,
                 cross_validation=cross_validation, k_fold=k_fold, split=split,

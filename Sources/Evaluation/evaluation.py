@@ -66,9 +66,10 @@ def report_performance(y_true, y_pred, y_score, labels, verbose=None,
     # show AUC
     # TODO here>>
     ## normalized to probability: ( This is a hack; because roc_auc_score only accept probaility like y_score .
-    from sklearn.metrics import roc_auc_score
-    normalized_row = np.apply_along_axis(lambda x: [i / sum(x) for i in x], 1,
-                                         y_score)
+
+    # from sklearn.metrics import roc_auc_score
+    # normalized_row = np.apply_along_axis(lambda x: [i / sum(x) for i in x], 1,
+    #                                      y_score)
 
     # ## create total_roc_auc_score; output shape = 1
     # if 2 == np.unique(y_true).shape[0] and 2 == normalized_row.shape[1]:
@@ -328,9 +329,9 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
     #     ## Goal is to make the function reuseable by different classifer( which is library/function dependent)
     #     # # TODO debugging paramter of clr to make it binary clasiifier
     #     # # train model
-    #     # clf = svm.SVC(gamma='scale', decision_function_shape='ovr',
+    #     # clf = mlp.SVC(gamma='scale', decision_function_shape='ovr',
     #     #               probability=True)
-    #     # # clf = svm.SVC(kernel='linear', probability=True)  # her
+    #     # # clf = mlp.SVC(kernel='linear', probability=True)  # her
     #     #
     #     # clf.fit(x_train_with_features, y_train)
     #     #
@@ -452,9 +453,9 @@ def run_clf_using_cross_validation(data, data_with_features_dict, k_fold,
         ## Goal is to make the function reuseable by different classifer( which is library/function dependent)
         # # TODO debugging paramter of clr to make it binary clasiifier
         # # train model
-        # clf = svm.SVC(gamma='scale', decision_function_shape='ovr',
+        # clf = mlp.SVC(gamma='scale', decision_function_shape='ovr',
         #               probability=True)
-        # # clf = svm.SVC(kernel='linear', probability=True)  # her
+        # # clf = mlp.SVC(kernel='linear', probability=True)  # her
         #
         # clf.fit(x_train_with_features, y_train)
         #

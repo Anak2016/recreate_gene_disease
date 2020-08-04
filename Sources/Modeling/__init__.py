@@ -9,4 +9,4 @@ from Sources.Modeling.Task import *
 # from Sources.Modeling.Classifier.mlp import *
 # from Sources.Modeling.Classifier.modeling import *
 # from Sources.Modeling.Classifier.rf import *
-# from Sources.Modeling.Classifier.svm import *
+# from Sources.Modeling.Classifier.mlp import *

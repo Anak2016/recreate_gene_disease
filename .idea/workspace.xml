@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff25f7-8fba-40e8-b520-dddacbb722a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Recreate_GeneDisease.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Recreate_GeneDisease.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/TrainingSplit==0.8/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/TrainingSplit==0.8(2)/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitByNodeOrEdge/KFold=4/0/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/KFold=4/0/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitByNodeOrEdge/KFold=4/1/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/KFold=4/1/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitByNodeOrEdge/KFold=4/2/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/KFold=4/2/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitByNodeOrEdge/KFold=4/3/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/KFold=4/3/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitByNodeOrEdge/TrainingSplit==0.8/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByEdge/WithoutSplitted_edges.bin/TrainingSplit==0.8/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=4/0/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=4/0/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=4/splitted_edges.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=4/splitted_edges.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/0/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/0/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/1/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/1/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/2/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/2/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/3/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/3/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/4/dim64_walk_len30_num_walks200_window10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/4/dim64_walk_len30_num_walks200_window10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/KFold=5/splitted_edges.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Data/processed/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/Node2Vec/UnweightedEdges/NoAddedEdges/SplitByNode/Correct/KFold=5/splitted_edges.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExampleCode/Library/hiplot_library/examples.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExampleCode/Library/hiplot_library/examples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric/link_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric/link_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExampleCode/plotting_from_from_performance_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExampleCode/plotting_from_from_performance_result.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/train_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Evaluation/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Evaluation/evaluation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/LR.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/LR.py" afterDir="false" />
@@ -27,17 +14,17 @@
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/RF.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/RF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/Task/link_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Task/link_prediction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Modeling/Task/run_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/Task/run_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Modeling/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Modeling/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/build_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/build_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Preprocessing/apply_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utilities/saver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities/saver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arg_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/arg_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global_param.py" beforeDir="false" afterPath="$PROJECT_DIR$/global_param.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/Library/Untitled Folder/Literate Notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/Library/Untitled Folder/Literate Notebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +90,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;TEXT" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PerformanceResult/GCN_Node2vec.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PerformanceResult/LinkPrediction/GeneDiseaseProject/copd/PhenotypeGeneDisease/PGDP/mlp/Node2Vec/UnweightedEdges/AddedEdges/SharedPhenotypeNotGeneEdges/EdgesPercent/GeneDisease" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -113,7 +100,7 @@
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -126,19 +113,19 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\PerformanceResult\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\mlp\Node2Vec\UnweightedEdges\AddedEdges\SharedPhenotypeNotGeneEdges\EdgesPercent\GeneDisease" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\PerformanceResult\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\mlp\Node2Vec\UnweightedEdges\AddedEdges\SharedGeneNotPhenotypeEdges\EdgesPercent\GeneDisease" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\KFold=4" />
+      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\DisGeNET\all_gene_disease_pmid_associations.tsv" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode\KFold=101\AscendingOrder" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode\KFold=101\DecendingOrder" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode\KFold=101" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByEdge\LowAccuracy" />
       <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByEdge" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\SplitByNode" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\LinkPrediction\GeneDiseaseProject\copd\PhenotypeGeneDisease\PGDP\Node2Vec\UnweightedEdges\NoAddedEdges\KFold=4" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\raw\DisGeNET\all_gene_disease_pmid_associations.tsv" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\WeightedEdges\AddedEdges\EdgesPercent" />
-      <recent name="C:\Users\Anak\PycharmProjects\recreate_gene_disease\Data\processed\GPSim\Node2Vec\UnweightedEdges\AddedEdges\EdgesPercent" />
     </key>
   </component>
   <component name="RunManager" selected="Python.train_model">
@@ -212,6 +199,9 @@
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExampleCode/Library/hiplot_library" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -242,6 +232,9 @@
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -305,6 +298,9 @@
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Anak\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExampleCode" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -331,10 +327,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="Recreate_GeneDisease" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Models" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -581,7 +580,14 @@
       <workItem from="1591546101900" duration="23666000" />
       <workItem from="1592674999604" duration="12144000" />
       <workItem from="1592692905328" duration="139946000" />
-      <workItem from="1593532298987" duration="114905000" />
+      <workItem from="1593532298987" duration="136427000" />
+      <workItem from="1595186041582" duration="13271000" />
+      <workItem from="1595430596232" duration="24787000" />
+      <workItem from="1595484909300" duration="18310000" />
+      <workItem from="1595513456454" duration="13034000" />
+      <workItem from="1595648875375" duration="1309000" />
+      <workItem from="1595770945565" duration="22573000" />
+      <workItem from="1596038644593" duration="113000" />
     </task>
     <servers />
   </component>
@@ -610,84 +616,82 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="530" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594439652563" />
-    <state x="-293" y="274" width="1536" height="550" key="#train_model" timestamp="1594797508383">
+    <state x="258" y="129" width="1046" height="566" key="#train_model" timestamp="1595491443256">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-293" y="274" width="1536" height="550" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1594797508383" />
-    <state x="870" y="90" width="632" height="546" key="#xdebugger.evaluate" timestamp="1594796821355">
+    <state x="258" y="129" width="1046" height="566" key="#train_model/0.0.1536.824@0.0.1536.824" timestamp="1595491443256" />
+    <state x="865" y="139" width="632" height="546" key="#xdebugger.evaluate" timestamp="1595512742054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="870" y="90" width="632" height="546" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1594796821355" />
-    <state x="22" y="0" width="814" height="824" key="Cacher.FindSnippetDialog" timestamp="1594440804197">
+    <state x="865" y="139" width="632" height="546" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1595512742054" />
+    <state x="22" y="0" width="814" height="824" key="Cacher.FindSnippetDialog" timestamp="1595490759113">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="22" y="0" width="814" height="824" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1594440804197" />
-    <state x="682" y="162" width="814" height="607" key="Cacher.NewSnippetDialog" timestamp="1592681356989">
+    <state x="22" y="0" width="814" height="824" key="Cacher.FindSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1595490759113" />
+    <state x="682" y="162" width="814" height="607" key="Cacher.NewSnippetDialog" timestamp="1595913534598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="682" y="162" width="814" height="607" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1592681356989" />
+    <state x="682" y="162" width="814" height="607" key="Cacher.NewSnippetDialog/0.0.1536.824@0.0.1536.824" timestamp="1595913534598" />
     <state x="0" y="10" key="CommitChangelistDialog2" timestamp="1588721688731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588721688731" />
-    <state width="1534" height="440" key="DebuggerActiveHint" timestamp="1592700139690">
+    <state width="1534" height="440" key="DebuggerActiveHint" timestamp="1595491151332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1534" height="440" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1592700139690" />
-    <state x="322" y="133" width="547" height="617" key="FileChooserDialogImpl" timestamp="1593372937170">
+    <state width="1534" height="440" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1595491151332" />
+    <state x="322" y="133" width="547" height="617" key="FileChooserDialogImpl" timestamp="1596038750842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="932" y="139" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1585435771427" />
-    <state x="322" y="133" width="547" height="617" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593372937170" />
-    <state x="645" y="78" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585775086575" />
-    <state width="1537" height="243" key="GridCell.Tab.0.bottom" timestamp="1594797585484">
+    <state x="322" y="133" width="547" height="617" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596038750842" />
+    <state width="769" height="346" key="GridCell.Tab.0.bottom" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594797585484" />
-    <state width="1537" height="243" key="GridCell.Tab.0.center" timestamp="1594797585484">
+    <state width="769" height="346" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.0.center" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594797585484" />
-    <state width="1537" height="243" key="GridCell.Tab.0.left" timestamp="1594797585484">
+    <state width="769" height="346" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.0.left" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594797585484" />
-    <state width="1537" height="243" key="GridCell.Tab.0.right" timestamp="1594797585484">
+    <state width="769" height="346" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.0.right" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594797585484" />
-    <state width="1537" height="243" key="GridCell.Tab.1.bottom" timestamp="1594797585485">
+    <state width="769" height="346" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.1.bottom" timestamp="1595576790538">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594797585485" />
-    <state width="1537" height="243" key="GridCell.Tab.1.center" timestamp="1594797585485">
+    <state width="769" height="346" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595576790538" />
+    <state width="769" height="346" key="GridCell.Tab.1.center" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594797585485" />
-    <state width="1537" height="243" key="GridCell.Tab.1.left" timestamp="1594797585484">
+    <state width="769" height="346" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.1.left" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594797585484" />
-    <state width="1537" height="243" key="GridCell.Tab.1.right" timestamp="1594797585485">
+    <state width="769" height="346" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state width="769" height="346" key="GridCell.Tab.1.right" timestamp="1595576790537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594797585485" />
-    <state x="276" y="53" key="SettingsEditor" timestamp="1593552246472">
+    <state width="769" height="346" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595576790537" />
+    <state x="-6" y="0" width="914" height="824" key="SettingsEditor" timestamp="1595987297638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="276" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593552246472" />
-    <state width="498" height="452" key="SwitcherDM" timestamp="1594827657521">
+    <state x="-6" y="0" width="914" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595987297638" />
+    <state width="498" height="452" key="SwitcherDM" timestamp="1595915921430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1594827657521" />
-    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1594776148650">
+    <state width="498" height="452" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1595915921430" />
+    <state width="776" height="416" key="XDebugger.FullValuePopup" timestamp="1595506749932">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1594776148650" />
-    <state x="346" y="118" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1594782167224">
+    <state width="776" height="416" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1595506749932" />
+    <state x="346" y="118" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1595512551404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="346" y="118" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/0.0.1536.824@0.0.1536.824" timestamp="1594782167224" />
+    <state x="346" y="118" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/0.0.1536.824@0.0.1536.824" timestamp="1595512551404" />
     <state x="861" y="93" width="582" height="638" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594440543696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -700,22 +704,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="488" y="43" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1593560961172" />
+    <state x="277" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1595463177585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1595463177585" />
     <state x="93" y="93" width="1350" height="638" key="dock-window-1" timestamp="1592679880398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1592679880398" />
-    <state x="201" y="120" width="738" height="606" key="find.popup" timestamp="1594796867525">
+    <state x="201" y="120" width="738" height="606" key="find.popup" timestamp="1595484266126">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="201" y="120" width="738" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594796867525" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1594828290398">
+    <state x="201" y="120" width="738" height="606" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1595484266126" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1595512863950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1594828290398" />
-    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1594828753104">
+    <state width="600" height="424" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1595512863950" />
+    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1595963970545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594828753104" />
+    <state x="541" y="277" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595963970545" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -732,12 +740,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>122</line>
+          <line>121</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>125</line>
+          <line>124</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -752,7 +760,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>215</line>
+          <line>288</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -762,7 +770,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>702</line>
+          <line>704</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -822,17 +830,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>671</line>
+          <line>673</line>
           <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>619</line>
+          <line>621</line>
           <option name="timeStamp" value="217" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>572</line>
+          <line>574</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -847,7 +855,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>263</line>
+          <line>336</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -867,37 +875,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>660</line>
+          <line>670</line>
           <option name="timeStamp" value="297" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>631</line>
+          <line>641</line>
           <option name="timeStamp" value="298" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>369</line>
+          <line>479</line>
           <option name="timeStamp" value="300" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>108</line>
+          <line>109</line>
           <option name="timeStamp" value="312" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>185</line>
-          <option name="timeStamp" value="313" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
-          <line>283</line>
+          <line>290</line>
           <option name="timeStamp" value="360" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
-          <line>276</line>
+          <line>283</line>
           <option name="timeStamp" value="361" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -922,12 +925,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
-          <line>311</line>
+          <line>314</line>
           <option name="timeStamp" value="411" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>203</line>
+          <line>204</line>
           <option name="timeStamp" value="412" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -997,7 +1000,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>261</line>
+          <line>262</line>
           <option name="timeStamp" value="492" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1017,12 +1020,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>321</line>
+          <line>322</line>
           <option name="timeStamp" value="504" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>296</line>
+          <line>297</line>
           <option name="timeStamp" value="506" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1032,18 +1035,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>289</line>
+          <line>290</line>
           <option name="timeStamp" value="509" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>420</line>
+          <line>421</line>
           <option name="timeStamp" value="511" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="515" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py</url>
@@ -1052,68 +1050,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>473</line>
+          <line>474</line>
           <option name="timeStamp" value="523" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>506</line>
+          <line>507</line>
           <option name="timeStamp" value="524" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>316</line>
-          <option name="timeStamp" value="530" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="531" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>318</line>
-          <option name="timeStamp" value="532" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>356</line>
-          <option name="timeStamp" value="538" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>369</line>
-          <option name="timeStamp" value="554" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="557" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="559" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py</url>
-          <line>72</line>
+          <line>73</line>
           <option name="timeStamp" value="560" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="561" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Task/node_classification.py</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="562" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>435</line>
-          <option name="timeStamp" value="566" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
@@ -1137,12 +1100,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>60</line>
+          <line>133</line>
           <option name="timeStamp" value="585" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
-          <line>57</line>
+          <line>130</line>
           <option name="timeStamp" value="586" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1151,13 +1114,8 @@
           <option name="timeStamp" value="588" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/select_strategy.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="593" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Utilities/saver.py</url>
-          <line>66</line>
+          <line>68</line>
           <option name="timeStamp" value="594" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1216,16 +1174,6 @@
           <option name="timeStamp" value="654" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
-          <line>216</line>
-          <option name="timeStamp" value="658" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="665" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ExampleCode/plotting_from_from_performance_result.py</url>
           <line>153</line>
           <option name="timeStamp" value="670" />
@@ -1237,17 +1185,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>443</line>
-          <option name="timeStamp" value="682" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>608</line>
+          <line>618</line>
           <option name="timeStamp" value="686" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>603</line>
+          <line>613</line>
           <option name="timeStamp" value="687" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1266,19 +1209,9 @@
           <option name="timeStamp" value="699" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="717" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
           <line>707</line>
           <option name="timeStamp" value="718" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric/link_prediction.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="719" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Preparation/Data/make_dataset.py</url>
@@ -1286,59 +1219,114 @@
           <option name="timeStamp" value="721" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>157</line>
-          <option name="timeStamp" value="739" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
-          <line>207</line>
-          <option name="timeStamp" value="740" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>140</line>
+          <line>139</line>
           <option name="timeStamp" value="743" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>46</line>
+          <line>45</line>
           <option name="timeStamp" value="744" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/arg_parser.py</url>
-          <line>208</line>
-          <option name="timeStamp" value="746" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
-          <line>181</line>
+          <line>188</line>
           <option name="timeStamp" value="747" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>372</line>
-          <option name="timeStamp" value="749" />
+          <url>file://$PROJECT_DIR$/Utilities/saver.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="754" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/node2vec_emb.py</url>
-          <line>346</line>
-          <option name="timeStamp" value="750" />
+          <url>file://$PROJECT_DIR$/Utilities/saver.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="755" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Models/train_model.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="751" />
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/NN.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="758" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/build_features.py</url>
-          <line>415</line>
-          <option name="timeStamp" value="752" />
+          <url>file://$USER_HOME$/Anaconda3/envs/py36/Lib/site-packages/keras/layers/core.py</url>
+          <line>916</line>
+          <option name="timeStamp" value="760" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_starter_graph.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="753" />
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
+          <line>424</line>
+          <option name="timeStamp" value="761" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
+          <line>488</line>
+          <option name="timeStamp" value="762" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/SVM.py</url>
+          <line>478</line>
+          <option name="timeStamp" value="763" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Classifier/LR.py</url>
+          <line>197</line>
+          <option name="timeStamp" value="767" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Task/run_task.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="785" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric/link_prediction.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="800" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric/link_prediction.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="803" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="805" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
+          <line>490</line>
+          <option name="timeStamp" value="814" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
+          <line>470</line>
+          <option name="timeStamp" value="815" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Modeling/Embedding/gcn_emb.py</url>
+          <line>481</line>
+          <option name="timeStamp" value="816" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>151</line>
+          <option name="timeStamp" value="818" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="819" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Evaluation/evaluation.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="820" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sources/Preparation/Features/get_qualified_edges.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="821" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1348,6 +1336,7 @@
         <watch expression="neg_edges_with_label_np" language="Python" />
         <watch expression="add_qualified_edges" language="Python" />
         <watch expression="x_train_ind" language="Python" />
+        <watch expression="input_shape" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -1358,9 +1347,9 @@
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$practicing_vim.coverage" NAME="practicing_vim Coverage Results" MODIFIED="1577416861451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_for_test_hellow_word_test_one.coverage" NAME="pytest for test_hellow_word.test_one Coverage Results" MODIFIED="1577459690751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$apply_preprocessing.coverage" NAME="apply_preprocessing Coverage Results" MODIFIED="1592720777059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preprocessing" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$link_prediction.coverage" NAME="link_prediction Coverage Results" MODIFIED="1594501319210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$link_prediction.coverage" NAME="link_prediction Coverage Results" MODIFIED="1595512453478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/pytorch_geometric" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$select_strategy.coverage" NAME="select_strategy Coverage Results" MODIFIED="1592682624664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sources/Preparation/Features" />
-    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1594797509553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
+    <SUITE FILE_PATH="coverage/Recreate_GeneDisease$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1595514579637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Models" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$arg_parser.coverage" NAME="arg_parser Coverage Results" MODIFIED="1593799048310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$pytest_in_test_hellow_word_py.coverage" NAME="pytest in test_hellow_word.py Coverage Results" MODIFIED="1577460001187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicing/pytest/test" />
     <SUITE FILE_PATH="coverage/Recreate_GeneDisease$adding_sub_parser.coverage" NAME="adding_sub_parser Coverage Results" MODIFIED="1580336082118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ExampleCode/Library/argparse" />

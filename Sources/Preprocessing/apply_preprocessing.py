@@ -466,7 +466,41 @@ def get_saved_file_name_for_emb(add_qualified_edges, edges_percent,
                                 window):
     """This function is create in case that file name getting increasingly more complicated as development process continues"""
 
-    # assert (edges_number is not None) or (edges_percent is not None), ""
+    # # assert (edges_number is not None) or (edges_percent is not None), ""
+    # if add_qualified_edges == 'top_k':
+    #     add_qualified_edges = 'top'
+    # elif add_qualified_edges == 'top_k_random':
+    #     add_qualified_edges = 'top_rand'
+    # elif add_qualified_edges == 'bottom_k_deterministic':
+    #     add_qualified_edges = 'bottom'
+    # elif add_qualified_edges == 'bottom_k_random':
+    #     add_qualified_edges = 'bottom_rand'
+    # elif add_qualified_edges == 'top_bottom_k_deterministic':
+    #     add_qualified_edges = 'top_bottom'
+    # elif add_qualified_edges == 'top_bottom_k_random':
+    #     add_qualified_edges = 'top_bottom_rand'
+    # elif add_qualified_edges == 'shared_nodes_random':
+    #     add_qualified_edges = 'shared'
+    # elif add_qualified_edges == 'all_nodes_random':
+    #     add_qualified_edges = 'all'
+    # else:
+    #     print(add_qualified_edges)
+    #     raise ValueError('')
+
+
+    # if add_qualified_edges is not None:
+    #     if edges_number is not None:
+    #         # return f'{add_qualified_edges}={edges_number}_dim{dim}_walk_len{walk_len}_num_walks{num_walks}_window{window}.txt'
+    #         return f'{add_qualified_edges}={edges_number}.txt'
+    #     elif edges_percent is not None:
+    #         # return f'{add_qualified_edges}={edges_percent}_dim{dim}_walk_len{walk_len}_num_walks{num_walks}_window{window}.txt'
+    #         return f'{add_qualified_edges}={edges_percent}.txt'
+    #     else:
+    #         raise ValueError(
+    #             "only edges_number and edges_pecent is acceptable as subparser for add qulified_edges")
+    # else:
+    #     return f'noAddedEdges.txt'
+
     if add_qualified_edges is not None:
         if edges_number is not None:
             return f'{add_qualified_edges}={edges_number}_dim{dim}_walk_len{walk_len}_num_walks{num_walks}_window{window}.txt'

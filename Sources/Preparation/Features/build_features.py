@@ -495,8 +495,10 @@ def get_data_feat(data=None,
                         'task only expect link_prediction or node_classification as its value')
             elif emb_type == 'gcn':
                 if task == 'link_prediction':
-                    raise NotImplementedError("")
-                elif task == 'node2vec':
+                    # raise NotImplementedError("")
+                    assert data_with_features is not None, ""
+                # elif task == 'node2vec':
+                elif task == 'node_classification':
                     assert data_with_features is not None, ""
                 else:
                     raise NotImplementedError()
